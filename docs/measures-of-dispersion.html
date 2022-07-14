@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 5 Measures of Dispersion | LECTURE NOTES OF STAT 3202</title>
+  <meta name="description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 5 Measures of Dispersion | LECTURE NOTES OF STAT 3202" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/cover.PNG" />
+  <meta property="og:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="github-repo" content="https://github.com/KAUMELON/stat3202" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 5 Measures of Dispersion | LECTURE NOTES OF STAT 3202" />
+  
+  <meta name="twitter:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="twitter:image" content="/images/cover.PNG" />
+
+<meta name="author" content="Dr. Pratheesh P. Gopinath" />
+
+
+<meta name="date" content="2022-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="measures-of-central-tendency--ii.html"/>
+<link rel="next" href="skewness-and-kurtosis.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LECTURE NOTES</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#origin-of-the-word-statistics"><i class="fa fa-check"></i><b>1.1</b> Origin of the word “Statistics”</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#statistics-and-mathematics"><i class="fa fa-check"></i><b>1.2</b> Statistics and Mathematics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#definition-of-statistics"><i class="fa fa-check"></i><b>1.3</b> Definition of Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#data"><i class="fa fa-check"></i><b>1.4</b> Data</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#use-and-limitations-of-statistics"><i class="fa fa-check"></i><b>1.5</b> Use and limitations of statistics</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#population-and-sample"><i class="fa fa-check"></i><b>1.6</b> Population and Sample</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#population"><i class="fa fa-check"></i><b>1.6.1</b> Population</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#sample"><i class="fa fa-check"></i><b>1.6.2</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#variables-and-constants"><i class="fa fa-check"></i><b>1.7</b> Variables and constants</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#variables"><i class="fa fa-check"></i><b>1.7.1</b> Variables</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#constants"><i class="fa fa-check"></i><b>1.7.2</b> Constants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#types-of-variables"><i class="fa fa-check"></i><b>1.8</b> Types of variables</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#quantitative-variables"><i class="fa fa-check"></i><b>1.8.1</b> Quantitative variables</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#discrete-variables"><i class="fa fa-check"></i><b>1.8.2</b> Discrete variables</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#continuous-variables"><i class="fa fa-check"></i><b>1.8.3</b> Continuous variables</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#categorical-variables"><i class="fa fa-check"></i><b>1.8.4</b> Categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#measurement-scales"><i class="fa fa-check"></i><b>1.9</b> Measurement scales</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#nominal-scale"><i class="fa fa-check"></i><b>1.9.1</b> Nominal scale</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#ordinal-scale"><i class="fa fa-check"></i><b>1.9.2</b> Ordinal scale</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#interval-scale"><i class="fa fa-check"></i><b>1.9.3</b> Interval scale</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#ratio-scale"><i class="fa fa-check"></i><b>1.9.4</b> Ratio scale</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#collection-of-data"><i class="fa fa-check"></i><b>1.10</b> Collection of Data</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#types-of-data"><i class="fa fa-check"></i><b>1.10.1</b> Types of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-primary-data"><i class="fa fa-check"></i><b>1.11</b> Methods of Collecting Primary Data</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#personal-investigation"><i class="fa fa-check"></i><b>1.11.1</b> Personal Investigation</a></li>
+<li class="chapter" data-level="1.11.2" data-path="introduction.html"><a href="introduction.html#through-investigation"><i class="fa fa-check"></i><b>1.11.2</b> Through Investigation</a></li>
+<li class="chapter" data-level="1.11.3" data-path="introduction.html"><a href="introduction.html#collection-through-questionnaire"><i class="fa fa-check"></i><b>1.11.3</b> Collection through Questionnaire</a></li>
+<li class="chapter" data-level="1.11.4" data-path="introduction.html"><a href="introduction.html#through-the-telephone"><i class="fa fa-check"></i><b>1.11.4</b> Through the Telephone</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-secondary-data"><i class="fa fa-check"></i><b>1.12</b> Methods of Collecting Secondary Data</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#official"><i class="fa fa-check"></i><b>1.12.1</b> Official</a></li>
+<li class="chapter" data-level="1.12.2" data-path="introduction.html"><a href="introduction.html#semi-official"><i class="fa fa-check"></i><b>1.12.2</b> Semi-Official</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#difference-between-primary-and-secondary-data"><i class="fa fa-check"></i><b>1.13</b> Difference Between Primary and Secondary Data</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#frequency-distribution"><i class="fa fa-check"></i><b>1.14</b> Frequency distribution</a>
+<ul>
+<li class="chapter" data-level="1.14.1" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution"><i class="fa fa-check"></i><b>1.14.1</b> Construction of frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#grouped-frequency-distribution"><i class="fa fa-check"></i><b>1.15</b> Grouped frequency distribution</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#terms-used-in-grouped-frequency-tables."><i class="fa fa-check"></i><b>1.16</b> Terms used in grouped frequency tables.</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution-table"><i class="fa fa-check"></i><b>1.17</b> Construction of frequency distribution table</a></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#cumulative-frequency"><i class="fa fa-check"></i><b>1.18</b> Cumulative frequency</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#relative-frequency"><i class="fa fa-check"></i><b>1.19</b> Relative frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html"><i class="fa fa-check"></i><b>2</b> Graphical representation of data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram"><i class="fa fa-check"></i><b>2.1</b> Histogram</a></li>
+<li class="chapter" data-level="2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#cumulative-frequency-curve-ogive"><i class="fa fa-check"></i><b>2.2</b> Cumulative frequency curve (Ogive)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#less-than-ogive"><i class="fa fa-check"></i><b>2.2.1</b> Less than Ogive</a></li>
+<li class="chapter" data-level="2.2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#greater-than-ogive"><i class="fa fa-check"></i><b>2.2.2</b> Greater than Ogive</a></li>
+<li class="chapter" data-level="2.2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#frequency-polygon"><i class="fa fa-check"></i><b>2.2.3</b> Frequency polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#stem-and-leaf-plot"><i class="fa fa-check"></i><b>2.3</b> Stem-and-leaf plot</a></li>
+<li class="chapter" data-level="2.4" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#bar-chart"><i class="fa fa-check"></i><b>2.4</b> Bar chart</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#simple-bar-chart"><i class="fa fa-check"></i><b>2.4.1</b> Simple bar chart</a></li>
+<li class="chapter" data-level="2.4.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#component-bar-chart"><i class="fa fa-check"></i><b>2.4.2</b> Component bar chart</a></li>
+<li class="chapter" data-level="2.4.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#grouped-bar-chart"><i class="fa fa-check"></i><b>2.4.3</b> Grouped bar chart</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram-and-bar-chart"><i class="fa fa-check"></i><b>2.5</b> Histogram and Bar chart</a></li>
+<li class="chapter" data-level="2.6" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#pie-charts"><i class="fa fa-check"></i><b>2.6</b> Pie Charts</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#steps-for-constructing-a-pie-chart"><i class="fa fa-check"></i><b>2.6.1</b> Steps for constructing a pie chart</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html"><i class="fa fa-check"></i><b>3</b> Measures of central tendency - I</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#arithmetic-mean"><i class="fa fa-check"></i><b>3.1</b> Arithmetic Mean</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mean-of-a-frequency-distribution"><i class="fa fa-check"></i><b>3.1.1</b> The mean of a frequency distribution</a></li>
+<li class="chapter" data-level="3.1.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mean-of-grouped-data"><i class="fa fa-check"></i><b>3.1.2</b> Mean of Grouped Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-arithmetic-mean-merits"><i class="fa fa-check"></i><b>3.2</b> Merits and demerits of Arithmetic mean Merits</a></li>
+<li class="chapter" data-level="3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-median"><i class="fa fa-check"></i><b>3.3</b> The median</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.3.1</b> Median of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Median of ungrouped frequency distribution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.3</b> Median of grouped frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-median"><i class="fa fa-check"></i><b>3.4</b> Merits and Demerits of Median</a></li>
+<li class="chapter" data-level="3.5" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mode"><i class="fa fa-check"></i><b>3.5</b> The mode</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.5.1</b> Mode of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Mode of Grouped frequency distribution</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-using-histogram"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Mode using Histogram</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-mode"><i class="fa fa-check"></i><b>3.6</b> Merits and Demerits of Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html"><i class="fa fa-check"></i><b>4</b> Measures of central tendency -II</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean"><i class="fa fa-check"></i><b>4.1</b> Geometric mean</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean-for-grouped-frequency-table-data"><i class="fa fa-check"></i><b>4.1.1</b> Geometric mean for grouped frequency table data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-geometric-mean"><i class="fa fa-check"></i><b>4.2</b> Merits and Demerits of Geometric mean</a></li>
+<li class="chapter" data-level="4.3" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#harmonic-mean"><i class="fa fa-check"></i><b>4.3</b> Harmonic mean</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#steps-in-calculating-harmonic-mean-h.m"><i class="fa fa-check"></i><b>4.3.1</b> Steps in calculating Harmonic Mean (H.M)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-harmonic-mean"><i class="fa fa-check"></i><b>4.4</b> Merits and Demerits of Harmonic mean</a></li>
+<li class="chapter" data-level="4.5" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#relation-between-am-gm-and-hm"><i class="fa fa-check"></i><b>4.5</b> Relation between AM, GM and HM</a></li>
+<li class="chapter" data-level="4.6" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#when-to-use-am-gm-and-hm"><i class="fa fa-check"></i><b>4.6</b> When to use AM, GM and HM?</a></li>
+<li class="chapter" data-level="4.7" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#positional-averages"><i class="fa fa-check"></i><b>4.7</b> Positional Averages</a></li>
+<li class="chapter" data-level="4.8" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartile"><i class="fa fa-check"></i><b>4.8</b> Quartiles</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-discrete-frequency-data"><i class="fa fa-check"></i><b>4.8.1</b> Quartiles of a discrete frequency data</a></li>
+<li class="chapter" data-level="4.8.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-continuous-frequency-data"><i class="fa fa-check"></i><b>4.8.2</b> Quartiles of a continuous frequency data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#percentiles"><i class="fa fa-check"></i><b>4.9</b> Percentiles</a></li>
+<li class="chapter" data-level="4.10" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#deciles"><i class="fa fa-check"></i><b>4.10</b> Deciles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html"><i class="fa fa-check"></i><b>5</b> Measures of Dispersion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#characteristics-of-a-good-measure-of-dispersion"><i class="fa fa-check"></i><b>5.1</b> Characteristics of a good measure of dispersion</a></li>
+<li class="chapter" data-level="5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-range"><i class="fa fa-check"></i><b>5.2</b> The Range</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-1"><i class="fa fa-check"></i><b>5.2.1</b> Method 1</a></li>
+<li class="chapter" data-level="5.2.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-2"><i class="fa fa-check"></i><b>5.2.2</b> Method 2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-range"><i class="fa fa-check"></i><b>5.2.3</b> Merits and Demerits of Range</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-inter-quartile-range-iqr-or-midspread"><i class="fa fa-check"></i><b>5.3</b> The Inter-Quartile Range (IQR) or Midspread</a></li>
+<li class="chapter" data-level="5.4" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#mean-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.4</b> Mean Absolute Deviation (MAD)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-mad"><i class="fa fa-check"></i><b>5.4.1</b> Merits and Demerits of MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>5.5</b> The variance and standard deviation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#variance-and-standard-deviation-for-grouped-data"><i class="fa fa-check"></i><b>5.5.1</b> Variance and standard deviation for grouped data</a></li>
+<li class="chapter" data-level="5.5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-standard-deviation"><i class="fa fa-check"></i><b>5.5.2</b> Merits and Demerits of Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#coefficient-of-variation-relative-measure-of-dispersion"><i class="fa fa-check"></i><b>5.6</b> Coefficient of Variation (relative measure of dispersion)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>6</b> Skewness and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#skewness"><i class="fa fa-check"></i><b>6.1</b> Skewness</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#left-skewed-or-negatively-skewed"><i class="fa fa-check"></i><b>6.1.1</b> Left-skewed or negatively skewed</a></li>
+<li class="chapter" data-level="6.1.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#right-skewed-or-positively-skewed"><i class="fa fa-check"></i><b>6.1.2</b> Right-skewed or positively skewed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measures-of-skewness"><i class="fa fa-check"></i><b>6.2</b> Measures of Skewness</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#karl-pearsons-coefficient-of-skewness-s_k"><i class="fa fa-check"></i><b>6.2.1</b> Karl Pearson’s coefficient of Skewness (<strong><span class="math inline">\(S_{k}\)</span></strong>)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#bowleys-measure-of-skewness-sq"><i class="fa fa-check"></i><b>6.2.2</b> Bowley's measure of Skewness (<em>S</em><sub>Q</sub>)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kellys-measure-of-skewness-sp"><i class="fa fa-check"></i><b>6.2.3</b> Kelly's Measure of Skewness (<em>S</em><sub>p</sub>)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measure-based-on-moments"><i class="fa fa-check"></i><b>6.2.4</b> Measure based on moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>6.3</b> Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-association.html"><a href="measures-of-association.html"><i class="fa fa-check"></i><b>7</b> Measures of Association</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram"><i class="fa fa-check"></i><b>7.1</b> Scatter Diagram</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-association.html"><a href="measures-of-association.html#correlation"><i class="fa fa-check"></i><b>7.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="measures-of-association.html"><a href="measures-of-association.html#positive-correlation"><i class="fa fa-check"></i><b>7.2.1</b> Positive correlation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="measures-of-association.html"><a href="measures-of-association.html#negative-correlation"><i class="fa fa-check"></i><b>7.2.2</b> Negative correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-association.html"><a href="measures-of-association.html#other-types-of-correlation"><i class="fa fa-check"></i><b>7.3</b> Other types of correlation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="measures-of-association.html"><a href="measures-of-association.html#simple-and-multiple"><i class="fa fa-check"></i><b>7.3.1</b> Simple and Multiple</a></li>
+<li class="chapter" data-level="7.3.2" data-path="measures-of-association.html"><a href="measures-of-association.html#partial-and-total"><i class="fa fa-check"></i><b>7.3.2</b> Partial and total</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-association.html"><a href="measures-of-association.html#linear-relationship"><i class="fa fa-check"></i><b>7.4</b> Linear relationship</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-association.html"><a href="measures-of-association.html#methods-of-measurement-of-correlation"><i class="fa fa-check"></i><b>7.5</b> Methods of measurement of correlation</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram-or-graphic-method"><i class="fa fa-check"></i><b>7.5.1</b> Scatter diagram or Graphic method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="measures-of-association.html"><a href="measures-of-association.html#karl-pearsons-coefficient-of-correlation-r"><i class="fa fa-check"></i><b>7.5.2</b> Karl Pearson’s coefficient of Correlation (<em>r</em>)</a></li>
+<li class="chapter" data-level="7.5.3" data-path="measures-of-association.html"><a href="measures-of-association.html#spearmans-rank-order-correlation-coefficient-ρ"><i class="fa fa-check"></i><b>7.5.3</b> Spearman’s Rank order correlation coefficient (<em>ρ</em>)</a></li>
+<li class="chapter" data-level="7.5.4" data-path="measures-of-association.html"><a href="measures-of-association.html#kendalls-rank-correlation-coefficient-τ"><i class="fa fa-check"></i><b>7.5.4</b> Kendall’s Rank Correlation Coefficient (<em>τ</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression-analysis.html"><a href="regression-analysis.html"><i class="fa fa-check"></i><b>8</b> Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regression-analysis.html"><a href="regression-analysis.html#definition"><i class="fa fa-check"></i><b>8.1</b> Definition</a></li>
+<li class="chapter" data-level="8.2" data-path="regression-analysis.html"><a href="regression-analysis.html#simple-regression"><i class="fa fa-check"></i><b>8.2</b> Simple regression</a></li>
+<li class="chapter" data-level="8.3" data-path="regression-analysis.html"><a href="regression-analysis.html#two-types-of-variables"><i class="fa fa-check"></i><b>8.3</b> Two types of variables</a></li>
+<li class="chapter" data-level="8.4" data-path="regression-analysis.html"><a href="regression-analysis.html#detailed-explanation"><i class="fa fa-check"></i><b>8.4</b> Detailed explanation</a></li>
+<li class="chapter" data-level="8.5" data-path="regression-analysis.html"><a href="regression-analysis.html#error-and-residual"><i class="fa fa-check"></i><b>8.5</b> Error and residual</a></li>
+<li class="chapter" data-level="8.6" data-path="regression-analysis.html"><a href="regression-analysis.html#straight-lines"><i class="fa fa-check"></i><b>8.6</b> Straight lines</a></li>
+<li class="chapter" data-level="8.7" data-path="regression-analysis.html"><a href="regression-analysis.html#method-of-least-squares"><i class="fa fa-check"></i><b>8.7</b> Method of least squares</a></li>
+<li class="chapter" data-level="8.8" data-path="regression-analysis.html"><a href="regression-analysis.html#principle-of-least-squares"><i class="fa fa-check"></i><b>8.8</b> Principle of least squares</a></li>
+<li class="chapter" data-level="8.9" data-path="regression-analysis.html"><a href="regression-analysis.html#two-lines-of-regression"><i class="fa fa-check"></i><b>8.9</b> Two lines of regression</a></li>
+<li class="chapter" data-level="8.10" data-path="regression-analysis.html"><a href="regression-analysis.html#assumptions-of-regression"><i class="fa fa-check"></i><b>8.10</b> Assumptions of Regression</a></li>
+<li class="chapter" data-level="8.11" data-path="regression-analysis.html"><a href="regression-analysis.html#properties-of-regression-coefficients"><i class="fa fa-check"></i><b>8.11</b> Properties of Regression coefficients</a></li>
+<li class="chapter" data-level="8.12" data-path="regression-analysis.html"><a href="regression-analysis.html#uses-of-regression"><i class="fa fa-check"></i><b>8.12</b> Uses of Regression</a></li>
+<li class="chapter" data-level="8.13" data-path="regression-analysis.html"><a href="regression-analysis.html#example-problem"><i class="fa fa-check"></i><b>8.13</b> Example problem</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kau-melon/home" target="blank">Published in MeLON</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LECTURE NOTES OF STAT 3202</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="measures-of-dispersion" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> Measures of Dispersion</h1>
+<p>We discussed in previous lectures, how a set of data can be summarized
+by a single representative value which describes the central value of
+the data. Consider the two sets of data A &amp; B below</p>
+<table>
+<thead>
+<tr class="header">
+<th>Data sets</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>A</strong></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td><strong>B</strong></td>
+<td>-1</td>
+<td>0</td>
+<td>3</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>You can see mean, median and mode for both the sets <strong>A</strong> &amp; <strong>B</strong> is 3</p>
+<p>See the dot diagrams of data sets A and B.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:d"></span>
+<img src="images/image2_d.jpeg" alt="Scatter diagram of data sets A &amp; B" width="50%" />
+<p class="caption">
+Figure 5.1: Scatter diagram of data sets A &amp; B
+</p>
+</div>
+<p>It can be seen that, while values of data set <strong>A</strong> are grouped close to
+their mean, while the values of data set <strong>B</strong> are more spread out. We
+say that values of data set <strong>B</strong> are more dispersed (or scattered) than
+those of data set <strong>A</strong></p>
+<p>This example shows that the mean, the mode and the median, are not
+enough in describing a set of data. In addition to using these measures,
+we need a numerical measure of dispersion (or variation) of a set of
+data.</p>
+<p>Statistical dispersion means the extent to which a numerical data is
+likely to vary about an average value.</p>
+<div id="characteristics-of-a-good-measure-of-dispersion" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Characteristics of a good measure of dispersion</h2>
+<p>An ideal measure of dispersion is expected to possess the following
+properties</p>
+<ol style="list-style-type: decimal">
+<li><p>It should be rigidly defined</p></li>
+<li><p>It should be based on all the items.</p></li>
+<li><p>It should not be unduly affected by extreme items.</p></li>
+<li><p>It should lend itself for algebraic manipulation.</p></li>
+<li><p>It should be simple to understand and easy to calculate</p></li>
+</ol>
+<p>The most important measures of dispersion are the <strong>Range</strong>, the
+<strong>Inter-quartile range</strong>, <strong>Mean Absolute Deviation (MAD)</strong>and the <strong>standard deviation</strong>.</p>
+</div>
+<div id="the-range" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> The Range</h2>
+<p>This is the simplest possible measure of dispersion. The range of a set
+of data is defined as the difference between the largest observation and
+the smallest observation in the set of data.</p>
+<p>Thus,</p>
+<p><strong>Range = largest observation – smallest observation.</strong></p>
+<p>In symbols, Range = L – S.</p>
+<p>Where L = Largest value; S = Smallest value.</p>
+<p>In individual observations and discrete series, L and S are easily
+identified. In continuous series, the following two methods are
+followed.</p>
+<div id="method-1" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Method 1</h3>
+<p>L = Upper boundary of the highest class</p>
+<p>S = Lower boundary of the lowest class.</p>
+</div>
+<div id="method-2" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Method 2</h3>
+<p>L = Mid-value of the highest class.</p>
+<p>S = Mid-value of the lowest class.</p>
+<p><strong>Example 5.1</strong>: The marks obtained by 8 students in Mathematics and
+Physics examinations are as follows:</p>
+<p>Mathematics: 35, 60, 70, 40, 85, 96, 55, 65.</p>
+<p>Physics: 50, 55, 70, 65, 89, 68, 72, 80.</p>
+<p>Find the ranges of the two sets of data. Are the Physics marks more
+dispersed than the Mathematics marks?</p>
+<p><strong>Solution</strong></p>
+<p>For Mathematics,</p>
+<p>Highest mark = 96, lowest mark = 35, range =96 – 35 = 61</p>
+<p>For Physics,</p>
+<p>Highest mark = 89, lowest mark = 50, range =89 – 50 = 39.</p>
+<p>The mathematics marks have a wider range than the Physics marks. The
+Mathematics marks are therefore more dispersed than the Physics marks.</p>
+<p><strong>Example 5.2</strong>: Calculate range from the following distribution</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Size</th>
+<th align="left">60-63</th>
+<th align="left">63-66</th>
+<th align="left">66-69</th>
+<th align="left">69-72</th>
+<th align="left">72-75</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Number</td>
+<td align="left">5</td>
+<td align="left">18</td>
+<td align="left">42</td>
+<td align="left">27</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong></p>
+<p>L = Upper boundary of the highest class = 75</p>
+<p>S = Lower boundary of the lowest class = 60</p>
+<p>Range = L – S = 75 – 60 = 15</p>
+</div>
+<div id="merits-and-demerits-of-range" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Merits and Demerits of Range</h3>
+<p><strong><u>Merits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>It is simple to understand.</p></li>
+<li><p>It is easy to calculate.</p></li>
+<li><p>In certain types of problems like quality control, weather
+forecasts, share price analysis, etc.</p></li>
+</ol>
+<p><strong><u>Demerits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>It is very much affected by the extreme items.</p></li>
+<li><p>It is based on only two extreme observations.</p></li>
+<li><p>It cannot be calculated from open-end class intervals.</p></li>
+<li><p>It is not suitable for mathematical treatment.</p></li>
+<li><p>It is a very rarely used measure.</p></li>
+</ol>
+</div>
+</div>
+<div id="the-inter-quartile-range-iqr-or-midspread" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> The Inter-Quartile Range (IQR) or Midspread</h2>
+<p>The range has the advantage that it is quick and easy to calculate.
+However, since it depends only on the maximum and the minimum values of
+a set of data, it does not show how the whole data is distributed
+between these two values. The range is therefore not a good measure of
+dispersion if one or both of these two values differ greatly from other
+values of the data. To overcome this problem, we sometimes use the
+inter-quartile range. A robust measure of dispersion is the
+inter-quartile range. The inter-quartile range of a set of data is the
+difference between the upper and lower quartiles of the data. Thus,</p>
+<p><strong>Inter-Quartile Range (IQR)</strong> = <em>Q</em><sub>3</sub> – <em>Q</em><sub>1</sub>.</p>
+<p>The inter-quartile range of a set of data is therefore not affected by
+values of the data outside <em>Q</em><sub>1</sub> and <em>Q</em><sub>3</sub>. The inter-quartile range
+is sometimes used as a measure of dispersion.</p>
+<p><strong>Example 5.3</strong>: Consider the two sets of data below, find IQR</p>
+<p><strong>A</strong>: 3, 4, 5, 6, 8, 9, 10, 12, 15</p>
+<p><strong>B</strong>: 3, 8, 8, 9, 9, 9, 10, 10, 15</p>
+<p>For data set A, <em>Q</em><sub>1</sub> = 5, <em>Q</em><sub>3</sub> = 10; so Inter-Quartile Range =10 –
+5 = 5</p>
+<p>For data set B, <em>Q</em><sub>1</sub> = 8, <em>Q</em><sub>3</sub> = 10; so Inter-Quartile Range =10 –
+8 = 2</p>
+<p>Since the inter-quartile range of data set A is greater than that of
+data set B, these results confirm that data set A is more dispersed than
+data set B. You can also see Range is same for both the sets.</p>
+</div>
+<div id="mean-absolute-deviation-mad" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Mean Absolute Deviation (MAD)</h2>
+<p>The mean absolute deviation (MAD) is a measure of variability that
+indicates the average distance between observations and their mean. MAD
+uses the original units of the data, which simplifies interpretation.
+Larger values signify that the data points spread out further from the
+average. Conversely, lower values correspond to data points bunching
+closer to it. The mean absolute deviation is also known as the mean
+deviation and average absolute deviation.</p>
+<p>Here is how to calculate the mean absolute deviation.</p>
+<ol style="list-style-type: decimal">
+<li><p>Calculate the mean.</p></li>
+<li><p>Calculate the difference of each observation from mean and take
+absolute value <em>i</em>.<em>e</em>. ignore the sign. This difference is known as
+absolute deviation</p></li>
+<li><p>Add those deviations together.</p></li>
+<li><p>Divide the sum by the number of data points.</p></li>
+</ol>
+<p><span class="math display">\[MAD = \frac{\sum_{i = 1}^{n}\left| x_{i} - \overline{x} \right|}{n}\]</span></p>
+<p><strong>Example 5.4</strong>: find the mean absolute deviation of the following 10, 15,
+15, 17, 18, 21</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sl.No.</th>
+<th align="left"><span class="math display">\[x_{i}\]</span></th>
+<th align="left"><span class="math display">\[x_{i} - \overline{x}\]</span></th>
+<th align="left"><span class="math display">\[\left| x_{i} - \overline{x} \right|\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">-6</td>
+<td align="left">6</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">15</td>
+<td align="left">-1</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">15</td>
+<td align="left">-1</td>
+<td align="left">1</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">17</td>
+<td align="left">1</td>
+<td align="left">1</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">18</td>
+<td align="left">2</td>
+<td align="left">2</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">21</td>
+<td align="left">5</td>
+<td align="left">5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\overline{x} =\)</span> 16</td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{n}\left| x_{i} - \overline{x} \right|\)</span> = 16</td>
+</tr>
+</tbody>
+</table>
+<p>Here n = 6 and <span class="math inline">\(\sum_{i = 1}^{n}\left| x_{i} - \overline{x} \right|\)</span> =
+16 therefore MAD = <span class="math inline">\(\frac{16}{6} = 2.67\)</span></p>
+<div id="merits-and-demerits-of-mad" class="section level3" number="5.4.1">
+<h3><span class="header-section-number">5.4.1</span> Merits and Demerits of MAD</h3>
+<p><strong><u>Merits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Simple And Easy</p></li>
+<li><p>Different items of observations can be easily compared with mean deviation</p></li>
+<li><p>Mean deviation is better than quartile deviation and range because it is based on all the observations of the series.</p></li>
+<li><p>Mean deviation is less affected by the extreme values in the series while comparing to standard deviation.</p></li>
+<li><p>Mean deviation is rigidly defined. So, it has fixed value.</p></li>
+</ol>
+<p><strong><u>Demerits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>It becomes difficult to compute mean deviation in case of fractions.</p></li>
+<li><p>Mean deviation is not applicable for algebraic calculations.</p></li>
+<li><p>It cannot be calculated from open-end class intervals.</p></li>
+<li><p>Mean deviation is not a good measure as it ignores negative signs of deviations.</p></li>
+</ol>
+</div>
+</div>
+<div id="the-variance-and-standard-deviation" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> The variance and standard deviation</h2>
+<p>The most important measures of variability are the sample variance and
+the sample standard deviation. If <em>x</em><sub>1</sub>, <em>x</em><sub>2</sub>… <em>x</em><sub>n</sub> is a sample
+of <em>n</em> observations, then the <strong>sample variance</strong> is denoted by <em>s</em>² and
+is defined by the equation.</p>
+<p><span class="math display">\[{\mathbf{\text{sample variance}},\ \mathbf{s}}^{\mathbf{2}}\mathbf{=}\frac{\sum_{\mathbf{i = 1}}^{\mathbf{n}}\left( \mathbf{x}_{\mathbf{i}}\mathbf{-}\overline{\mathbf{x}} \right)^{\mathbf{2}}}{\mathbf{n - 1}}\]</span></p>
+<p>The sample <strong>standard deviation</strong>, <em>s</em>, is the positive square root of
+the sample variance.</p>
+<p><span class="math display">\[\mathbf{variance =}\left( \mathbf{\text{standard deviation}} \right)^{\mathbf{2}}\]</span></p>
+<p><span class="math display">\[\mathbf{standard\ deviation = \ }\sqrt{\mathbf{\text{variance}}}\]</span></p>
+<p><strong>Note</strong>: If <em>s</em><sub>A</sub>, the standard deviation of data set A, is greater
+than <em>s</em><sub>B</sub>, the standard deviation of data set B, then data set A is
+more dispersed than data set B. It should be noted that the standard
+deviation of a set of data is a non-negative number.</p>
+<p><strong>Example 5.4</strong>: Consider the two sets of data A &amp; B below; find standard
+deviation?</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>A</strong></th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">3</th>
+<th align="left">4</th>
+<th align="left">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>B</strong></td>
+<td align="left">-1</td>
+<td align="left">0</td>
+<td align="left">3</td>
+<td align="left">3</td>
+<td align="left">5</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Set A</strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td><span class="math display">\[\mathbf{x}_{\mathbf{i}}\]</span></td>
+<td><span class="math display">\[\left( \mathbf{x}_{\mathbf{i}}\mathbf{-}\overline{\mathbf{x}} \right)\]</span></td>
+<td><span class="math display">\[\left( \mathbf{x}_{\mathbf{i}}\mathbf{-}\overline{\mathbf{x}} \right)^{\mathbf{2}}\]</span></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>1</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>2</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>4</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Sum</strong></td>
+<td><strong>18</strong></td>
+<td><strong>0</strong></td>
+<td><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mean (<span class="math inline">\(\overline{x}\)</span>) =<span class="math inline">\(\ \frac{18}{6} = 3\)</span></p>
+<p><span class="math display">\[{Sample\ variane,\ s}_{A}^{2} = \frac{\sum_{i = 1}^{n}\left( x_{i} - \overline{x} \right)^{2}}{n - 1} = \frac{10}{5} = 2\]</span></p>
+<p><span class="math display">\[\text{sample standard deviation,}\ s_{A} = \ \sqrt{s_{A}^{2}} = \ \sqrt{2} = 1.414\]</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Set B</strong></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td><span class="math display">\[\mathbf{x}_{\mathbf{i}}\]</span></td>
+<td><span class="math display">\[\left( \mathbf{x}_{\mathbf{i}}\mathbf{-}\overline{\mathbf{x}} \right)\]</span></td>
+<td><span class="math display">\[\left( \mathbf{x}_{\mathbf{i}}\mathbf{-}\overline{\mathbf{x}} \right)^{\mathbf{2}}\]</span></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>-1</td>
+<td>-4</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>0</td>
+<td>-3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td>8</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Sum</strong></td>
+<td><strong>18</strong></td>
+<td><strong>0</strong></td>
+<td><strong>54</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mean (<span class="math inline">\(\overline{x}\)</span>) =<span class="math inline">\(\ \frac{18}{6} = 3\)</span></p>
+<p><span class="math display">\[{Sample\ variane,\ s}_{B}^{2} = \frac{\sum_{i = 1}^{n}\left( x_{i} - \overline{x} \right)^{2}}{n - 1} = \frac{54}{5} = 10.8\]</span></p>
+<p><span class="math display">\[sample\ standard\ deviation,\ s_{B} = \ \sqrt{s_{B}^{2}} = \ \sqrt{10.8} = 3.29\]</span></p>
+<p>It can be seen that <span class="math inline">\(s_{B} &gt; s_{A}\ \)</span>, confirming that data set B is
+more dispersed than data set A (see the dot diagrams)</p>
+<blockquote>
+<p><strong>Note</strong>: The unit of measurement of the sample variance is the square
+of the unit of measurement of the data. Sample standard deviation has
+same unit of measurement as of the data. Thus, if <em>x</em> is measured in
+centimetres (cm), then the unit of measurement of the sample variance is
+cm<sup>2</sup> and that of sample standard deviation is cm. The standard
+deviation has the desirable property of measuring variability in the
+same unit as the data.</p>
+</blockquote>
+<p><strong>An alternative formula for computing the variance</strong></p>
+<p>The computation of <em>s</em>² requires calculations of <span class="math inline">\(\overline{x}\)</span>, <em>n</em>
+subtractions and <em>n</em> squaring and adding operations. If the original
+observations or the deviations <span class="math inline">\(\left( x_{i} - \overline{x} \right)\)</span> are
+not integers, the deviations <span class="math inline">\(\left( x_{i} - \overline{x} \right)\)</span> may
+be difficult to work with, and several decimals may have to be carried
+to ensure numerical accuracy. A more efficient computational formula for
+<em>s</em>² is given by</p>
+<p><span class="math inline">\(s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{x_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}x_{i} \right)^{2} \right\}\)</span></p>
+<p><strong>Example 5.5</strong>: Consider the data set below; find standard deviation?</p>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left">6</td>
+<td align="left">8</td>
+<td align="left">9</td>
+<td align="left">10</td>
+<td align="left">12</td>
+<td align="left">15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left"><span class="math display">\[\mathbf{x}_{\mathbf{i}}\]</span></th>
+<th align="left"><span class="math display">\[\mathbf{x}_{\mathbf{i}}^{\mathbf{2}}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td align="left">3</td>
+<td align="left">9</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left">4</td>
+<td align="left">16</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="left">5</td>
+<td align="left">25</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left">6</td>
+<td align="left">36</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="left">8</td>
+<td align="left">64</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left">9</td>
+<td align="left">81</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="left">10</td>
+<td align="left">100</td>
+</tr>
+<tr class="even">
+<td></td>
+<td align="left">12</td>
+<td align="left">144</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td align="left">15</td>
+<td align="left">225</td>
+</tr>
+<tr class="even">
+<td><strong>Sum</strong></td>
+<td align="left"><strong>72</strong></td>
+<td align="left"><strong>700</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{x_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}x_{i} \right)^{2} \right\}\)</span>
+; here <em>n</em> = 9</p>
+<p><span class="math inline">\(s^{2} = \frac{1}{8}\left\{ 700 - {\frac{1}{9}\left( 72 \right)}^{2} \right\}\)</span>
+=15.5</p>
+<p><span class="math inline">\(s = \ \sqrt{15.5} = 3.94\)</span></p>
+<div id="variance-and-standard-deviation-for-grouped-data" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Variance and standard deviation for grouped data</h3>
+<div id="for-discrete-grouped-data" class="section level4" number="5.5.1.1">
+<h4><span class="header-section-number">5.5.1.1</span> For discrete grouped data</h4>
+<p><span class="math display">\[s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{{f_{i}x}_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}{f_{i}x}_{i} \right)^{2} \right\}\]</span></p>
+<p>where <span class="math inline">\(f_{i}\)</span> is the frequency of <em>i</em><sup>th</sup> observation</p>
+<p><strong>Example 5.6</strong>: The frequency distributions of seed yield of 50 sesamum
+plants are given below. Find the standard deviation.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Seed yield in gms (<em>x</em>)</th>
+<th align="left"><strong>3</strong></th>
+<th align="left"><strong>4</strong></th>
+<th align="left"><strong>5</strong></th>
+<th align="left"><strong>6</strong></th>
+<th align="left"><strong>7</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Frequency (<em>f</em>)</td>
+<td align="left"><strong>4</strong></td>
+<td align="left"><strong>6</strong></td>
+<td align="left"><strong>15</strong></td>
+<td align="left"><strong>15</strong></td>
+<td align="left"><strong>10</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong><em>x</em></strong></th>
+<th align="left"><strong><em>f</em></strong></th>
+<th align="left"><strong><em>fx</em></strong></th>
+<th align="left"><strong><em>fx<sup>2</sup></em></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left">12</td>
+<td align="left">36</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">6</td>
+<td align="left">24</td>
+<td align="left">96</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">15</td>
+<td align="left">75</td>
+<td align="left">375</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">15</td>
+<td align="left">90</td>
+<td align="left">540</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">10</td>
+<td align="left">70</td>
+<td align="left">490</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>50</strong></td>
+<td align="left"><strong>271</strong></td>
+<td align="left"><strong>1537</strong></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{{f_{i}x}_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}{f_{i}x}_{i} \right)^{2} \right\}\]</span></p>
+<p><span class="math display">\[{sample\ variance,\ s}^{2} = \frac{1}{50 - 1}\left\{ 1537 - \frac{271^{2}}{50} \right\} = 1.3914\]</span></p>
+<p><span class="math inline">\(standard\ deviation,\ s = \sqrt{1.3914}\)</span> = 1.179</p>
+</div>
+<div id="for-continuous-grouped-data" class="section level4" number="5.5.1.2">
+<h4><span class="header-section-number">5.5.1.2</span> For continuous grouped data</h4>
+<p><span class="math display">\[s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{{f_{i}d}_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}{f_{i}d}_{i} \right)^{2} \right\}\]</span></p>
+<p>where <span class="math inline">\(f_{i}\)</span> is the frequency of <em>i</em><sup>th</sup> class, <em>c</em> is the class
+interval, <span class="math inline">\(d_{i} = \frac{x_{i} - A}{c}\)</span>, <span class="math inline">\(x_{i}\)</span> is the class mark, <span class="math inline">\(A\)</span>
+is the class mark with the highest frequency</p>
+<p><strong>Example 5.7</strong>: The frequency distributions of seed yield of 50 sesamum
+plants are given below. Find the standard deviation</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Seed yield in gms (<em>x</em>)</th>
+<th align="left">2.5-3.5</th>
+<th align="left">3.5-4.5</th>
+<th align="left">4.5-5.5</th>
+<th align="left">5.5-6.5</th>
+<th align="left">6.5-7.5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Frequency (<em>f</em>)</td>
+<td align="left">4</td>
+<td align="left">6</td>
+<td align="left">15</td>
+<td align="left">15</td>
+<td align="left">10</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution</strong>:</p>
+<p>Here <em>n</em> =50; <em>c</em> =1</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Seed yield</strong></th>
+<th align="left"><em>f</em></th>
+<th align="left"><em>x</em></th>
+<th align="left"><span class="math display">\[d_{i} = \frac{x_{i} - A}{c}\]</span></th>
+<th align="left"><em>fd</em></th>
+<th align="left"><em>f d<sup>2</sup></em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2.5-3.5</td>
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">-2</td>
+<td align="left">-8</td>
+<td align="left">16</td>
+</tr>
+<tr class="even">
+<td align="left">3.5-4.5</td>
+<td align="left">6</td>
+<td align="left">4</td>
+<td align="left">-1</td>
+<td align="left">-6</td>
+<td align="left">6</td>
+</tr>
+<tr class="odd">
+<td align="left">4.5-5.5</td>
+<td align="left">15</td>
+<td align="left">5</td>
+<td align="left">0</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">6.5-7.5</td>
+<td align="left">15</td>
+<td align="left">6</td>
+<td align="left">1</td>
+<td align="left">15</td>
+<td align="left">15</td>
+</tr>
+<tr class="odd">
+<td align="left">7.5-8.5</td>
+<td align="left">10</td>
+<td align="left">7</td>
+<td align="left">2</td>
+<td align="left">20</td>
+<td align="left">40</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Total</strong></td>
+<td align="left"><strong>50</strong></td>
+<td align="left"><strong>25</strong></td>
+<td align="left"><strong>0</strong></td>
+<td align="left"><strong>21</strong></td>
+<td align="left"><strong>77</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>A</em> = 5</p>
+<p><span class="math display">\[s^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{{f_{i}d}_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}{f_{i}d}_{i} \right)^{2} \right\}\]</span></p>
+<p><span class="math display">\[{sample\ variance,\ s}^{2} = \frac{1}{49}\left( 77 - \frac{\left( 21 \right)^{2}}{50} \right) = \ 1.3914\]</span></p>
+<p><span class="math inline">\(standard\ deviation,\ s = \sqrt{1.3914}\)</span> = 1.179</p>
+</div>
+</div>
+<div id="merits-and-demerits-of-standard-deviation" class="section level3" number="5.5.2">
+<h3><span class="header-section-number">5.5.2</span> Merits and Demerits of Standard Deviation</h3>
+<p><strong><u>Merits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>It is rigidly defined and its value is always definite and based on
+all the observations</p></li>
+<li><p>As it is based on arithmetic mean, it has all the merits of
+arithmetic mean.</p></li>
+<li><p>It is the most important and widely used measure of dispersion.</p></li>
+<li><p>It is possible for further algebraic treatment.</p></li>
+<li><p>It is less affected by the fluctuations of sampling and hence
+stable.</p></li>
+<li><p>It is the basis for measuring the coefficient of correlation and
+other measures.</p></li>
+</ol>
+<p><strong><u>Demerits</u></strong></p>
+<ol style="list-style-type: decimal">
+<li><p>It is not easy to understand and it is difficult to calculate.</p></li>
+<li><p>It gives more weight to extreme values because the values are
+squared up.</p></li>
+<li><p>As it is an absolute measure of variability, it cannot be used for
+the purpose of comparison.</p></li>
+</ol>
+</div>
+</div>
+<div id="coefficient-of-variation-relative-measure-of-dispersion" class="section level2" number="5.6">
+<h2><span class="header-section-number">5.6</span> Coefficient of Variation (relative measure of dispersion)</h2>
+<p>The Standard deviation is an absolute measure of dispersion. It is
+expressed in terms of units in which the original figures are collected
+and stated. The standard deviation of heights of plants cannot be
+compared with the standard deviation of weights of the grains, as both
+are expressed in different units, <em>i</em>.<em>e</em> heights in centimetre and
+weights in kilograms.</p>
+<p>Therefore the standard deviation must be converted into a relative
+measure of dispersion for the purpose of comparison. The relative
+measure is known as the <strong>coefficient of variation</strong>. The coefficient of
+variation is obtained by dividing the standard deviation by the mean and
+expressed in percentage.</p>
+<p><span class="math display">\[\mathbf{\text{Coefficient of variation}}\left( \mathbf{C}\mathbf{.}\mathbf{V} \right)\mathbf{=}\frac{\mathbf{\text{standard deviation}}}{\mathbf{\text{mean}}}\mathbf{\times 100}\]</span></p>
+<p>If we want to compare the variability of two or more series, we can use
+C.V. The series or groups of data for which the C.V. is greater indicate
+that the group is more variable, less stable, less uniform, less
+consistent or less homogeneous. If the C.V. is less, it indicates that
+the group is less variable or more stable or more uniform or more
+consistent or more homogeneous.</p>
+<p><strong>Example 5.8</strong>: Consider the measurement on yield and plant height of a
+paddy variety. The mean and standard deviation for yield are 50 kg and
+10 kg respectively. The mean and standard deviation for plant height are
+55 cm and 5 cm respectively. Compare the variability.</p>
+<p><strong>Solution</strong>:</p>
+<p>Here the measurements for yield and plant height are in different units.
+Hence the variability can be compared only by using coefficient of
+variation.</p>
+<p>For yield, CV=<span class="math inline">\(\ \frac{10}{50} \times 100 =\)</span> 20%</p>
+<p>For plant height, CV=
+<span class="math inline">\(\frac{5}{55} \times 100 = \ \)</span><!-- -->9.1%</p>
+<p>The yield is subject to more variation than the plant height.</p>
+<p><strong>******************************************************************</strong></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="measures-of-central-tendency--ii.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="skewness-and-kurtosis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

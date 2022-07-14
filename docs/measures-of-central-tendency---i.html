@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Measures of central tendency - I | LECTURE NOTES OF STAT 3202</title>
+  <meta name="description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Measures of central tendency - I | LECTURE NOTES OF STAT 3202" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/cover.PNG" />
+  <meta property="og:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="github-repo" content="https://github.com/KAUMELON/stat3202" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Measures of central tendency - I | LECTURE NOTES OF STAT 3202" />
+  
+  <meta name="twitter:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="twitter:image" content="/images/cover.PNG" />
+
+<meta name="author" content="Dr. Pratheesh P. Gopinath" />
+
+
+<meta name="date" content="2022-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="graphical-representation-of-data.html"/>
+<link rel="next" href="measures-of-central-tendency--ii.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LECTURE NOTES</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#origin-of-the-word-statistics"><i class="fa fa-check"></i><b>1.1</b> Origin of the word “Statistics”</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#statistics-and-mathematics"><i class="fa fa-check"></i><b>1.2</b> Statistics and Mathematics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#definition-of-statistics"><i class="fa fa-check"></i><b>1.3</b> Definition of Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#data"><i class="fa fa-check"></i><b>1.4</b> Data</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#use-and-limitations-of-statistics"><i class="fa fa-check"></i><b>1.5</b> Use and limitations of statistics</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#population-and-sample"><i class="fa fa-check"></i><b>1.6</b> Population and Sample</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#population"><i class="fa fa-check"></i><b>1.6.1</b> Population</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#sample"><i class="fa fa-check"></i><b>1.6.2</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#variables-and-constants"><i class="fa fa-check"></i><b>1.7</b> Variables and constants</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#variables"><i class="fa fa-check"></i><b>1.7.1</b> Variables</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#constants"><i class="fa fa-check"></i><b>1.7.2</b> Constants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#types-of-variables"><i class="fa fa-check"></i><b>1.8</b> Types of variables</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#quantitative-variables"><i class="fa fa-check"></i><b>1.8.1</b> Quantitative variables</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#discrete-variables"><i class="fa fa-check"></i><b>1.8.2</b> Discrete variables</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#continuous-variables"><i class="fa fa-check"></i><b>1.8.3</b> Continuous variables</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#categorical-variables"><i class="fa fa-check"></i><b>1.8.4</b> Categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#measurement-scales"><i class="fa fa-check"></i><b>1.9</b> Measurement scales</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#nominal-scale"><i class="fa fa-check"></i><b>1.9.1</b> Nominal scale</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#ordinal-scale"><i class="fa fa-check"></i><b>1.9.2</b> Ordinal scale</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#interval-scale"><i class="fa fa-check"></i><b>1.9.3</b> Interval scale</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#ratio-scale"><i class="fa fa-check"></i><b>1.9.4</b> Ratio scale</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#collection-of-data"><i class="fa fa-check"></i><b>1.10</b> Collection of Data</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#types-of-data"><i class="fa fa-check"></i><b>1.10.1</b> Types of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-primary-data"><i class="fa fa-check"></i><b>1.11</b> Methods of Collecting Primary Data</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#personal-investigation"><i class="fa fa-check"></i><b>1.11.1</b> Personal Investigation</a></li>
+<li class="chapter" data-level="1.11.2" data-path="introduction.html"><a href="introduction.html#through-investigation"><i class="fa fa-check"></i><b>1.11.2</b> Through Investigation</a></li>
+<li class="chapter" data-level="1.11.3" data-path="introduction.html"><a href="introduction.html#collection-through-questionnaire"><i class="fa fa-check"></i><b>1.11.3</b> Collection through Questionnaire</a></li>
+<li class="chapter" data-level="1.11.4" data-path="introduction.html"><a href="introduction.html#through-the-telephone"><i class="fa fa-check"></i><b>1.11.4</b> Through the Telephone</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-secondary-data"><i class="fa fa-check"></i><b>1.12</b> Methods of Collecting Secondary Data</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#official"><i class="fa fa-check"></i><b>1.12.1</b> Official</a></li>
+<li class="chapter" data-level="1.12.2" data-path="introduction.html"><a href="introduction.html#semi-official"><i class="fa fa-check"></i><b>1.12.2</b> Semi-Official</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#difference-between-primary-and-secondary-data"><i class="fa fa-check"></i><b>1.13</b> Difference Between Primary and Secondary Data</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#frequency-distribution"><i class="fa fa-check"></i><b>1.14</b> Frequency distribution</a>
+<ul>
+<li class="chapter" data-level="1.14.1" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution"><i class="fa fa-check"></i><b>1.14.1</b> Construction of frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#grouped-frequency-distribution"><i class="fa fa-check"></i><b>1.15</b> Grouped frequency distribution</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#terms-used-in-grouped-frequency-tables."><i class="fa fa-check"></i><b>1.16</b> Terms used in grouped frequency tables.</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution-table"><i class="fa fa-check"></i><b>1.17</b> Construction of frequency distribution table</a></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#cumulative-frequency"><i class="fa fa-check"></i><b>1.18</b> Cumulative frequency</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#relative-frequency"><i class="fa fa-check"></i><b>1.19</b> Relative frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html"><i class="fa fa-check"></i><b>2</b> Graphical representation of data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram"><i class="fa fa-check"></i><b>2.1</b> Histogram</a></li>
+<li class="chapter" data-level="2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#cumulative-frequency-curve-ogive"><i class="fa fa-check"></i><b>2.2</b> Cumulative frequency curve (Ogive)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#less-than-ogive"><i class="fa fa-check"></i><b>2.2.1</b> Less than Ogive</a></li>
+<li class="chapter" data-level="2.2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#greater-than-ogive"><i class="fa fa-check"></i><b>2.2.2</b> Greater than Ogive</a></li>
+<li class="chapter" data-level="2.2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#frequency-polygon"><i class="fa fa-check"></i><b>2.2.3</b> Frequency polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#stem-and-leaf-plot"><i class="fa fa-check"></i><b>2.3</b> Stem-and-leaf plot</a></li>
+<li class="chapter" data-level="2.4" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#bar-chart"><i class="fa fa-check"></i><b>2.4</b> Bar chart</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#simple-bar-chart"><i class="fa fa-check"></i><b>2.4.1</b> Simple bar chart</a></li>
+<li class="chapter" data-level="2.4.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#component-bar-chart"><i class="fa fa-check"></i><b>2.4.2</b> Component bar chart</a></li>
+<li class="chapter" data-level="2.4.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#grouped-bar-chart"><i class="fa fa-check"></i><b>2.4.3</b> Grouped bar chart</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram-and-bar-chart"><i class="fa fa-check"></i><b>2.5</b> Histogram and Bar chart</a></li>
+<li class="chapter" data-level="2.6" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#pie-charts"><i class="fa fa-check"></i><b>2.6</b> Pie Charts</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#steps-for-constructing-a-pie-chart"><i class="fa fa-check"></i><b>2.6.1</b> Steps for constructing a pie chart</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html"><i class="fa fa-check"></i><b>3</b> Measures of central tendency - I</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#arithmetic-mean"><i class="fa fa-check"></i><b>3.1</b> Arithmetic Mean</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mean-of-a-frequency-distribution"><i class="fa fa-check"></i><b>3.1.1</b> The mean of a frequency distribution</a></li>
+<li class="chapter" data-level="3.1.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mean-of-grouped-data"><i class="fa fa-check"></i><b>3.1.2</b> Mean of Grouped Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-arithmetic-mean-merits"><i class="fa fa-check"></i><b>3.2</b> Merits and demerits of Arithmetic mean Merits</a></li>
+<li class="chapter" data-level="3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-median"><i class="fa fa-check"></i><b>3.3</b> The median</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.3.1</b> Median of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Median of ungrouped frequency distribution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.3</b> Median of grouped frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-median"><i class="fa fa-check"></i><b>3.4</b> Merits and Demerits of Median</a></li>
+<li class="chapter" data-level="3.5" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mode"><i class="fa fa-check"></i><b>3.5</b> The mode</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.5.1</b> Mode of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Mode of Grouped frequency distribution</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-using-histogram"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Mode using Histogram</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-mode"><i class="fa fa-check"></i><b>3.6</b> Merits and Demerits of Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html"><i class="fa fa-check"></i><b>4</b> Measures of central tendency -II</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean"><i class="fa fa-check"></i><b>4.1</b> Geometric mean</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean-for-grouped-frequency-table-data"><i class="fa fa-check"></i><b>4.1.1</b> Geometric mean for grouped frequency table data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-geometric-mean"><i class="fa fa-check"></i><b>4.2</b> Merits and Demerits of Geometric mean</a></li>
+<li class="chapter" data-level="4.3" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#harmonic-mean"><i class="fa fa-check"></i><b>4.3</b> Harmonic mean</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#steps-in-calculating-harmonic-mean-h.m"><i class="fa fa-check"></i><b>4.3.1</b> Steps in calculating Harmonic Mean (H.M)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-harmonic-mean"><i class="fa fa-check"></i><b>4.4</b> Merits and Demerits of Harmonic mean</a></li>
+<li class="chapter" data-level="4.5" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#relation-between-am-gm-and-hm"><i class="fa fa-check"></i><b>4.5</b> Relation between AM, GM and HM</a></li>
+<li class="chapter" data-level="4.6" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#when-to-use-am-gm-and-hm"><i class="fa fa-check"></i><b>4.6</b> When to use AM, GM and HM?</a></li>
+<li class="chapter" data-level="4.7" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#positional-averages"><i class="fa fa-check"></i><b>4.7</b> Positional Averages</a></li>
+<li class="chapter" data-level="4.8" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartile"><i class="fa fa-check"></i><b>4.8</b> Quartiles</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-discrete-frequency-data"><i class="fa fa-check"></i><b>4.8.1</b> Quartiles of a discrete frequency data</a></li>
+<li class="chapter" data-level="4.8.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-continuous-frequency-data"><i class="fa fa-check"></i><b>4.8.2</b> Quartiles of a continuous frequency data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#percentiles"><i class="fa fa-check"></i><b>4.9</b> Percentiles</a></li>
+<li class="chapter" data-level="4.10" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#deciles"><i class="fa fa-check"></i><b>4.10</b> Deciles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html"><i class="fa fa-check"></i><b>5</b> Measures of Dispersion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#characteristics-of-a-good-measure-of-dispersion"><i class="fa fa-check"></i><b>5.1</b> Characteristics of a good measure of dispersion</a></li>
+<li class="chapter" data-level="5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-range"><i class="fa fa-check"></i><b>5.2</b> The Range</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-1"><i class="fa fa-check"></i><b>5.2.1</b> Method 1</a></li>
+<li class="chapter" data-level="5.2.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-2"><i class="fa fa-check"></i><b>5.2.2</b> Method 2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-range"><i class="fa fa-check"></i><b>5.2.3</b> Merits and Demerits of Range</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-inter-quartile-range-iqr-or-midspread"><i class="fa fa-check"></i><b>5.3</b> The Inter-Quartile Range (IQR) or Midspread</a></li>
+<li class="chapter" data-level="5.4" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#mean-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.4</b> Mean Absolute Deviation (MAD)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-mad"><i class="fa fa-check"></i><b>5.4.1</b> Merits and Demerits of MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>5.5</b> The variance and standard deviation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#variance-and-standard-deviation-for-grouped-data"><i class="fa fa-check"></i><b>5.5.1</b> Variance and standard deviation for grouped data</a></li>
+<li class="chapter" data-level="5.5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-standard-deviation"><i class="fa fa-check"></i><b>5.5.2</b> Merits and Demerits of Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#coefficient-of-variation-relative-measure-of-dispersion"><i class="fa fa-check"></i><b>5.6</b> Coefficient of Variation (relative measure of dispersion)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>6</b> Skewness and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#skewness"><i class="fa fa-check"></i><b>6.1</b> Skewness</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#left-skewed-or-negatively-skewed"><i class="fa fa-check"></i><b>6.1.1</b> Left-skewed or negatively skewed</a></li>
+<li class="chapter" data-level="6.1.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#right-skewed-or-positively-skewed"><i class="fa fa-check"></i><b>6.1.2</b> Right-skewed or positively skewed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measures-of-skewness"><i class="fa fa-check"></i><b>6.2</b> Measures of Skewness</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#karl-pearsons-coefficient-of-skewness-s_k"><i class="fa fa-check"></i><b>6.2.1</b> Karl Pearson’s coefficient of Skewness (<strong><span class="math inline">\(S_{k}\)</span></strong>)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#bowleys-measure-of-skewness-sq"><i class="fa fa-check"></i><b>6.2.2</b> Bowley's measure of Skewness (<em>S</em><sub>Q</sub>)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kellys-measure-of-skewness-sp"><i class="fa fa-check"></i><b>6.2.3</b> Kelly's Measure of Skewness (<em>S</em><sub>p</sub>)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measure-based-on-moments"><i class="fa fa-check"></i><b>6.2.4</b> Measure based on moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>6.3</b> Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-association.html"><a href="measures-of-association.html"><i class="fa fa-check"></i><b>7</b> Measures of Association</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram"><i class="fa fa-check"></i><b>7.1</b> Scatter Diagram</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-association.html"><a href="measures-of-association.html#correlation"><i class="fa fa-check"></i><b>7.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="measures-of-association.html"><a href="measures-of-association.html#positive-correlation"><i class="fa fa-check"></i><b>7.2.1</b> Positive correlation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="measures-of-association.html"><a href="measures-of-association.html#negative-correlation"><i class="fa fa-check"></i><b>7.2.2</b> Negative correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-association.html"><a href="measures-of-association.html#other-types-of-correlation"><i class="fa fa-check"></i><b>7.3</b> Other types of correlation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="measures-of-association.html"><a href="measures-of-association.html#simple-and-multiple"><i class="fa fa-check"></i><b>7.3.1</b> Simple and Multiple</a></li>
+<li class="chapter" data-level="7.3.2" data-path="measures-of-association.html"><a href="measures-of-association.html#partial-and-total"><i class="fa fa-check"></i><b>7.3.2</b> Partial and total</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-association.html"><a href="measures-of-association.html#linear-relationship"><i class="fa fa-check"></i><b>7.4</b> Linear relationship</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-association.html"><a href="measures-of-association.html#methods-of-measurement-of-correlation"><i class="fa fa-check"></i><b>7.5</b> Methods of measurement of correlation</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram-or-graphic-method"><i class="fa fa-check"></i><b>7.5.1</b> Scatter diagram or Graphic method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="measures-of-association.html"><a href="measures-of-association.html#karl-pearsons-coefficient-of-correlation-r"><i class="fa fa-check"></i><b>7.5.2</b> Karl Pearson’s coefficient of Correlation (<em>r</em>)</a></li>
+<li class="chapter" data-level="7.5.3" data-path="measures-of-association.html"><a href="measures-of-association.html#spearmans-rank-order-correlation-coefficient-ρ"><i class="fa fa-check"></i><b>7.5.3</b> Spearman’s Rank order correlation coefficient (<em>ρ</em>)</a></li>
+<li class="chapter" data-level="7.5.4" data-path="measures-of-association.html"><a href="measures-of-association.html#kendalls-rank-correlation-coefficient-τ"><i class="fa fa-check"></i><b>7.5.4</b> Kendall’s Rank Correlation Coefficient (<em>τ</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression-analysis.html"><a href="regression-analysis.html"><i class="fa fa-check"></i><b>8</b> Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regression-analysis.html"><a href="regression-analysis.html#definition"><i class="fa fa-check"></i><b>8.1</b> Definition</a></li>
+<li class="chapter" data-level="8.2" data-path="regression-analysis.html"><a href="regression-analysis.html#simple-regression"><i class="fa fa-check"></i><b>8.2</b> Simple regression</a></li>
+<li class="chapter" data-level="8.3" data-path="regression-analysis.html"><a href="regression-analysis.html#two-types-of-variables"><i class="fa fa-check"></i><b>8.3</b> Two types of variables</a></li>
+<li class="chapter" data-level="8.4" data-path="regression-analysis.html"><a href="regression-analysis.html#detailed-explanation"><i class="fa fa-check"></i><b>8.4</b> Detailed explanation</a></li>
+<li class="chapter" data-level="8.5" data-path="regression-analysis.html"><a href="regression-analysis.html#error-and-residual"><i class="fa fa-check"></i><b>8.5</b> Error and residual</a></li>
+<li class="chapter" data-level="8.6" data-path="regression-analysis.html"><a href="regression-analysis.html#straight-lines"><i class="fa fa-check"></i><b>8.6</b> Straight lines</a></li>
+<li class="chapter" data-level="8.7" data-path="regression-analysis.html"><a href="regression-analysis.html#method-of-least-squares"><i class="fa fa-check"></i><b>8.7</b> Method of least squares</a></li>
+<li class="chapter" data-level="8.8" data-path="regression-analysis.html"><a href="regression-analysis.html#principle-of-least-squares"><i class="fa fa-check"></i><b>8.8</b> Principle of least squares</a></li>
+<li class="chapter" data-level="8.9" data-path="regression-analysis.html"><a href="regression-analysis.html#two-lines-of-regression"><i class="fa fa-check"></i><b>8.9</b> Two lines of regression</a></li>
+<li class="chapter" data-level="8.10" data-path="regression-analysis.html"><a href="regression-analysis.html#assumptions-of-regression"><i class="fa fa-check"></i><b>8.10</b> Assumptions of Regression</a></li>
+<li class="chapter" data-level="8.11" data-path="regression-analysis.html"><a href="regression-analysis.html#properties-of-regression-coefficients"><i class="fa fa-check"></i><b>8.11</b> Properties of Regression coefficients</a></li>
+<li class="chapter" data-level="8.12" data-path="regression-analysis.html"><a href="regression-analysis.html#uses-of-regression"><i class="fa fa-check"></i><b>8.12</b> Uses of Regression</a></li>
+<li class="chapter" data-level="8.13" data-path="regression-analysis.html"><a href="regression-analysis.html#example-problem"><i class="fa fa-check"></i><b>8.13</b> Example problem</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kau-melon/home" target="blank">Published in MeLON</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LECTURE NOTES OF STAT 3202</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="measures-of-central-tendency---i" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Measures of central tendency - I</h1>
+<p>In the previous lecture, you have learnt how data can be summarised in
+the form of tables and presented in the form of graphs so that important
+features can be illustrated easily and more effectively. In this
+Lecture, we consider statistical measures which can be used to describe
+the characteristics of a set of data.</p>
+<p>We are interested in a single value that serves as a representative
+value of the overall data. A <strong>measure of central tendency</strong> is a
+summary statistic that represents the centre point or typical value of a
+dataset.</p>
+<p>There are five averages. Among them mean, median and mode are called
+<strong>simple averages</strong> and the other two averages geometric mean and harmonic
+mean are called <strong>special averages</strong>. These measures reflect numerical
+values in the centre of a set of data and are therefore called measures
+of central tendency.</p>
+<p><span class="ui"><strong>Requisites of a Good Measure of Central Tendency:</strong></span></p>
+<ul>
+<li><p>It should be rigidly defined.</p></li>
+<li><p>It should be simple to understand &amp; easy to calculate</p></li>
+<li><p>It should be based upon all values of given data</p></li>
+<li><p>It should be capable of further mathematical treatment.</p></li>
+<li><p>It should have sampling stability.</p></li>
+<li><p>It should be not be unduly affected by extreme values</p></li>
+</ul>
+<p><span class="ui">The main objectives of Measure of Central Tendency</span></p>
+<ul>
+<li><p>To condense data in a single value.</p></li>
+<li><p>To facilitate comparisons between data.</p></li>
+</ul>
+<div id="arithmetic-mean" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Arithmetic Mean</h2>
+<p>This is what people usually intend when they say "average". Arithmetic
+mean or simply the mean of a variable is defined as the sum of the
+observations divided by the number of observations. Mean of set of
+numbers <span class="math inline">\(x_{1\ },x_{2},\ldots,x_{n}\)</span> is denoted as <span class="math inline">\(\overline{x}\)</span>. It is
+given by the formula</p>
+<p><span class="math display">\[\overline{x} = \frac{x_{1} + x_{2} + \ldots + x_{n}}{n}\]</span></p>
+<p><span class="math inline">\(= \frac{1}{n}\sum_{i = 1}^{n}x_{i}\)</span></p>
+<p><strong>Example 3.1</strong> Find the mean of the numbers 2, 4, 7, 8, 11, 12</p>
+<p><span class="math display">\[\overline{x} = \frac{2 + 4 + 7 + 8 + 11 + 12}{6} = \frac{44}{6} = 7.33\]</span></p>
+<div id="the-mean-of-a-frequency-distribution" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> The mean of a frequency distribution</h3>
+<div id="direct-method" class="section level4" number="3.1.1.1">
+<h4><span class="header-section-number">3.1.1.1</span> Direct method</h4>
+<p>If the numbers <span class="math inline">\(x_{1\ },x_{2},\ldots,x_{n}\)</span> occur with frequencies
+<span class="math inline">\(f_{1\ },f_{2},\ldots,f_{n}\)</span> respectively then</p>
+<p><span class="math display">\[\overline{x} = \frac{x_{1}f_{1} + x_{2}f_{2\ \ } + \ldots + x_{n}f_{n}}{f_{1} + f_{2} + \ldots f_{n}}\]</span></p>
+<p><span class="math display">\[= \frac{\sum_{i = 1}^{n}{f_{i}x_{i}}}{\sum_{i = 1}^{n}f_{i}}\]</span></p>
+<p><strong>Example 3.2</strong> Table below shows the body masses of 50 men. Find the
+mean body mass.</p>
+<table>
+<caption><span id="tab:bodymass">Table 3.1: </span> Body masses of 50 men.</caption>
+<thead>
+<tr class="header">
+<th align="left">Mass(kg)</th>
+<th align="left">59</th>
+<th align="left">60</th>
+<th align="left">61</th>
+<th align="left">62</th>
+<th align="left">63</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Frequency</td>
+<td align="left">3</td>
+<td align="left">9</td>
+<td align="left">23</td>
+<td align="left">11</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution 3.2</strong></p>
+<p>The calculation can be arranged as shown</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Mass(<em>x</em>)</th>
+<th align="left">Frequency(<em>f</em>)</th>
+<th align="left"><em>fx</em></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">59</td>
+<td align="left">3</td>
+<td align="left">177</td>
+</tr>
+<tr class="even">
+<td align="left">60</td>
+<td align="left">9</td>
+<td align="left">540</td>
+</tr>
+<tr class="odd">
+<td align="left">61</td>
+<td align="left">23</td>
+<td align="left">1403</td>
+</tr>
+<tr class="even">
+<td align="left">62</td>
+<td align="left">11</td>
+<td align="left">682</td>
+</tr>
+<tr class="odd">
+<td align="left">63</td>
+<td align="left">4</td>
+<td align="left">252</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{n}f_{i}\)</span>= 50</td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{n}{f_{i}x_{i}}\)</span>= 3054</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\overline{x} = \frac{\sum_{i = 1}^{n}{f_{i}x_{i}}}{\sum_{i = 1}^{n}f_{i}} = \frac{3054}{50}\)</span>=
+61.08 kg</p>
+</div>
+<div id="assumed-mean-method-indirect-method" class="section level4" number="3.1.1.2">
+<h4><span class="header-section-number">3.1.1.2</span> Assumed mean method (Indirect method)</h4>
+<p>The amount of computation involved above can be reduced by using the
+following formula:</p>
+<p><span class="math display">\[\overline{x} = A + \frac{\sum_{i = 1}^{n}{f_{i}d_{i}}}{\sum_{i = 1}^{n}f_{i}}\]</span></p>
+<p>Where <span class="math inline">\(A\)</span> is the assumed mean, which can be any value in <em>x</em>.
+<span class="math inline">\(d_{i} = x_{i} - A\)</span>, <span class="math inline">\(f_{i}\)</span> is the frequency of <span class="math inline">\(x_{i}\)</span></p>
+<p>Consider the Example 2.2 see Table: <a href="measures-of-central-tendency---i.html#tab:bodymass">3.1</a></p>
+<p>let <span class="math inline">\(A\)</span> = 61; it can be any number in <em>x</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">Mass(<em>x</em>)</th>
+<th align="center">Frequency(<em>f</em>)</th>
+<th align="right"><span class="math display">\[\mathbf{d}_{\mathbf{i}}\mathbf{=}\mathbf{x}_{\mathbf{i}}\mathbf{-}\mathbf{61}\]</span></th>
+<th align="right"><span class="math display">\[\mathbf{f}_{\mathbf{i}}\mathbf{d}_{\mathbf{i}}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">59</td>
+<td align="center">3</td>
+<td align="right">-2</td>
+<td align="right">-6</td>
+</tr>
+<tr class="even">
+<td align="right">60</td>
+<td align="center">9</td>
+<td align="right">-1</td>
+<td align="right">-9</td>
+</tr>
+<tr class="odd">
+<td align="right">61</td>
+<td align="center">23</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="right">62</td>
+<td align="center">11</td>
+<td align="right">1</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="right">63</td>
+<td align="center">4</td>
+<td align="right">2</td>
+<td align="right">8</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="center"><span class="math inline">\(\sum_{i = 1}^{n}f_{i}\)</span>= 50</td>
+<td align="right"></td>
+<td align="right"><span class="math inline">\(\sum_{i = 1}^{n}{f_{i}d_{i}}\)</span>= 4</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\overline{x} = 61 + \frac{4}{50}\)</span> = 61.08 kg</p>
+<p>The mean mass is 61.08 kg</p>
+</div>
+</div>
+<div id="mean-of-grouped-data" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Mean of Grouped Data</h3>
+<div id="direct-method-1" class="section level4" number="3.1.2.1">
+<h4><span class="header-section-number">3.1.2.1</span> Direct method</h4>
+<p>The mean for grouped data is obtained from the following formula:</p>
+<p><span class="math display">\[\overline{x} = \frac{\sum_{i = 1}^{k}{f_{i}x_{i}}}{n}\]</span></p>
+<p>Where <span class="math inline">\(x_{i}\)</span> = the mid-point of <em>i</em><sup>th</sup> class (<em>i</em><sup>th</sup> class mark);
+<span class="math inline">\(f_{i}\)</span>= the frequency of <em>i</em><sup>th</sup> class; <span class="math inline">\(n\)</span> = the sum of the
+frequencies or total frequencies in a sample. Note that <em>i</em> =1,2...,
+<em>k</em>, <em>i</em>.<em>e</em>. there are <em>k</em> classes.</p>
+<p><strong>Example 3.3</strong> Shows the distribution of the marks scored by 60 students in a Physics examination. Find the mean mark.</p>
+<table>
+<caption><span id="tab:phy">Table 3.2: </span> Distribution of the marks scored by 60 students</caption>
+<thead>
+<tr class="header">
+<th align="left">Mark (%)</th>
+<th align="left">60-65</th>
+<th align="left">65-70</th>
+<th align="left">70-75</th>
+<th align="left">75-80</th>
+<th align="left">80-85</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Number of students</td>
+<td align="left">2</td>
+<td align="left">15</td>
+<td align="left">25</td>
+<td align="left">14</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution 3.3</strong></p>
+<p>The solution can be arranged as shown</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Marks</th>
+<th align="left">Class mark(<span class="math inline">\(\mathbf{x}_{\mathbf{i}}\)</span>)</th>
+<th align="left">Frequency(<span class="math inline">\(\mathbf{f}_{\mathbf{i}}\)</span>)</th>
+<th align="left"><span class="math display">\[\mathbf{f}_{\mathbf{i}}\mathbf{x}_{\mathbf{i}}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">60-65</td>
+<td align="left">62.5</td>
+<td align="left">2</td>
+<td align="left">125</td>
+</tr>
+<tr class="even">
+<td align="left">65-70</td>
+<td align="left">67.5</td>
+<td align="left">15</td>
+<td align="left">1012.5</td>
+</tr>
+<tr class="odd">
+<td align="left">70-75</td>
+<td align="left">72.5</td>
+<td align="left">25</td>
+<td align="left">1812.5</td>
+</tr>
+<tr class="even">
+<td align="left">75-80</td>
+<td align="left">77.5</td>
+<td align="left">14</td>
+<td align="left">1085</td>
+</tr>
+<tr class="odd">
+<td align="left">80-85</td>
+<td align="left">82.5</td>
+<td align="left">4</td>
+<td align="left">330</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{n}f_{i}\)</span>= 60</td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{n}{f_{i}x_{i}}\)</span>= 4365</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\overline{x} = \frac{\sum_{i = 1}^{n}{f_{i}x_{i}}}{\sum_{i = 1}^{n}f_{i}} = \frac{4365}{60}\)</span>=
+72.75</p>
+<p>The mean mark is 72.75%</p>
+</div>
+<div id="coding-method-indirect-method" class="section level4" number="3.1.2.2">
+<h4><span class="header-section-number">3.1.2.2</span> Coding method (Indirect method)</h4>
+<p>If all the class intervals of a grouped frequency distribution have equal size <span class="math inline">\(C\)</span> (class width); then the following formula can be used instead of direct method above. This formula makes calculations easier.</p>
+<p><span class="math display">\[\overline{x} = A + C\frac{\sum_{i = 1}^{n}{f_{i}u_{i}}}{\sum_{i = 1}^{n}f_{i}}\]</span></p>
+<p>Where <span class="math inline">\(A\)</span> is the he class mark with the highest frequency,
+<span class="math inline">\(u_{i} = \frac{x_{i} - A}{C}\)</span>, <span class="math inline">\(f_{i}\)</span> is the frequency of <span class="math inline">\(x_{i}\)</span>, <em>C</em>
+is the class width</p>
+<p>This is called the “coding” method for computing the mean. It is a very short method and should always be used for finding the mean of a grouped frequency distribution with equal class widths.</p>
+<p>Consider the Example 3.3 see Table:<a href="measures-of-central-tendency---i.html#tab:phy">3.2</a></p>
+<p><span class="math inline">\(A\)</span>=72.5, class mark with highest frequency; <span class="math inline">\(C\)</span> =5</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Marks</th>
+<th align="left">Class mark(<span class="math inline">\(\mathbf{x}_{\mathbf{i}}\)</span>)</th>
+<th align="left">Frequency(<span class="math inline">\(\mathbf{f}_{\mathbf{i}}\)</span>)</th>
+<th align="left"><span class="math display">\[\mathbf{u}_{\mathbf{i}}\mathbf{=}\frac{\mathbf{x}_{\mathbf{i}}\mathbf{- 72.5}}{\mathbf{5}}\]</span></th>
+<th align="left"><span class="math display">\[\mathbf{f}_{\mathbf{i}}\mathbf{u}_{\mathbf{i}}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">60-65</td>
+<td align="left">62.5</td>
+<td align="left">2</td>
+<td align="left">-2</td>
+<td align="left">-4</td>
+</tr>
+<tr class="even">
+<td align="left">65-70</td>
+<td align="left">67.5</td>
+<td align="left">15</td>
+<td align="left">-1</td>
+<td align="left">-15</td>
+</tr>
+<tr class="odd">
+<td align="left">70-75</td>
+<td align="left">72.5</td>
+<td align="left">25</td>
+<td align="left">0</td>
+<td align="left">0</td>
+</tr>
+<tr class="even">
+<td align="left">75-80</td>
+<td align="left">77.5</td>
+<td align="left">14</td>
+<td align="left">1</td>
+<td align="left">14</td>
+</tr>
+<tr class="odd">
+<td align="left">80-85</td>
+<td align="left">82.5</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{k}f_{i}\)</span>= 60</td>
+<td align="left"></td>
+<td align="left"><span class="math inline">\(\sum_{i = 1}^{k}{f_{i}u_{i}}\)</span>=3</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\overline{x} = 72.5 + 5 \times \left( \frac{3}{60} \right)\)</span>= 72.75</p>
+<p>The mean mark is 72.75%</p>
+</div>
+</div>
+</div>
+<div id="merits-and-demerits-of-arithmetic-mean-merits" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Merits and demerits of Arithmetic mean Merits</h2>
+<p><u><strong>Merits </strong></u></p>
+<ol style="list-style-type: decimal">
+<li><p>It is rigidly defined.</p></li>
+<li><p>It is easy to understand and easy to calculate.</p></li>
+<li><p>If the number of items is sufficiently large, it is more accurate
+and more reliable.</p></li>
+<li><p>It is a calculated value and is not based on its position in the
+series.</p></li>
+<li><p>It is possible to calculate even if some of the details of the data
+are lacking.</p></li>
+<li><p>Of all averages, it is affected least by fluctuations of sampling.</p></li>
+<li><p>It provides a good basis for comparison.</p></li>
+</ol>
+<p><u><strong>Demerits</strong></u></p>
+<ol style="list-style-type: decimal">
+<li><p>It cannot be obtained by inspection nor located through a frequency
+graph.</p></li>
+<li><p>It cannot be in the study of qualitative phenomena not capable of
+numerical measurement <em>i</em>.<em>e</em>. Intelligence, beauty, honesty etc.</p></li>
+<li><p>It can ignore any single item only at the risk of losing its
+accuracy.</p></li>
+<li><p>It is affected very much by extreme values.</p></li>
+<li><p>It cannot be calculated for open-end classes.</p></li>
+<li><p>It may lead to fallacious conclusions, if the details of the data
+from which it is computed are not given.</p></li>
+</ol>
+</div>
+<div id="the-median" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> The median</h2>
+<p><strong>The median</strong> of a set of data is defined as the middle value when the
+data is arranged in order of magnitude. If there are no ties, half of
+the observations will be smaller than the median, and half of the
+observations will be larger than the median. The median can be the
+middle most item that divides the group into two equal parts, one part
+comprising all values greater, and the other, all values less than that
+item. It is a positional measure.</p>
+<div id="median-of-ungrouped-or-raw-data" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Median of ungrouped or raw data</h3>
+<p>Arrange the given <em>n</em> observations <span class="math inline">\(x_{1\ },x_{2},\ldots,x_{n}\)</span> in
+ascending order. If the number of values is odd, median is the middle
+value. If the number of values is even, median is the mean of middle two
+values.</p>
+<p>Arrange data in ascending then use the following formula</p>
+<p>When <em>n</em> is odd, Median = Md
+=<span class="math inline">\(\left( \frac{n + 1}{2} \right)^{\text{th}}\)</span>value</p>
+<p>When <em>n</em> is even, Median = Md
+=<span class="math inline">\({\text{Average\ of\ }\left( \frac{n}{2} \right)^{th}\text{and\ }\left( \frac{n}{2} + 1 \right)}^{\text{th}}\)</span>value</p>
+<p><strong>Example 3.4</strong> Find the median of each of the following sets of
+numbers.</p>
+<p>(a) 12, 15, 22, 17, 20, 26, 22, 26, 12</p>
+<p>(b) 4, 7, 9, 10, 5, 1, 3, 4, 12, 10</p>
+<p><strong>Solution 3.4</strong></p>
+<p>(a) Arranging the data in an increasing order of magnitude, we
+obtain 12, 12, 15, 17, 20, 22, 22, 26, 26. Here, N (= 9) is odd, and so,
+median =<span class="math inline">\(\left( \frac{9 + 1}{2} \right)^{\text{th}}\)</span>= 5<sup>th</sup> ordered
+observation = 20.</p>
+<p>Note: If a number is repeated, we still count it the number of times it
+appears when we calculate the median.</p>
+<p>(b) Arranging the data in an increasing order of magnitude, we obtain
+1, 3, 4, 4, 5, 7, 9, 10, 10, 12. Here, N(=10) is an even number and so
+median = <span class="math inline">\(\frac{1}{2}\)</span>{5<sup>th</sup> ordered observation + 6<sup>th</sup> ordered
+observation} = <span class="math inline">\(\frac{1}{2}\left( 5 + 7 \right) = 6\)</span>.</p>
+<p>Note: You can see in each case, the median divides the distribution into
+two equal parts, with 50% of the observations greater than it and the
+other 50% less than it.</p>
+</div>
+<div id="median-of-ungrouped-frequency-distribution" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Median of ungrouped frequency distribution</h3>
+<p>The median is the middle number is an ordered set of data. In a
+frequency table, the observations are already arranged in an ascending
+order. We can obtain the median by looking for the value in the middle
+position.</p>
+<div id="median-of-a-frequency-table-when-the-number-of-observations-is-odd" class="section level4" number="3.3.2.1">
+<h4><span class="header-section-number">3.3.2.1</span> Median of a frequency table when the number of observations is odd</h4>
+<p>When the number of observations (n) is odd, then the median is the value
+at the <span class="math inline">\(\left( \frac{n + 1}{2} \right)^{\text{th}}\)</span> positional value.
+For that we use less than cumulative frequency.</p>
+<p><strong>Example 3.5</strong>: The following is a frequency table of the score obtained in a mathematics quiz. Find the median score.</p>
+<table>
+<caption><span id="tab:score">Table 3.3: </span> Score obtained in a mathematics quiz.</caption>
+<thead>
+<tr class="header">
+<th align="left"><strong>Score</strong></th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Frequency</strong></td>
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left">7</td>
+<td align="left">6</td>
+<td align="left">3</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution 3.5:</strong></p>
+<p>Total frequency = 3 + 4 + 7 + 6 + 3 = 23 (odd number). Since the number
+of scores is odd, the median is at
+<span class="math inline">\(\left( \frac{23 + 1}{2} \right)^{\text{th}} =\)</span> 12<sup>th</sup> position. To find
+out the 12<sup>th</sup> position, we use less than cumulative frequencies as
+shown:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Score</strong></th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left"><strong>2</strong></th>
+<th align="left">3</th>
+<th align="left">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Frequency</strong></td>
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left"><strong>7</strong></td>
+<td align="left">6</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>less than cumulative frequency</strong></td>
+<td align="left">3</td>
+<td align="left">7</td>
+<td align="left"><strong>14</strong></td>
+<td align="left">20</td>
+<td align="left">23</td>
+</tr>
+</tbody>
+</table>
+<p>The 12<sup>th</sup> position is after the 7<sup>th</sup> position but before the
+14<sup>th</sup> position. So, the median is 2.</p>
+</div>
+<div id="median-of-a-frequency-table-when-the-number-of-observations-is-even" class="section level4" number="3.3.2.2">
+<h4><span class="header-section-number">3.3.2.2</span> Median of a frequency table when the number of observations is even</h4>
+<p>When the number of observations is even, then the median is the average
+of
+<span class="math inline">\({\left( \frac{n}{2} \right)^{th}\text{and\ }\left( \frac{n}{2} + 1 \right)}^{\text{th}}\)</span>
+position values.</p>
+<p><strong>Example 3.6</strong>: The table is a frequency table of the marks obtained in a competition. Find the median score.</p>
+<table>
+<caption><span id="tab:median">Table 3.4: </span> Distribution of marks obtained in a competition.</caption>
+<thead>
+<tr class="header">
+<th align="left"><strong>Mark</strong></th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Frequency</strong></td>
+<td align="left">11</td>
+<td align="left">9</td>
+<td align="left">5</td>
+<td align="left">10</td>
+<td align="left">15</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution 3.6</strong>:</p>
+<p>Total frequency = 11 + 9 + 5 + 10 + 15 = 50 (even number). Since the
+number of scores is even, the median is at the average of the values in
+<span class="math inline">\({\left( \frac{n}{2} \right)^{th} = 25\ and\ \left( \frac{n}{2} + 1 \right)}^{\text{th}} = 26\)</span>
+positions. To find out the 25<sup>th</sup> position and 26<sup>th</sup> position, we add up the frequencies as shown:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Mark</strong></th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left">2</th>
+<th align="left">3</th>
+<th align="left">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Frequency</strong></td>
+<td align="left">11</td>
+<td align="left">9</td>
+<td align="left">5</td>
+<td align="left">10</td>
+<td align="left">15</td>
+</tr>
+<tr class="even">
+<td align="left"><strong>less than cumulative frequency</strong></td>
+<td align="left">11</td>
+<td align="left">20</td>
+<td align="left">25</td>
+<td align="left">35</td>
+<td align="left">50</td>
+</tr>
+</tbody>
+</table>
+<p>The mark at the 25<sup>th</sup> position is 2 and the mark at the 26<sup>th</sup> position
+is 3. The median is the average of the scores at 25<sup>th</sup> and
+26<sup>th</sup> positions = <span class="math inline">\(\frac{2 + 3}{2} = 2.5\)</span></p>
+</div>
+</div>
+<div id="median-of-grouped-frequency-distribution" class="section level3" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Median of grouped frequency distribution</h3>
+<p>The exact value of the median of a grouped data cannot be obtained
+because the actual values of a grouped data are not known. For a grouped
+frequency distribution, the median is in the class interval which
+contains the <span class="math inline">\(\left( \frac{N}{2} \right)^{\text{th}}\)</span>ordered
+observation, where <span class="math inline">\(N\)</span> is the total number of observations. This class
+interval is called the <strong>median class</strong>. The median of a grouped
+frequency distribution can be estimated by either of the following two
+methods:</p>
+<div id="linear-interpolation-method-for-estimating-the-median" class="section level4" number="3.3.3.1">
+<h4><span class="header-section-number">3.3.3.1</span> Linear interpolation method for estimating the median</h4>
+<p>The median of a grouped frequency distribution can be estimated by
+linear interpolation. We assume that the observations are evenly spread
+through the median class. The median can then be computed by using the
+following formula:</p>
+<p><span class="math display">\[median = L + \left( \frac{\frac{1}{2}N - F}{f_{m}} \right)C\]</span></p>
+<p>where <span class="math inline">\(N\)</span> = total number of observations, <span class="math inline">\(L\)</span> = lower limit of the
+median class, <span class="math inline">\(F\)</span> = sum of all frequencies below <em>L</em>(cumulative
+frequency), <span class="math inline">\(f_{m}\)</span> = frequency of the median class, <span class="math inline">\(C\)</span> = class width
+of the median class.</p>
+</div>
+<div id="estimation-of-the-median-from-a-cumulative-frequency-curve" class="section level4" number="3.3.3.2">
+<h4><span class="header-section-number">3.3.3.2</span> Estimation of the median from a cumulative frequency curve</h4>
+The median of a grouped frequency distribution can be estimated from a
+cumulative frequency curve. A horizontal line is drawn from the point
+<span class="math inline">\(\frac{\text{N\ }}{2}\)</span> on the vertical axis to meet the cumulative
+frequency curve. From the point of intersection, a vertical line is
+dropped to the horizontal axis. The value on the horizontal axis is
+equal to the median.<br />
+
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mediancf"></span>
+<img src="images/mediancf.png" alt="median from a cumulative frequency curve " width="40%" />
+<p class="caption">
+Figure 3.1: median from a cumulative frequency curve
+</p>
+</div>
+<p><strong>Example 3.7</strong> Table below gives the distribution of the heights of 60
+students in a Senior High school. Find the median height of the students</p>
+<table>
+<caption><span id="tab:medianheight">Table 3.5: </span>Distribution of heights of 60
+students</caption>
+<thead>
+<tr class="header">
+<th align="left">Height(cm)</th>
+<th align="left">145-150</th>
+<th align="left">150-155</th>
+<th align="left">155-160</th>
+<th align="left">160-165</th>
+<th align="left">165-170</th>
+<th align="left">170-175</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Number of students</td>
+<td align="left">3</td>
+<td align="left">9</td>
+<td align="left">16</td>
+<td align="left">18</td>
+<td align="left">10</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution 3.7</strong></p>
+<p><strong>(i) Linear interpolation method for estimating the median</strong></p>
+<p><span class="math inline">\(N\)</span> = 60</p>
+<p>Median class= class interval which contains the
+<span class="math inline">\(\left( \frac{N}{2} \right)^{\text{th}}\)</span>ordered observation; here
+<span class="math inline">\(\left( \frac{60}{2} \right)^{\text{th}} =\)</span> 30<sup>th</sup> observation. Before
+the class 160-165 there are 3+9+16=28 observations so 30<sup>th</sup> observation
+will be in the class 160-165, therefore it is the median class.</p>
+<p><span class="math inline">\(L\)</span> = lower limit of the median class =160</p>
+<p><span class="math inline">\(F\)</span> = sum of all frequencies below 160(cumulative frequency) = 16+9+3=
+28</p>
+<p><span class="math inline">\(f_{m}\)</span> = frequency of the median class=18</p>
+<p><span class="math inline">\(C\)</span> = class width of the median class=5</p>
+<p><span class="math inline">\(median = 160 + \left( \frac{\frac{1}{2}60 - 28}{18} \right)5\)</span> = 160.56</p>
+<p><strong>(ii) Estimation of the median from a cumulative frequency curve</strong></p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:mediancf1"></span>
+<img src="images/cf.png" alt="Median from a cumulative frequency curve Example 3.7" width="40%" />
+<p class="caption">
+Figure 3.2: Median from a cumulative frequency curve Example 3.7
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="merits-and-demerits-of-median" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Merits and Demerits of Median</h2>
+<p><u><strong>Merits</strong></u></p>
+<ol style="list-style-type: decimal">
+<li><p>Median is not influenced by extreme values because it is a
+positional average.</p></li>
+<li><p>Median can be calculated in case of distribution with open-end
+intervals</p></li>
+<li><p>Median can be located even if the data are incomplete.</p></li>
+</ol>
+<p><u><strong>Demerits</strong></u></p>
+<ol style="list-style-type: decimal">
+<li><p>A slight change in the series may bring drastic change in median
+value.</p></li>
+<li><p>In case of even number of items or continuous series, median is an
+estimated value other than any value in the series.</p></li>
+<li><p>It is not suitable for further mathematical treatment except its use
+in calculating mean deviation.</p></li>
+<li><p>It does not take into account all the observations</p></li>
+</ol>
+</div>
+<div id="the-mode" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> The mode</h2>
+<p>The mode of a set of data is the value which occurs with the greatest
+frequency. The mode is therefore the most common value. The mode is an
+important measure in case of qualitative data. The mode can be used to
+describe both quantitative and qualitative data.</p>
+<div id="mode-of-ungrouped-or-raw-data" class="section level3" number="3.5.1">
+<h3><span class="header-section-number">3.5.1</span> Mode of ungrouped or raw data</h3>
+<p>For ungrouped data or a series of individual observations, mode is often
+found by mere inspection.</p>
+<p><strong>Example 3.8</strong></p>
+<p>(a) The mode of 1, 2, 2, 2, 3 is 2.</p>
+<p>(b) The modes of 2, 3, 4, 4, 5, 5 are 4 and 5.</p>
+<p>(c) The mode does not exist when every observation has the same frequency. For example, the following sets of data have no modes: (i) 3,
+6, 8, 9; (ii) 4, 4, 4, 7, 7, 7, 9, 9, 9.</p>
+<p>Note: It can be seen that the mode of a distribution may not exist, and
+even if it exists, it may not be unique. Distributions with a single
+mode are referred to as <em>unimodal</em>. Distributions with two modes are
+referred to as <em>bimodal</em>. Distributions may have several modes, in which
+case they are referred to as <em>multimodal</em>.</p>
+<p><strong>Example 3.9</strong> 20 patients selected at random had their blood groups
+determined. The results are given in the table below</p>
+<table>
+<caption><span id="tab:Blood">Table 3.6: </span> Blood groups of 20 patients</caption>
+<thead>
+<tr class="header">
+<th align="left">Blood group</th>
+<th align="left">A</th>
+<th align="left">AB</th>
+<th align="left">B</th>
+<th align="left">O</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">No. of patients</td>
+<td align="left">2</td>
+<td align="left">4</td>
+<td align="left">6</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<p>The blood group with the highest frequency is O. The mode of the data is
+therefore blood group O. We can say that most of the patients selected
+have blood group O. Notice that the mean and the median cannot be
+applied to the data. This is because the variable “blood group” cannot
+take numerical values. However, it can be seen that the mode can be used
+to describe both quantitative and qualitative data.</p>
+</div>
+<div id="mode-of-grouped-frequency-distribution" class="section level3" number="3.5.2">
+<h3><span class="header-section-number">3.5.2</span> Mode of Grouped frequency distribution</h3>
+<p><span class="math display">\[mode = L + \left( \frac{f_{s}}{f_{p} + f_{s}} \right)C\]</span></p>
+<p>Locate the highest frequency the class corresponding to that frequency
+is called the <strong>modal class</strong>.</p>
+<p>Where <span class="math inline">\(L\)</span> = lower limit of the model class; <span class="math inline">\(f_{p}\)</span>= the frequency of
+the class preceding the model class; <span class="math inline">\(f_{s}\)</span>= the frequency of the class
+succeeding the model class and <span class="math inline">\(C\)</span> = class interval</p>
+<p><strong>Example 3.10</strong> For the frequency distribution of weights of sorghum
+ear-heads given in table below. Calculate the mode.</p>
+<table>
+<caption><span id="tab:earhead">Table 3.7: </span>requency distribution of weights of sorghum ear heads</caption>
+<thead>
+<tr class="header">
+<th align="left">Weights of ear heads (g)</th>
+<th align="left">No of ear heads (<em>f</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">60-80</td>
+<td align="left">22</td>
+</tr>
+<tr class="even">
+<td align="left">80-100</td>
+<td align="left">38</td>
+</tr>
+<tr class="odd">
+<td align="left">100-120</td>
+<td align="left">45</td>
+</tr>
+<tr class="even">
+<td align="left">120-140</td>
+<td align="left">35</td>
+</tr>
+<tr class="odd">
+<td align="left">140-160</td>
+<td align="left">20</td>
+</tr>
+</tbody>
+</table>
+<p>Modal class is <strong>100-120</strong></p>
+<p><span class="math inline">\(mode = 100 + \left( \frac{35}{38 + 35} \right)20 =\)</span> 109.589</p>
+</div>
+<div id="mode-using-histogram" class="section level3" number="3.5.3">
+<h3><span class="header-section-number">3.5.3</span> <strong>Mode using Histogram</strong></h3>
+Consider the figure below. The modal class is the class interval which
+corresponds to rectangle <span class="math inline">\(\text{ABCD}\)</span>. An estimate of the mode of the
+distribution is the abscissa of the point of intersection of the line
+segments <span class="math inline">\(\overline{\text{AE}}\)</span>and <span class="math inline">\(\overline{\text{BF}}\)</span>in
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:cf1"></span>
+<img src="images/l2m1.jpeg" alt="Median from a cumulative frequency curve for Example 3.10" width="40%" />
+<p class="caption">
+Figure 3.3: Median from a cumulative frequency curve for Example 3.10
+</p>
+</div>
+</div>
+</div>
+<div id="merits-and-demerits-of-mode" class="section level2" number="3.6">
+<h2><span class="header-section-number">3.6</span> Merits and Demerits of Mode</h2>
+<p><u><em>Merits</em></u></p>
+<ol style="list-style-type: decimal">
+<li><p>It is readily comprehensible and easy to compute. In some case it
+can be computed merely by inspection.</p></li>
+<li><p>It is not affected by extreme values. It can be obtained even if the
+extreme values are not known.</p></li>
+<li><p>Mode can be determined in distributions with open classes.</p></li>
+<li><p>Mode can be located on the graph also.</p></li>
+<li><p>Mode can be used to describe both quantitative and qualitative data.</p></li>
+</ol>
+<p><u><em>Demerits</em></u></p>
+<ol style="list-style-type: decimal">
+<li><p>The mode is not unique. That is, there can be more than one mode for
+a given set of data.</p></li>
+<li><p>The mode of a set of data may not exist</p></li>
+<li><p>It is not based upon all the observation.</p></li>
+</ol>
+<p> <br />
+ <br />
+ </p>
+<div id="hello" class="greeting message" style="color: #c9c6c5;">
+<center>
+<p><strong>If the statistics are boring, you’ve got the wrong numbers</strong>!</p>
+</center>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="graphical-representation-of-data.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="measures-of-central-tendency--ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

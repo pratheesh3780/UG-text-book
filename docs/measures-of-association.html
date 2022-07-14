@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Measures of Association | LECTURE NOTES OF STAT 3202</title>
+  <meta name="description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Measures of Association | LECTURE NOTES OF STAT 3202" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/cover.PNG" />
+  <meta property="og:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="github-repo" content="https://github.com/KAUMELON/stat3202" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Measures of Association | LECTURE NOTES OF STAT 3202" />
+  
+  <meta name="twitter:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="twitter:image" content="/images/cover.PNG" />
+
+<meta name="author" content="Dr. Pratheesh P. Gopinath" />
+
+
+<meta name="date" content="2022-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="skewness-and-kurtosis.html"/>
+<link rel="next" href="regression-analysis.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LECTURE NOTES</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#origin-of-the-word-statistics"><i class="fa fa-check"></i><b>1.1</b> Origin of the word “Statistics”</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#statistics-and-mathematics"><i class="fa fa-check"></i><b>1.2</b> Statistics and Mathematics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#definition-of-statistics"><i class="fa fa-check"></i><b>1.3</b> Definition of Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#data"><i class="fa fa-check"></i><b>1.4</b> Data</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#use-and-limitations-of-statistics"><i class="fa fa-check"></i><b>1.5</b> Use and limitations of statistics</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#population-and-sample"><i class="fa fa-check"></i><b>1.6</b> Population and Sample</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#population"><i class="fa fa-check"></i><b>1.6.1</b> Population</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#sample"><i class="fa fa-check"></i><b>1.6.2</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#variables-and-constants"><i class="fa fa-check"></i><b>1.7</b> Variables and constants</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#variables"><i class="fa fa-check"></i><b>1.7.1</b> Variables</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#constants"><i class="fa fa-check"></i><b>1.7.2</b> Constants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#types-of-variables"><i class="fa fa-check"></i><b>1.8</b> Types of variables</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#quantitative-variables"><i class="fa fa-check"></i><b>1.8.1</b> Quantitative variables</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#discrete-variables"><i class="fa fa-check"></i><b>1.8.2</b> Discrete variables</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#continuous-variables"><i class="fa fa-check"></i><b>1.8.3</b> Continuous variables</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#categorical-variables"><i class="fa fa-check"></i><b>1.8.4</b> Categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#measurement-scales"><i class="fa fa-check"></i><b>1.9</b> Measurement scales</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#nominal-scale"><i class="fa fa-check"></i><b>1.9.1</b> Nominal scale</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#ordinal-scale"><i class="fa fa-check"></i><b>1.9.2</b> Ordinal scale</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#interval-scale"><i class="fa fa-check"></i><b>1.9.3</b> Interval scale</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#ratio-scale"><i class="fa fa-check"></i><b>1.9.4</b> Ratio scale</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#collection-of-data"><i class="fa fa-check"></i><b>1.10</b> Collection of Data</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#types-of-data"><i class="fa fa-check"></i><b>1.10.1</b> Types of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-primary-data"><i class="fa fa-check"></i><b>1.11</b> Methods of Collecting Primary Data</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#personal-investigation"><i class="fa fa-check"></i><b>1.11.1</b> Personal Investigation</a></li>
+<li class="chapter" data-level="1.11.2" data-path="introduction.html"><a href="introduction.html#through-investigation"><i class="fa fa-check"></i><b>1.11.2</b> Through Investigation</a></li>
+<li class="chapter" data-level="1.11.3" data-path="introduction.html"><a href="introduction.html#collection-through-questionnaire"><i class="fa fa-check"></i><b>1.11.3</b> Collection through Questionnaire</a></li>
+<li class="chapter" data-level="1.11.4" data-path="introduction.html"><a href="introduction.html#through-the-telephone"><i class="fa fa-check"></i><b>1.11.4</b> Through the Telephone</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-secondary-data"><i class="fa fa-check"></i><b>1.12</b> Methods of Collecting Secondary Data</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#official"><i class="fa fa-check"></i><b>1.12.1</b> Official</a></li>
+<li class="chapter" data-level="1.12.2" data-path="introduction.html"><a href="introduction.html#semi-official"><i class="fa fa-check"></i><b>1.12.2</b> Semi-Official</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#difference-between-primary-and-secondary-data"><i class="fa fa-check"></i><b>1.13</b> Difference Between Primary and Secondary Data</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#frequency-distribution"><i class="fa fa-check"></i><b>1.14</b> Frequency distribution</a>
+<ul>
+<li class="chapter" data-level="1.14.1" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution"><i class="fa fa-check"></i><b>1.14.1</b> Construction of frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#grouped-frequency-distribution"><i class="fa fa-check"></i><b>1.15</b> Grouped frequency distribution</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#terms-used-in-grouped-frequency-tables."><i class="fa fa-check"></i><b>1.16</b> Terms used in grouped frequency tables.</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution-table"><i class="fa fa-check"></i><b>1.17</b> Construction of frequency distribution table</a></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#cumulative-frequency"><i class="fa fa-check"></i><b>1.18</b> Cumulative frequency</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#relative-frequency"><i class="fa fa-check"></i><b>1.19</b> Relative frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html"><i class="fa fa-check"></i><b>2</b> Graphical representation of data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram"><i class="fa fa-check"></i><b>2.1</b> Histogram</a></li>
+<li class="chapter" data-level="2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#cumulative-frequency-curve-ogive"><i class="fa fa-check"></i><b>2.2</b> Cumulative frequency curve (Ogive)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#less-than-ogive"><i class="fa fa-check"></i><b>2.2.1</b> Less than Ogive</a></li>
+<li class="chapter" data-level="2.2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#greater-than-ogive"><i class="fa fa-check"></i><b>2.2.2</b> Greater than Ogive</a></li>
+<li class="chapter" data-level="2.2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#frequency-polygon"><i class="fa fa-check"></i><b>2.2.3</b> Frequency polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#stem-and-leaf-plot"><i class="fa fa-check"></i><b>2.3</b> Stem-and-leaf plot</a></li>
+<li class="chapter" data-level="2.4" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#bar-chart"><i class="fa fa-check"></i><b>2.4</b> Bar chart</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#simple-bar-chart"><i class="fa fa-check"></i><b>2.4.1</b> Simple bar chart</a></li>
+<li class="chapter" data-level="2.4.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#component-bar-chart"><i class="fa fa-check"></i><b>2.4.2</b> Component bar chart</a></li>
+<li class="chapter" data-level="2.4.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#grouped-bar-chart"><i class="fa fa-check"></i><b>2.4.3</b> Grouped bar chart</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram-and-bar-chart"><i class="fa fa-check"></i><b>2.5</b> Histogram and Bar chart</a></li>
+<li class="chapter" data-level="2.6" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#pie-charts"><i class="fa fa-check"></i><b>2.6</b> Pie Charts</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#steps-for-constructing-a-pie-chart"><i class="fa fa-check"></i><b>2.6.1</b> Steps for constructing a pie chart</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html"><i class="fa fa-check"></i><b>3</b> Measures of central tendency - I</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#arithmetic-mean"><i class="fa fa-check"></i><b>3.1</b> Arithmetic Mean</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mean-of-a-frequency-distribution"><i class="fa fa-check"></i><b>3.1.1</b> The mean of a frequency distribution</a></li>
+<li class="chapter" data-level="3.1.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mean-of-grouped-data"><i class="fa fa-check"></i><b>3.1.2</b> Mean of Grouped Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-arithmetic-mean-merits"><i class="fa fa-check"></i><b>3.2</b> Merits and demerits of Arithmetic mean Merits</a></li>
+<li class="chapter" data-level="3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-median"><i class="fa fa-check"></i><b>3.3</b> The median</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.3.1</b> Median of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Median of ungrouped frequency distribution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.3</b> Median of grouped frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-median"><i class="fa fa-check"></i><b>3.4</b> Merits and Demerits of Median</a></li>
+<li class="chapter" data-level="3.5" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mode"><i class="fa fa-check"></i><b>3.5</b> The mode</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.5.1</b> Mode of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Mode of Grouped frequency distribution</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-using-histogram"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Mode using Histogram</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-mode"><i class="fa fa-check"></i><b>3.6</b> Merits and Demerits of Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html"><i class="fa fa-check"></i><b>4</b> Measures of central tendency -II</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean"><i class="fa fa-check"></i><b>4.1</b> Geometric mean</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean-for-grouped-frequency-table-data"><i class="fa fa-check"></i><b>4.1.1</b> Geometric mean for grouped frequency table data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-geometric-mean"><i class="fa fa-check"></i><b>4.2</b> Merits and Demerits of Geometric mean</a></li>
+<li class="chapter" data-level="4.3" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#harmonic-mean"><i class="fa fa-check"></i><b>4.3</b> Harmonic mean</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#steps-in-calculating-harmonic-mean-h.m"><i class="fa fa-check"></i><b>4.3.1</b> Steps in calculating Harmonic Mean (H.M)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-harmonic-mean"><i class="fa fa-check"></i><b>4.4</b> Merits and Demerits of Harmonic mean</a></li>
+<li class="chapter" data-level="4.5" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#relation-between-am-gm-and-hm"><i class="fa fa-check"></i><b>4.5</b> Relation between AM, GM and HM</a></li>
+<li class="chapter" data-level="4.6" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#when-to-use-am-gm-and-hm"><i class="fa fa-check"></i><b>4.6</b> When to use AM, GM and HM?</a></li>
+<li class="chapter" data-level="4.7" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#positional-averages"><i class="fa fa-check"></i><b>4.7</b> Positional Averages</a></li>
+<li class="chapter" data-level="4.8" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartile"><i class="fa fa-check"></i><b>4.8</b> Quartiles</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-discrete-frequency-data"><i class="fa fa-check"></i><b>4.8.1</b> Quartiles of a discrete frequency data</a></li>
+<li class="chapter" data-level="4.8.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-continuous-frequency-data"><i class="fa fa-check"></i><b>4.8.2</b> Quartiles of a continuous frequency data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#percentiles"><i class="fa fa-check"></i><b>4.9</b> Percentiles</a></li>
+<li class="chapter" data-level="4.10" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#deciles"><i class="fa fa-check"></i><b>4.10</b> Deciles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html"><i class="fa fa-check"></i><b>5</b> Measures of Dispersion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#characteristics-of-a-good-measure-of-dispersion"><i class="fa fa-check"></i><b>5.1</b> Characteristics of a good measure of dispersion</a></li>
+<li class="chapter" data-level="5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-range"><i class="fa fa-check"></i><b>5.2</b> The Range</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-1"><i class="fa fa-check"></i><b>5.2.1</b> Method 1</a></li>
+<li class="chapter" data-level="5.2.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-2"><i class="fa fa-check"></i><b>5.2.2</b> Method 2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-range"><i class="fa fa-check"></i><b>5.2.3</b> Merits and Demerits of Range</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-inter-quartile-range-iqr-or-midspread"><i class="fa fa-check"></i><b>5.3</b> The Inter-Quartile Range (IQR) or Midspread</a></li>
+<li class="chapter" data-level="5.4" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#mean-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.4</b> Mean Absolute Deviation (MAD)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-mad"><i class="fa fa-check"></i><b>5.4.1</b> Merits and Demerits of MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>5.5</b> The variance and standard deviation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#variance-and-standard-deviation-for-grouped-data"><i class="fa fa-check"></i><b>5.5.1</b> Variance and standard deviation for grouped data</a></li>
+<li class="chapter" data-level="5.5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-standard-deviation"><i class="fa fa-check"></i><b>5.5.2</b> Merits and Demerits of Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#coefficient-of-variation-relative-measure-of-dispersion"><i class="fa fa-check"></i><b>5.6</b> Coefficient of Variation (relative measure of dispersion)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>6</b> Skewness and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#skewness"><i class="fa fa-check"></i><b>6.1</b> Skewness</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#left-skewed-or-negatively-skewed"><i class="fa fa-check"></i><b>6.1.1</b> Left-skewed or negatively skewed</a></li>
+<li class="chapter" data-level="6.1.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#right-skewed-or-positively-skewed"><i class="fa fa-check"></i><b>6.1.2</b> Right-skewed or positively skewed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measures-of-skewness"><i class="fa fa-check"></i><b>6.2</b> Measures of Skewness</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#karl-pearsons-coefficient-of-skewness-s_k"><i class="fa fa-check"></i><b>6.2.1</b> Karl Pearson’s coefficient of Skewness (<strong><span class="math inline">\(S_{k}\)</span></strong>)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#bowleys-measure-of-skewness-sq"><i class="fa fa-check"></i><b>6.2.2</b> Bowley's measure of Skewness (<em>S</em><sub>Q</sub>)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kellys-measure-of-skewness-sp"><i class="fa fa-check"></i><b>6.2.3</b> Kelly's Measure of Skewness (<em>S</em><sub>p</sub>)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measure-based-on-moments"><i class="fa fa-check"></i><b>6.2.4</b> Measure based on moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>6.3</b> Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-association.html"><a href="measures-of-association.html"><i class="fa fa-check"></i><b>7</b> Measures of Association</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram"><i class="fa fa-check"></i><b>7.1</b> Scatter Diagram</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-association.html"><a href="measures-of-association.html#correlation"><i class="fa fa-check"></i><b>7.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="measures-of-association.html"><a href="measures-of-association.html#positive-correlation"><i class="fa fa-check"></i><b>7.2.1</b> Positive correlation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="measures-of-association.html"><a href="measures-of-association.html#negative-correlation"><i class="fa fa-check"></i><b>7.2.2</b> Negative correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-association.html"><a href="measures-of-association.html#other-types-of-correlation"><i class="fa fa-check"></i><b>7.3</b> Other types of correlation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="measures-of-association.html"><a href="measures-of-association.html#simple-and-multiple"><i class="fa fa-check"></i><b>7.3.1</b> Simple and Multiple</a></li>
+<li class="chapter" data-level="7.3.2" data-path="measures-of-association.html"><a href="measures-of-association.html#partial-and-total"><i class="fa fa-check"></i><b>7.3.2</b> Partial and total</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-association.html"><a href="measures-of-association.html#linear-relationship"><i class="fa fa-check"></i><b>7.4</b> Linear relationship</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-association.html"><a href="measures-of-association.html#methods-of-measurement-of-correlation"><i class="fa fa-check"></i><b>7.5</b> Methods of measurement of correlation</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram-or-graphic-method"><i class="fa fa-check"></i><b>7.5.1</b> Scatter diagram or Graphic method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="measures-of-association.html"><a href="measures-of-association.html#karl-pearsons-coefficient-of-correlation-r"><i class="fa fa-check"></i><b>7.5.2</b> Karl Pearson’s coefficient of Correlation (<em>r</em>)</a></li>
+<li class="chapter" data-level="7.5.3" data-path="measures-of-association.html"><a href="measures-of-association.html#spearmans-rank-order-correlation-coefficient-ρ"><i class="fa fa-check"></i><b>7.5.3</b> Spearman’s Rank order correlation coefficient (<em>ρ</em>)</a></li>
+<li class="chapter" data-level="7.5.4" data-path="measures-of-association.html"><a href="measures-of-association.html#kendalls-rank-correlation-coefficient-τ"><i class="fa fa-check"></i><b>7.5.4</b> Kendall’s Rank Correlation Coefficient (<em>τ</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression-analysis.html"><a href="regression-analysis.html"><i class="fa fa-check"></i><b>8</b> Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regression-analysis.html"><a href="regression-analysis.html#definition"><i class="fa fa-check"></i><b>8.1</b> Definition</a></li>
+<li class="chapter" data-level="8.2" data-path="regression-analysis.html"><a href="regression-analysis.html#simple-regression"><i class="fa fa-check"></i><b>8.2</b> Simple regression</a></li>
+<li class="chapter" data-level="8.3" data-path="regression-analysis.html"><a href="regression-analysis.html#two-types-of-variables"><i class="fa fa-check"></i><b>8.3</b> Two types of variables</a></li>
+<li class="chapter" data-level="8.4" data-path="regression-analysis.html"><a href="regression-analysis.html#detailed-explanation"><i class="fa fa-check"></i><b>8.4</b> Detailed explanation</a></li>
+<li class="chapter" data-level="8.5" data-path="regression-analysis.html"><a href="regression-analysis.html#error-and-residual"><i class="fa fa-check"></i><b>8.5</b> Error and residual</a></li>
+<li class="chapter" data-level="8.6" data-path="regression-analysis.html"><a href="regression-analysis.html#straight-lines"><i class="fa fa-check"></i><b>8.6</b> Straight lines</a></li>
+<li class="chapter" data-level="8.7" data-path="regression-analysis.html"><a href="regression-analysis.html#method-of-least-squares"><i class="fa fa-check"></i><b>8.7</b> Method of least squares</a></li>
+<li class="chapter" data-level="8.8" data-path="regression-analysis.html"><a href="regression-analysis.html#principle-of-least-squares"><i class="fa fa-check"></i><b>8.8</b> Principle of least squares</a></li>
+<li class="chapter" data-level="8.9" data-path="regression-analysis.html"><a href="regression-analysis.html#two-lines-of-regression"><i class="fa fa-check"></i><b>8.9</b> Two lines of regression</a></li>
+<li class="chapter" data-level="8.10" data-path="regression-analysis.html"><a href="regression-analysis.html#assumptions-of-regression"><i class="fa fa-check"></i><b>8.10</b> Assumptions of Regression</a></li>
+<li class="chapter" data-level="8.11" data-path="regression-analysis.html"><a href="regression-analysis.html#properties-of-regression-coefficients"><i class="fa fa-check"></i><b>8.11</b> Properties of Regression coefficients</a></li>
+<li class="chapter" data-level="8.12" data-path="regression-analysis.html"><a href="regression-analysis.html#uses-of-regression"><i class="fa fa-check"></i><b>8.12</b> Uses of Regression</a></li>
+<li class="chapter" data-level="8.13" data-path="regression-analysis.html"><a href="regression-analysis.html#example-problem"><i class="fa fa-check"></i><b>8.13</b> Example problem</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kau-melon/home" target="blank">Published in MeLON</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LECTURE NOTES OF STAT 3202</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="measures-of-association" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Measures of Association</h1>
+<div id="scatter-diagram" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Scatter Diagram</h2>
+<p>Consider two variables <em>x</em> and <em>y</em>, we use scatter diagram to
+investigate whether there is any relation between the two variables. If
+the variables <em>x</em> and <em>y</em> are plotted along the X-axis and Y-axis
+respectively in the X-Y plane of a graph sheet the resultant diagram of
+dots is known as <strong>scatter diagram</strong>. From the scatter diagram we can
+say whether there is any association between X and Y.</p>
+<p><strong>Example 7.1</strong>: Consider the data on Sepal length (<em>x</em>) and Sepal width (<em>y</em>) of <em>Iris</em> <em>setosa.</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Sl. No. </th>
+<th align="left">Sepal Length</th>
+<th align="left">Sepal Width</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">5.1</td>
+<td align="left">3.5</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">4.9</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">4.7</td>
+<td align="left">3.2</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">4.6</td>
+<td align="left">3.1</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">5</td>
+<td align="left">3.6</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">7</td>
+<td align="left">3.2</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">6.4</td>
+<td align="left">3.2</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">6.9</td>
+<td align="left">3.1</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">5.5</td>
+<td align="left">2.3</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">6.5</td>
+<td align="left">2.8</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="left">6.3</td>
+<td align="left">3.3</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="left">5.8</td>
+<td align="left">2.7</td>
+</tr>
+<tr class="odd">
+<td align="left">13</td>
+<td align="left">7.1</td>
+<td align="left">3</td>
+</tr>
+<tr class="even">
+<td align="left">14</td>
+<td align="left">6.3</td>
+<td align="left">2.9</td>
+</tr>
+<tr class="odd">
+<td align="left">15</td>
+<td align="left">6.5</td>
+<td align="left">3</td>
+</tr>
+</tbody>
+</table>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:c1"></span>
+<img src="images/image2c.jpeg" alt="Scatter diagram of data in Example 7.1" width="50%" />
+<p class="caption">
+Figure 7.1: Scatter diagram of data in Example 7.1
+</p>
+</div>
+</div>
+<div id="correlation" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Correlation</h2>
+<p>Correlation is a statistical technique used for analyzing the behaviour
+of two or more variables. The correlation measures the degree and
+closeness of the linear relationship between two variables in
+numerical magnitude.</p>
+<p>Correlation measure will enable us to compare the linear relationship
+between two variables by using a single number. If two or more
+quantities vary in a related manner so that the movements in one tend to
+be accompanied by the movements in the other, then they are said to be
+correlated.</p>
+<div id="positive-correlation" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Positive correlation</h3>
+<p>Positive correlation is a relationship between two variables in
+which both variables move in the same direction. A positive correlation
+exists when one variable decreases as the other variable decreases, or
+one variable increases while the other increases.</p>
+<p>Examples of positive correlation: consider two variables <em>x</em> and <em>y</em></p>
+<ul>
+<li><p>The more time you spend running on a treadmill [Running time
+(<em>x</em>)], the more calories you will burn [calories burned (<em>y</em>)].
+Here you can see as <em>x</em> increases <em>y</em> also increases</p></li>
+<li><p>Shorter people [Height (<em>x</em>)] have smaller shoe sizes [shoe size
+(<em>y</em>)]. Here you can see as <em>x</em> decreases <em>y</em> also decreases.</p></li>
+<li><p>The more hours you spend in direct sunlight [Hours in sunlight
+(<em>x</em>)], the more is your tan [melanin content(<em>y</em>)]. Here you can
+see as <em>x</em> increases <em>y</em> also increases</p></li>
+<li><p>As the temperature goes up [Temperature (<em>x</em>)], ice cream sales
+[sales (<em>y</em>)], also go up.</p></li>
+</ul>
+</div>
+<div id="negative-correlation" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Negative correlation</h3>
+<p>Negative correlation is a relationship between two variables in
+which one variable increases as the other decreases, and vice versa.</p>
+<p>Examples of negative correlation: consider two variables <em>x</em> and <em>y</em></p>
+<ul>
+<li><p>A student who has many absences [No. of days absent (<em>x</em>)] has a
+decrease in grades [grades (<em>x</em>)]. Here you can see as <em>x</em>
+increases <em>y</em> decreases.</p></li>
+<li><p>As weather gets colder [Average monthly temperature (<em>x</em>)], air
+conditioning costs decrease [Price of A.C (<em>y</em>)].</p></li>
+<li><p>If a chicken increases in age [chicken age (<em>x</em>)], the number of
+eggs it produces [No. of eggs produced (<em>y</em>)] decreases.</p></li>
+<li><p>If a car decreases speed [average car speed(<em>x</em>)], travel time
+(<em>y</em>) to a destination increases.</p></li>
+</ul>
+</div>
+</div>
+<div id="other-types-of-correlation" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Other types of correlation</h2>
+<div id="simple-and-multiple" class="section level3" number="7.3.1">
+<h3><span class="header-section-number">7.3.1</span> Simple and Multiple</h3>
+<p>In <u>simple correlation</u> the relationship
+is confined to two variables only. In <u>multiple correlation</u> the
+relationship between more than two variables is judged.</p>
+</div>
+<div id="partial-and-total" class="section level3" number="7.3.2">
+<h3><span class="header-section-number">7.3.2</span> Partial and total</h3>
+<p>There are two types of correlations in multiple
+correlation analysis.</p>
+<p>Under <u>partial correlation</u> the relationship of two or variables is
+examined after eliminating the linear effect of other correlated
+variables.</p>
+<p>The <u>total correlation</u> is based on all relevant variables.</p>
+<blockquote>
+<p>Correlation measures only linear relationship between variables</p>
+</blockquote>
+</div>
+</div>
+<div id="linear-relationship" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> Linear relationship</h2>
+<p>A linear relationship (or linear association)
+is a statistical term used to describe a straight-line relationship
+between variables.</p>
+<p>Linear relationships can be expressed either in a graphical format where
+the variable plotted on X-Y plane gives a straight line or relation
+between two variables (consider <em>x</em> and <em>y</em>) can be expressed with an
+equation of a straight line (<em>y</em> = <em>a</em> + <em>bx</em>) (**will be more clear
+when we discuss regression)</p>
+<p><strong>Example 7.2</strong>: Consider the following example of ice cream sales</p>
+<p>The local ice cream shop keeps track of how much ice cream they sell
+versus the temperature on that day; here are their figures for the last
+12 days:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Temperature (°C)</th>
+<th align="left">Ice Cream Sales (in $)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">14.2</td>
+<td align="left">215</td>
+</tr>
+<tr class="even">
+<td align="left">16.4</td>
+<td align="left">325</td>
+</tr>
+<tr class="odd">
+<td align="left">11.9</td>
+<td align="left">185</td>
+</tr>
+<tr class="even">
+<td align="left">15.2</td>
+<td align="left">332</td>
+</tr>
+<tr class="odd">
+<td align="left">18.5</td>
+<td align="left">406</td>
+</tr>
+<tr class="even">
+<td align="left">22.1</td>
+<td align="left">522</td>
+</tr>
+<tr class="odd">
+<td align="left">19.4</td>
+<td align="left">412</td>
+</tr>
+<tr class="even">
+<td align="left">25.1</td>
+<td align="left">614</td>
+</tr>
+<tr class="odd">
+<td align="left">23.4</td>
+<td align="left">544</td>
+</tr>
+<tr class="even">
+<td align="left">18.1</td>
+<td align="left">421</td>
+</tr>
+<tr class="odd">
+<td align="left">22.6</td>
+<td align="left">445</td>
+</tr>
+<tr class="even">
+<td align="left">17.2</td>
+<td align="left">408</td>
+</tr>
+</tbody>
+</table>
+<p>For the rest of our discussion we will be using this example .</p>
+</div>
+<div id="methods-of-measurement-of-correlation" class="section level2" number="7.5">
+<h2><span class="header-section-number">7.5</span> Methods of measurement of correlation</h2>
+<div id="scatter-diagram-or-graphic-method" class="section level3" number="7.5.1">
+<h3><span class="header-section-number">7.5.1</span> Scatter diagram or Graphic method</h3>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:c2"></span>
+<img src="images/image3c.jpeg" alt="Scatter plot of Example 7.2" width="50%" />
+<p class="caption">
+Figure 7.2: Scatter plot of Example 7.2
+</p>
+</div>
+<p>From the Figure 7.2 above you can see a linear association between the two variables <em>i</em>.<em>e</em>.
+between temperature and ice cream sales. It can be shown using a line as
+below. It is clear that as temperature increases sales increases,
+indicating a positive correlation.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:c3"></span>
+<img src="images/image3.5c.png" alt="Linear relationship between variables" width="50%" />
+<p class="caption">
+Figure 7.3: Linear relationship between variables
+</p>
+</div>
+<p>From the example it is clear that scatter diagram gives an idea on
+linear association between variables, so it can also used as a graphical
+tool to see whether there is correlation is present or not.</p>
+<blockquote>
+<p><strong>Perfect Correlation</strong>: If there is any change in the value of one
+variable, the value of the other variable is changed in a fixed
+proportion then the correlation between them is said to be a perfect
+correlation. If there is a perfect correlation, the points will lie in
+the straight line. In the scatter diagram of Example 7.2, you can see that
+there is no perfect linear relationship as the points are not exactly in
+the line, but the points are in some scattered form but still have a
+direction (positive).</p>
+</blockquote>
+<p>Direction of correlation can be identified using a scatter diagram as shown below in Figure 7.4</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:c4"></span>
+<img src="images/image4c.jpeg" alt="Scatter plot and nature of relationship" width="70%" />
+<p class="caption">
+Figure 7.4: Scatter plot and nature of relationship
+</p>
+</div>
+</div>
+<div id="karl-pearsons-coefficient-of-correlation-r" class="section level3" number="7.5.2">
+<h3><span class="header-section-number">7.5.2</span> Karl Pearson’s coefficient of Correlation (<em>r</em>)</h3>
+<p>It is the most important and widely used measure of correlation. A
+measure of the intensity or degree of linear relationship between two
+variables is developed by Karl Pearson, a British Biometrician - known
+as the <strong><u>Pearson’s Correlation coefficient</u></strong> denoted by <strong><em>r</em></strong>
+which is expressed as the ratio of the <strong>covariance</strong> to the product of the standard deviations of the two variables.</p>
+<div id="covariance" class="section level4" number="7.5.2.1">
+<h4><span class="header-section-number">7.5.2.1</span> Covariance</h4>
+<p><strong>Covariance</strong> is a measure of the joint linear variability of the two
+variables. Consider two variables <em>x</em> and <em>y</em> with <em>n</em> observations
+each, then covariance is given by the formula</p>
+<p>Covariance of (<em>x</em>,<em>y</em>) =
+<span class="math inline">\(\frac{1}{n}\sum_{i = 1}^{n}{\left( x_{i} - \overline{x} \right)\left( y_{i} - \overline{y} \right)}\)</span></p>
+<p>When covariance = 0 there is no joint variability or there is no linear
+relationship. The unit of covariance is the product of the units of the
+two variables.</p>
+<p>Covariance of two variables <em>x</em> and <em>y</em> is denoted as <em>Cov</em>(<em>x</em>, <em>y</em>).
+Covariance measure is used to find correlation coefficient.</p>
+<p>The correlation coefficient between the two variables (<em>x</em> and <em>y</em>) is
+calculated as<br />
+<span class="math display">\[r=\frac{cov(x,y)}{sd(x)sd(y)}\]</span></p>
+<p>Where <em>sd</em>. is the standard deviation.</p>
+<p><span class="math display">\[r = \frac{\frac{1}{n}\sum_{i = 1}^{n}{\left( x_{i} - \overline{x} \right)\left( y_{i} - \overline{y} \right)}}{\sqrt{\frac{1}{n}\sum_{i = 1}^{n}\left( x_{i} - \overline{x} \right)^{2}\frac{1}{n}\sum_{i = 1}^{n}\left( y_{i} - \overline{y} \right)^{2}}}\]</span>
+#### Properties of the correlation coefficient (<em>r</em>)</p>
+<ol style="list-style-type: decimal">
+<li><p>It is a pure number independent of both origin and scale of the
+units of the observations.</p></li>
+<li><p>It always lies between −1 and +1 (absolute value cannot exceed
+unity). <strong>−1</strong> ≤ <em>r</em> ≤ <strong>+1</strong></p></li>
+<li><p><em>r</em> = +1, indicates perfect positive correlation. <em>r</em> = −1,
+indicates perfect negative correlation. <em>r</em> = 0, indicates no
+correlation.</p></li>
+<li><p>When the correlation is zero then there is no linear relationship
+between the variables.</p></li>
+<li><p>If there is no meaningful relation between the variables the value
+of the correlation obtained is also meaningless. (For example as
+fertilizer price increases, Kohili’s batting average also increases,
+we know there no practical relationship between these variables,
+still we may get a correlation measure and it is called <em>spurious
+correlation</em>)</p></li>
+<li><p>A Simplified formula for computation of correlation coefficient can
+be derived by modifying above formula</p></li>
+</ol>
+<p><span class="math display">\[r = \frac{n\left( \sum_{i = 1}^{n}{x_{i}y_{i}} \right) - \sum_{i = 1}^{n}{x_{i}\sum_{i = 1}^{n}y_{i}}}{\sqrt{\left\lbrack n\sum_{i = 1}^{n}{x_{i}^{2} - \left( \sum_{i = 1}^{n}x_{i} \right)^{2}} \right\rbrack\left\lbrack n\sum_{i = 1}^{n}{y_{i}^{2} - \left( \sum_{i = 1}^{n}y_{i} \right)^{2}} \right\rbrack}}\]</span></p>
+<p><strong>Example 7.3</strong>: Consider the Example 7.2 of ice cream sales; find
+correlation coefficient (<em>r</em>)</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="17%" />
+<col width="9%" />
+<col width="10%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="13%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Sl. No.</th>
+<th>Temperature</th>
+<th>Sales</th>
+<th><span class="math inline">\(x_{i}-\overline{x}\)</span>(1)</th>
+<th><span class="math inline">\(y_{i}-\overline{y}\)</span>(2)</th>
+<th>(1).(2)</th>
+<th><span class="math inline">\((x_{i}-\overline{x})^{2}\)</span></th>
+<th><span class="math inline">\((y_{i}-\overline{y})^{2}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>(x)</td>
+<td>(y)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>14.2</td>
+<td>215</td>
+<td>-4.475</td>
+<td>-187.42</td>
+<td>838.69</td>
+<td>20.0256</td>
+<td>35125.01</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>16.4</td>
+<td>325</td>
+<td>-2.275</td>
+<td>-77.417</td>
+<td>176.123</td>
+<td>5.17563</td>
+<td>5993.34</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>11.9</td>
+<td>185</td>
+<td>-6.775</td>
+<td>-217.42</td>
+<td>1473</td>
+<td>45.9006</td>
+<td>47270.01</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>15.2</td>
+<td>332</td>
+<td>-3.475</td>
+<td>-70.417</td>
+<td>244.698</td>
+<td>12.0756</td>
+<td>4958.507</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>18.5</td>
+<td>406</td>
+<td>-0.175</td>
+<td>3.58333</td>
+<td>-0.6271</td>
+<td>0.03063</td>
+<td>12.84028</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>22.1</td>
+<td>522</td>
+<td>3.425</td>
+<td>119.583</td>
+<td>409.573</td>
+<td>11.7306</td>
+<td>14300.17</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>19.4</td>
+<td>412</td>
+<td>0.725</td>
+<td>9.58333</td>
+<td>6.94792</td>
+<td>0.52562</td>
+<td>91.84028</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>25.1</td>
+<td>614</td>
+<td>6.425</td>
+<td>211.583</td>
+<td>1359.42</td>
+<td>41.2806</td>
+<td>44767.51</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>23.4</td>
+<td>544</td>
+<td>4.725</td>
+<td>141.583</td>
+<td>668.981</td>
+<td>22.3256</td>
+<td>20045.84</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>18.1</td>
+<td>421</td>
+<td>-0.575</td>
+<td>18.5833</td>
+<td>-10.685</td>
+<td>0.33062</td>
+<td>345.3403</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>22.6</td>
+<td>445</td>
+<td>3.925</td>
+<td>42.5833</td>
+<td>167.14</td>
+<td>15.4056</td>
+<td>1813.34</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>17.2</td>
+<td>408</td>
+<td>-1.475</td>
+<td>5.58333</td>
+<td>-8.2354</td>
+<td>2.17563</td>
+<td>31.17361</td>
+</tr>
+<tr class="even">
+<td><strong>SUM</strong></td>
+<td><strong>224.1</strong></td>
+<td><strong>4829</strong></td>
+<td>0</td>
+<td>0</td>
+<td><strong>5325.03</strong></td>
+<td><strong>176.983</strong></td>
+<td><strong>174754.9</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>n</em> =12</p>
+<p><span class="math display">\[mean,\overline{x} = \ \frac{224.1}{12} = 18.675\]</span></p>
+<p><span class="math display">\[mean,\overline{y} = \ \frac{4829}{12} = 402.416\]</span></p>
+<p><em>Cov</em> (<em>x</em>,<em>y</em>) =
+<span class="math inline">\(\frac{1}{n}\sum_{i = 1}^{n}{\left( x_{i} - \overline{x} \right)\left( y_{i} - \overline{y} \right)}\)</span></p>
+<p><span class="math inline">\(\sum_{i = 1}^{12}{\left( x_{i} - \overline{x} \right)\left( y_{i} - \overline{y} \right)} = 5325.03\)</span></p>
+<p><em>Cov</em> (<em>x</em>,<em>y</em>) = <span class="math inline">\(\frac{5325.03}{12} = 443.752\)</span></p>
+<p><span class="math display">\[Standard\ deviation,\ S.D\left( x \right) = \ \sqrt{\frac{1}{n}\sum_{i = 1}^{n}\left( x_{i} - \overline{x} \right)^{2}} = \sqrt{\frac{176.983}{12}} = 3.840\]</span></p>
+<p><span class="math display">\[Standard\ deviation,\ S.D\left( y \right) = \ \sqrt{\frac{1}{n}\sum_{i = 1}^{n}\left( y_{i} - \overline{y} \right)^{2}} = \sqrt{\frac{174754.9}{12}} = 120.676\]</span></p>
+<p><span class="math inline">\(r = \frac{443.752}{3.840\  \times 120.676} = 0.95751\)</span>, which indicates
+a strong positive correlation</p>
+</div>
+</div>
+<div id="spearmans-rank-order-correlation-coefficient-ρ" class="section level3" number="7.5.3">
+<h3><span class="header-section-number">7.5.3</span> Spearman’s Rank order correlation coefficient (<em>ρ</em>)</h3>
+<p>The Spearman correlation evaluates the monotonic relationship between
+two continuous or ordinal variables.</p>
+<p>Note: What is a monotonic relation?</p>
+<p>In a monotonic relationship, the variables tend to move in the same
+relative direction, but not necessarily at a constant rate. In a linear
+relationship, the variables move in the same direction at a constant
+rate.</p>
+<p>Linear relationship is monotonic but all monotonic relations are not
+linear. You can see the plots below for better understanding.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:c6"></span>
+<img src="images/image6c.jpeg" alt="Linear and Monotonic relationship" width="49%" /><img src="images/image7c.jpeg" alt="Linear and Monotonic relationship" width="49%" /><img src="images/image8c.jpeg" alt="Linear and Monotonic relationship" width="49%" /><img src="images/image9c.jpeg" alt="Linear and Monotonic relationship" width="49%" /><img src="images/image10c.jpeg" alt="Linear and Monotonic relationship" width="49%" />
+<p class="caption">
+Figure 7.5: Linear and Monotonic relationship
+</p>
+</div>
+<p>The Spearman correlation coefficient is based on the ranked values for
+each variable rather than the raw data. The spearman correlation
+measures the monotonic relationship between variables, where pearsons
+correlation coefficient measures linear relationship only. To use
+Spearman’s correlation coefficient your data must be in ordinal,
+interval or ratio scale.</p>
+<p>There are two cases in calculating <em>ρ</em>. One is in case of no tied rank
+other is when there is tied rank</p>
+<div id="no-tied-rank-case" class="section level4" number="7.5.3.1">
+<h4><span class="header-section-number">7.5.3.1</span> No tied rank case</h4>
+<p>When two or more distinct observations have the same
+value, thus being given the same rank, they are said to be tied</p>
+<p>The formula for the Spearman rank correlation coefficient when there are
+no tied ranks is:</p>
+<p><span class="math display">\[\rho = 1 - \frac{6\sum_{i = 1}^{n}d_{i}^{2}}{n\left( n^{2} - 1 \right)}\]</span></p>
+<p>Where <span class="math inline">\(d_{i}\)</span> is the difference between ranks of <em>i<sup>t</sup></em><sup>h</sup> pair of
+observation</p>
+<p><strong>Example 7.4</strong>: Calculation of Spearman’s rank correlation when there is
+no tied rank is explained step by step by using the example below</p>
+<p>The scores for nine students in physics and math are as follows:</p>
+<p>Physics: 35, 23, 47, 17, 10, 43, 9, 6, 28</p>
+<p>Mathematics: 30, 33, 45, 23, 8, 49, 12, 4, 31</p>
+<p>Compute the student’s ranks in the two subjects and compute the Spearman
+rank correlation.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Physics</th>
+<th align="left">Mathematics</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">35</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td align="left">23</td>
+<td align="left">33</td>
+</tr>
+<tr class="odd">
+<td align="left">47</td>
+<td align="left">45</td>
+</tr>
+<tr class="even">
+<td align="left">17</td>
+<td align="left">23</td>
+</tr>
+<tr class="odd">
+<td align="left">10</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">43</td>
+<td align="left">49</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">12</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">4</td>
+</tr>
+<tr class="odd">
+<td align="left">28</td>
+<td align="left">31</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1</strong>: Find the ranks for each individual subject. Rank the scores
+from greatest to smallest; assign the rank 1 to the highest score, 2 to
+the next highest and so on:</p>
+<table style="width:61%;">
+<colgroup>
+<col width="22%" />
+<col width="9%" />
+<col width="19%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Physics (<em>x</em>)</th>
+<th>Rank</th>
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>3</td>
+<td>30</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5</td>
+<td>33</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>1</td>
+<td>45</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>6</td>
+<td>23</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>2</td>
+<td>49</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+<td>12</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9</td>
+<td>4</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+<td>31</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2</strong>: Add a column <em>d</em>, to your data. The <em>d</em> is the difference
+between ranks. For example, the first student’s physics rank is 3 and
+math rank is 5, so the difference is -2. In the next column, square your
+<em>d</em> values.</p>
+<table style="width:85%;">
+<colgroup>
+<col width="22%" />
+<col width="12%" />
+<col width="19%" />
+<col width="9%" />
+<col width="8%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Physics (<em>x</em>)</th>
+<th>Rank</th>
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+<th>Rank</th>
+<th><em>d</em></th>
+<th><em>d</em><sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>3</td>
+<td>30</td>
+<td>5</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5</td>
+<td>33</td>
+<td>3</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>1</td>
+<td>45</td>
+<td>2</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>6</td>
+<td>23</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>7</td>
+<td>8</td>
+<td>8</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>2</td>
+<td>49</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+<td>12</td>
+<td>7</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9</td>
+<td>4</td>
+<td>9</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+<td>31</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>SUM</strong></td>
+<td><strong>12</strong></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 4</strong>: Sum (add up) all of your <em>d</em><sup>2</sup> values. 4 + 4 + 1 + 0 + 1 +
+1 + 1 + 0 + 0 = 12. You’ll need this for the formula (the
+<span class="math inline">\(\sum_{i = 1}^{n}d_{i}^{2}\)</span> is just “the sum of <em>d</em><sup>2</sup>values, here <em>n</em>=
+9”).</p>
+<p><strong>Step 5</strong>: Insert the values into the formula.</p>
+<p><span class="math display">\[\rho = 1 - \frac{6\sum_{i = 1}^{n}d_{i}^{2}}{n\left( n^{2} - 1 \right)}\]</span></p>
+<p><span class="math display">\[\rho = 1 - \frac{6 \times 12}{9\left( 81 - 1 \right)} = 0.90\]</span></p>
+<p>The Spearman’s Rank Correlation for this set of data is 0.9.</p>
+<p>Spearman’s Rank Correlation also lies between −1 and +1 always. −1 ≤ <em>ρ</em>
+≤+1</p>
+</div>
+<div id="tied-rank-case" class="section level4" number="7.5.3.2">
+<h4><span class="header-section-number">7.5.3.2</span> Tied rank case</h4>
+<p>Calculation of Spearman’s rank correlation when there is
+tied rank is explained step by step by using the example below</p>
+<p><strong>Example 7.5</strong>: The scores for nine students in physics and mathematics are as follows:</p>
+<table style="width:33%;">
+<colgroup>
+<col width="13%" />
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Physics</p>
+(<em>x</em>)</th>
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>45</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>23</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>49</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 1</strong>: Consider the marks in Physics, ranked as usual</p>
+<table style="width:24%;">
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Physics</p>
+(<em>x</em>)</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>You can see the value 23 is repeated, so may have equal ranks, so the
+average of two ranks 5 and 6 is given to both;
+<span class="math inline">\(\left( \frac{5 + 6}{2} \right)\ \)</span>= 5.5</p>
+<table style="width:24%;">
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Physics</p>
+(<em>x</em>)</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5.5</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5.5</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>Similarly for marks in mathematics you can see 33 is repeated thrice.</p>
+<table style="width:19%;">
+<colgroup>
+<col width="19%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30</td>
+</tr>
+<tr class="even">
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>45</td>
+</tr>
+<tr class="even">
+<td>23</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+</tr>
+<tr class="even">
+<td>49</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+</tr>
+<tr class="even">
+<td>33</td>
+</tr>
+<tr class="odd">
+<td>33</td>
+</tr>
+</tbody>
+</table>
+<table style="width:29%;">
+<colgroup>
+<col width="19%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>45</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>49</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<p>You can see the value 33 is repeated thrice, so the average of three
+ranks 3, 4 and 5 is given <span class="math inline">\(\left( \frac{3 + 4 + 5}{3} \right)\ \)</span>= 4</p>
+<table style="width:29%;">
+<colgroup>
+<col width="19%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>30</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>45</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>49</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>33</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>33</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Step 2</strong>: Change in the formula</p>
+<p><span class="math display">\[\rho = 1 - \frac{6\left( \sum_{i = 1}^{n}d_{i}^{2} + T_{x} + T_{y} \right)}{n\left( n^{2} - 1 \right)}\]</span></p>
+<p>If there are <em>m</em> individuals tied (having same rank), and <em>s</em> such sets
+of ranks are there in X- series then,
+<span class="math inline">\(T_{x} = \ \frac{1}{12}\sum_{i = 1}^{s}{m_{i}\left( m_{i}^{2} - 1 \right)}\)</span></p>
+<p>In our example marks in Physics (<em>x</em>) there are two 23 values tied
+therefore <em>m</em> = 2; since only one such a set is there <em>s</em> =1</p>
+<p><span class="math inline">\(T_{x} = \ \frac{1}{12}\left( 2 \times (2^{2} - 1 \right)\)</span> = 0.5</p>
+<p>If there are <em>w</em> individuals tied (having same rank), and <em>s’</em> such sets
+of ranks are there in Y- series then,
+<span class="math inline">\(T_{y} = \ \frac{1}{12}\sum_{i = 1}^{s&#39;}{w_{i}\left( w_{i}^{2} - 1 \right)}\)</span></p>
+<p>In our example marks in Mathematics (<em>y</em>) there are three 33 values tied
+therefore <em>w</em> = 3; since only one such a set is there <em>s</em> =1</p>
+<p><span class="math inline">\(T_{y} = \ \frac{1}{12}\left( 3 \times (3^{2} - 1 \right)\)</span> = 2</p>
+<p><strong>Step 2</strong>: Calculate <em>d</em> and then use the formula</p>
+<table style="width:75%;">
+<colgroup>
+<col width="13%" />
+<col width="9%" />
+<col width="19%" />
+<col width="9%" />
+<col width="9%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Physics</p>
+(<em>x</em>)</th>
+<th>Rank</th>
+<th><p>Mathematics</p>
+(<em>y</em>)</th>
+<th>Rank</th>
+<th><em>d</em></th>
+<th><em>d</em><sup>2</sup></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>35</td>
+<td>3</td>
+<td>30</td>
+<td>6</td>
+<td>-3</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5.5</td>
+<td>33</td>
+<td>4</td>
+<td>1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="odd">
+<td>47</td>
+<td>1</td>
+<td>45</td>
+<td>2</td>
+<td>-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>23</td>
+<td>5.5</td>
+<td>23</td>
+<td>7</td>
+<td>-1.5</td>
+<td>2.25</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>-2</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>43</td>
+<td>2</td>
+<td>49</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>8</td>
+<td>12</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>9</td>
+<td>33</td>
+<td>4</td>
+<td>5</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<td>28</td>
+<td>4</td>
+<td>33</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>SUM</td>
+<td>0</td>
+<td>44.5</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><span class="math inline">\(\rho = 1 - \frac{6\left( \sum_{i = 1}^{n}d_{i}^{2} + T_{x} + T_{y} \right)}{n\left( n^{2} - 1 \right)} = 1 - \frac{6 \times \left( 44.5 + 0.5 + 2 \right)}{9\left( 9^{2} - 1 \right)} = \ 1 - \frac{282}{720}\)</span>
+= 0.60834</p>
+</div>
+</div>
+<div id="kendalls-rank-correlation-coefficient-τ" class="section level3" number="7.5.4">
+<h3><span class="header-section-number">7.5.4</span> Kendall’s Rank Correlation Coefficient (<em>τ</em>)</h3>
+<p>Kendall’s rank correlation coefficient also known as Kendall’s Tau or
+coefficient of concordance. It lies between 0 and 1, 0 ≤ <em>τ ≤</em> 1. when
+several sets of ranks are there, it can be used to test the association.</p>
+<p>When we have <em>k</em> sets of rankings we may determine the association among
+them by using the Kendall’s coefficient of Concordance (<em>τ</em>). Such a
+measure is useful to study the reliability in the scorings made by a
+number of Judges.</p>
+<p>Arrange the data into a table with each row representing the ranks
+assigned by (each judge), to say, <em>n</em> number of objects. Let there be
+<em>k</em> number of sets of rankings for each object given by <em>k</em> judges. Then
+the Kendall’s coefficient of concordance <em>τ</em> is computed as</p>
+<p><span class="math display">\[\tau = \frac{12\left\lbrack \sum_{i = 1}^{n}{R_{i}^{2} - \frac{\left( \sum_{i = 1}^{n}R_{i} \right)^{2}}{n}} \right\rbrack}{k^{2}n\left( n^{2} - 1 \right)}\]</span></p>
+<p><strong>Example 7.6</strong>: In a crop production competition, 10 entries of farmers
+were ranked by agricultural scientists (judges). Find the degree of
+agreement among the scientist for the competition result given below.</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">Ranks given by the judges to farmers</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Farmers</td>
+<td align="left">Scientist 1</td>
+<td>Scientist 2</td>
+<td>Scientist 3</td>
+<td>Scientist 4</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td align="left">4</td>
+<td>5</td>
+<td>3</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td align="left">10</td>
+<td>9</td>
+<td>8</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td align="left">8</td>
+<td>6</td>
+<td>10</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td align="left">3</td>
+<td>4</td>
+<td>2</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td align="left">1</td>
+<td>3</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td align="left">2</td>
+<td>1</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td align="left">5</td>
+<td>7</td>
+<td>6</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td align="left">6</td>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td align="left">7</td>
+<td>8</td>
+<td>9</td>
+<td>10</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td align="left">9</td>
+<td>10</td>
+<td>7</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<p>Solution:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Farmers</th>
+<th align="left">S1</th>
+<th align="left">S2</th>
+<th align="left">S3</th>
+<th align="left">S4</th>
+<th align="left"><span class="math inline">\(R_{i}\)</span> (sum of ranks)</th>
+<th align="left"><span class="math display">\[R_{i}^{2}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">5</td>
+<td align="left">3</td>
+<td align="left">7</td>
+<td align="left">19</td>
+<td align="left">361</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">10</td>
+<td align="left">9</td>
+<td align="left">8</td>
+<td align="left">6</td>
+<td align="left">33</td>
+<td align="left">1089</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">8</td>
+<td align="left">6</td>
+<td align="left">10</td>
+<td align="left">9</td>
+<td align="left">33</td>
+<td align="left">1089</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">10</td>
+<td align="left">100</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">1</td>
+<td align="left">3</td>
+<td align="left">4</td>
+<td align="left">2</td>
+<td align="left">10</td>
+<td align="left">100</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">2</td>
+<td align="left">1</td>
+<td align="left">1</td>
+<td align="left">4</td>
+<td align="left">8</td>
+<td align="left">64</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="left">5</td>
+<td align="left">7</td>
+<td align="left">6</td>
+<td align="left">5</td>
+<td align="left">23</td>
+<td align="left">529</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="left">6</td>
+<td align="left">2</td>
+<td align="left">5</td>
+<td align="left">3</td>
+<td align="left">16</td>
+<td align="left">256</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="left">7</td>
+<td align="left">8</td>
+<td align="left">9</td>
+<td align="left">10</td>
+<td align="left">34</td>
+<td align="left">1156</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="left">9</td>
+<td align="left">10</td>
+<td align="left">7</td>
+<td align="left">8</td>
+<td align="left">34</td>
+<td align="left">1156</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>SUM</strong></td>
+<td align="left">220</td>
+<td align="left">5900</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Here <em>k</em> = number of judges = 4</p>
+<p><em>n</em> = number of farmers =10</p>
+<p><span class="math inline">\(\left( \sum_{i = 1}^{10}R_{i} \right)^{2}\ \)</span>= (220)<sup>2</sup> = 48400</p>
+<p><span class="math inline">\(\sum_{i = 1}^{10}R_{i}^{2}\)</span> = 5900</p>
+<p><span class="math display">\[\tau = \frac{12\left\lbrack \sum_{i = 1}^{n}{R_{i}^{2} - \frac{\left( \sum_{i = 1}^{n}R_{i} \right)^{2}}{n}} \right\rbrack}{k^{2}n\left( n^{2} - 1 \right)}\]</span></p>
+<p>=<br />
+<span class="math inline">\(\tau = \frac{12\left\lbrack 5900 - \frac{48400}{10} \right\rbrack}{16 \times 10\left( 100 - 1 \right)}\)</span>
+= 0.803</p>
+<p>Since <span class="math inline">\(\tau\)</span> is nearly equal to 1, the ranks given by judges were almost
+same</p>
+<p>*************************************************</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="skewness-and-kurtosis.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="regression-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

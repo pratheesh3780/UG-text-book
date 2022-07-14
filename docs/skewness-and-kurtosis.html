@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 6 Skewness and Kurtosis | LECTURE NOTES OF STAT 3202</title>
+  <meta name="description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 6 Skewness and Kurtosis | LECTURE NOTES OF STAT 3202" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="/images/cover.PNG" />
+  <meta property="og:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="github-repo" content="https://github.com/KAUMELON/stat3202" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 6 Skewness and Kurtosis | LECTURE NOTES OF STAT 3202" />
+  
+  <meta name="twitter:description" content="A BOOK FOR UNDERGRADUATE PROGRAMME IN AGRICULTURE" />
+  <meta name="twitter:image" content="/images/cover.PNG" />
+
+<meta name="author" content="Dr. Pratheesh P. Gopinath" />
+
+
+<meta name="date" content="2022-01-30" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="measures-of-dispersion.html"/>
+<link rel="next" href="measures-of-association.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">LECTURE NOTES</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#origin-of-the-word-statistics"><i class="fa fa-check"></i><b>1.1</b> Origin of the word “Statistics”</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#statistics-and-mathematics"><i class="fa fa-check"></i><b>1.2</b> Statistics and Mathematics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#definition-of-statistics"><i class="fa fa-check"></i><b>1.3</b> Definition of Statistics</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#data"><i class="fa fa-check"></i><b>1.4</b> Data</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction.html"><a href="introduction.html#use-and-limitations-of-statistics"><i class="fa fa-check"></i><b>1.5</b> Use and limitations of statistics</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction.html"><a href="introduction.html#population-and-sample"><i class="fa fa-check"></i><b>1.6</b> Population and Sample</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="introduction.html"><a href="introduction.html#population"><i class="fa fa-check"></i><b>1.6.1</b> Population</a></li>
+<li class="chapter" data-level="1.6.2" data-path="introduction.html"><a href="introduction.html#sample"><i class="fa fa-check"></i><b>1.6.2</b> Sample</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="introduction.html"><a href="introduction.html#variables-and-constants"><i class="fa fa-check"></i><b>1.7</b> Variables and constants</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="introduction.html"><a href="introduction.html#variables"><i class="fa fa-check"></i><b>1.7.1</b> Variables</a></li>
+<li class="chapter" data-level="1.7.2" data-path="introduction.html"><a href="introduction.html#constants"><i class="fa fa-check"></i><b>1.7.2</b> Constants</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="introduction.html"><a href="introduction.html#types-of-variables"><i class="fa fa-check"></i><b>1.8</b> Types of variables</a>
+<ul>
+<li class="chapter" data-level="1.8.1" data-path="introduction.html"><a href="introduction.html#quantitative-variables"><i class="fa fa-check"></i><b>1.8.1</b> Quantitative variables</a></li>
+<li class="chapter" data-level="1.8.2" data-path="introduction.html"><a href="introduction.html#discrete-variables"><i class="fa fa-check"></i><b>1.8.2</b> Discrete variables</a></li>
+<li class="chapter" data-level="1.8.3" data-path="introduction.html"><a href="introduction.html#continuous-variables"><i class="fa fa-check"></i><b>1.8.3</b> Continuous variables</a></li>
+<li class="chapter" data-level="1.8.4" data-path="introduction.html"><a href="introduction.html#categorical-variables"><i class="fa fa-check"></i><b>1.8.4</b> Categorical variables</a></li>
+</ul></li>
+<li class="chapter" data-level="1.9" data-path="introduction.html"><a href="introduction.html#measurement-scales"><i class="fa fa-check"></i><b>1.9</b> Measurement scales</a>
+<ul>
+<li class="chapter" data-level="1.9.1" data-path="introduction.html"><a href="introduction.html#nominal-scale"><i class="fa fa-check"></i><b>1.9.1</b> Nominal scale</a></li>
+<li class="chapter" data-level="1.9.2" data-path="introduction.html"><a href="introduction.html#ordinal-scale"><i class="fa fa-check"></i><b>1.9.2</b> Ordinal scale</a></li>
+<li class="chapter" data-level="1.9.3" data-path="introduction.html"><a href="introduction.html#interval-scale"><i class="fa fa-check"></i><b>1.9.3</b> Interval scale</a></li>
+<li class="chapter" data-level="1.9.4" data-path="introduction.html"><a href="introduction.html#ratio-scale"><i class="fa fa-check"></i><b>1.9.4</b> Ratio scale</a></li>
+</ul></li>
+<li class="chapter" data-level="1.10" data-path="introduction.html"><a href="introduction.html#collection-of-data"><i class="fa fa-check"></i><b>1.10</b> Collection of Data</a>
+<ul>
+<li class="chapter" data-level="1.10.1" data-path="introduction.html"><a href="introduction.html#types-of-data"><i class="fa fa-check"></i><b>1.10.1</b> Types of Data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.11" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-primary-data"><i class="fa fa-check"></i><b>1.11</b> Methods of Collecting Primary Data</a>
+<ul>
+<li class="chapter" data-level="1.11.1" data-path="introduction.html"><a href="introduction.html#personal-investigation"><i class="fa fa-check"></i><b>1.11.1</b> Personal Investigation</a></li>
+<li class="chapter" data-level="1.11.2" data-path="introduction.html"><a href="introduction.html#through-investigation"><i class="fa fa-check"></i><b>1.11.2</b> Through Investigation</a></li>
+<li class="chapter" data-level="1.11.3" data-path="introduction.html"><a href="introduction.html#collection-through-questionnaire"><i class="fa fa-check"></i><b>1.11.3</b> Collection through Questionnaire</a></li>
+<li class="chapter" data-level="1.11.4" data-path="introduction.html"><a href="introduction.html#through-the-telephone"><i class="fa fa-check"></i><b>1.11.4</b> Through the Telephone</a></li>
+</ul></li>
+<li class="chapter" data-level="1.12" data-path="introduction.html"><a href="introduction.html#methods-of-collecting-secondary-data"><i class="fa fa-check"></i><b>1.12</b> Methods of Collecting Secondary Data</a>
+<ul>
+<li class="chapter" data-level="1.12.1" data-path="introduction.html"><a href="introduction.html#official"><i class="fa fa-check"></i><b>1.12.1</b> Official</a></li>
+<li class="chapter" data-level="1.12.2" data-path="introduction.html"><a href="introduction.html#semi-official"><i class="fa fa-check"></i><b>1.12.2</b> Semi-Official</a></li>
+</ul></li>
+<li class="chapter" data-level="1.13" data-path="introduction.html"><a href="introduction.html#difference-between-primary-and-secondary-data"><i class="fa fa-check"></i><b>1.13</b> Difference Between Primary and Secondary Data</a></li>
+<li class="chapter" data-level="1.14" data-path="introduction.html"><a href="introduction.html#frequency-distribution"><i class="fa fa-check"></i><b>1.14</b> Frequency distribution</a>
+<ul>
+<li class="chapter" data-level="1.14.1" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution"><i class="fa fa-check"></i><b>1.14.1</b> Construction of frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="1.15" data-path="introduction.html"><a href="introduction.html#grouped-frequency-distribution"><i class="fa fa-check"></i><b>1.15</b> Grouped frequency distribution</a></li>
+<li class="chapter" data-level="1.16" data-path="introduction.html"><a href="introduction.html#terms-used-in-grouped-frequency-tables."><i class="fa fa-check"></i><b>1.16</b> Terms used in grouped frequency tables.</a></li>
+<li class="chapter" data-level="1.17" data-path="introduction.html"><a href="introduction.html#construction-of-frequency-distribution-table"><i class="fa fa-check"></i><b>1.17</b> Construction of frequency distribution table</a></li>
+<li class="chapter" data-level="1.18" data-path="introduction.html"><a href="introduction.html#cumulative-frequency"><i class="fa fa-check"></i><b>1.18</b> Cumulative frequency</a></li>
+<li class="chapter" data-level="1.19" data-path="introduction.html"><a href="introduction.html#relative-frequency"><i class="fa fa-check"></i><b>1.19</b> Relative frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html"><i class="fa fa-check"></i><b>2</b> Graphical representation of data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram"><i class="fa fa-check"></i><b>2.1</b> Histogram</a></li>
+<li class="chapter" data-level="2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#cumulative-frequency-curve-ogive"><i class="fa fa-check"></i><b>2.2</b> Cumulative frequency curve (Ogive)</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#less-than-ogive"><i class="fa fa-check"></i><b>2.2.1</b> Less than Ogive</a></li>
+<li class="chapter" data-level="2.2.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#greater-than-ogive"><i class="fa fa-check"></i><b>2.2.2</b> Greater than Ogive</a></li>
+<li class="chapter" data-level="2.2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#frequency-polygon"><i class="fa fa-check"></i><b>2.2.3</b> Frequency polygon</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#stem-and-leaf-plot"><i class="fa fa-check"></i><b>2.3</b> Stem-and-leaf plot</a></li>
+<li class="chapter" data-level="2.4" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#bar-chart"><i class="fa fa-check"></i><b>2.4</b> Bar chart</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#simple-bar-chart"><i class="fa fa-check"></i><b>2.4.1</b> Simple bar chart</a></li>
+<li class="chapter" data-level="2.4.2" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#component-bar-chart"><i class="fa fa-check"></i><b>2.4.2</b> Component bar chart</a></li>
+<li class="chapter" data-level="2.4.3" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#grouped-bar-chart"><i class="fa fa-check"></i><b>2.4.3</b> Grouped bar chart</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#histogram-and-bar-chart"><i class="fa fa-check"></i><b>2.5</b> Histogram and Bar chart</a></li>
+<li class="chapter" data-level="2.6" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#pie-charts"><i class="fa fa-check"></i><b>2.6</b> Pie Charts</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="graphical-representation-of-data.html"><a href="graphical-representation-of-data.html#steps-for-constructing-a-pie-chart"><i class="fa fa-check"></i><b>2.6.1</b> Steps for constructing a pie chart</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html"><i class="fa fa-check"></i><b>3</b> Measures of central tendency - I</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#arithmetic-mean"><i class="fa fa-check"></i><b>3.1</b> Arithmetic Mean</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mean-of-a-frequency-distribution"><i class="fa fa-check"></i><b>3.1.1</b> The mean of a frequency distribution</a></li>
+<li class="chapter" data-level="3.1.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mean-of-grouped-data"><i class="fa fa-check"></i><b>3.1.2</b> Mean of Grouped Data</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-arithmetic-mean-merits"><i class="fa fa-check"></i><b>3.2</b> Merits and demerits of Arithmetic mean Merits</a></li>
+<li class="chapter" data-level="3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-median"><i class="fa fa-check"></i><b>3.3</b> The median</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.3.1</b> Median of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.3.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-ungrouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.2</b> Median of ungrouped frequency distribution</a></li>
+<li class="chapter" data-level="3.3.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#median-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.3.3</b> Median of grouped frequency distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-median"><i class="fa fa-check"></i><b>3.4</b> Merits and Demerits of Median</a></li>
+<li class="chapter" data-level="3.5" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#the-mode"><i class="fa fa-check"></i><b>3.5</b> The mode</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-ungrouped-or-raw-data"><i class="fa fa-check"></i><b>3.5.1</b> Mode of ungrouped or raw data</a></li>
+<li class="chapter" data-level="3.5.2" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-of-grouped-frequency-distribution"><i class="fa fa-check"></i><b>3.5.2</b> Mode of Grouped frequency distribution</a></li>
+<li class="chapter" data-level="3.5.3" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#mode-using-histogram"><i class="fa fa-check"></i><b>3.5.3</b> <strong>Mode using Histogram</strong></a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="measures-of-central-tendency---i.html"><a href="measures-of-central-tendency---i.html#merits-and-demerits-of-mode"><i class="fa fa-check"></i><b>3.6</b> Merits and Demerits of Mode</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html"><i class="fa fa-check"></i><b>4</b> Measures of central tendency -II</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean"><i class="fa fa-check"></i><b>4.1</b> Geometric mean</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#geometric-mean-for-grouped-frequency-table-data"><i class="fa fa-check"></i><b>4.1.1</b> Geometric mean for grouped frequency table data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-geometric-mean"><i class="fa fa-check"></i><b>4.2</b> Merits and Demerits of Geometric mean</a></li>
+<li class="chapter" data-level="4.3" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#harmonic-mean"><i class="fa fa-check"></i><b>4.3</b> Harmonic mean</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#steps-in-calculating-harmonic-mean-h.m"><i class="fa fa-check"></i><b>4.3.1</b> Steps in calculating Harmonic Mean (H.M)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#merits-and-demerits-of-harmonic-mean"><i class="fa fa-check"></i><b>4.4</b> Merits and Demerits of Harmonic mean</a></li>
+<li class="chapter" data-level="4.5" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#relation-between-am-gm-and-hm"><i class="fa fa-check"></i><b>4.5</b> Relation between AM, GM and HM</a></li>
+<li class="chapter" data-level="4.6" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#when-to-use-am-gm-and-hm"><i class="fa fa-check"></i><b>4.6</b> When to use AM, GM and HM?</a></li>
+<li class="chapter" data-level="4.7" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#positional-averages"><i class="fa fa-check"></i><b>4.7</b> Positional Averages</a></li>
+<li class="chapter" data-level="4.8" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartile"><i class="fa fa-check"></i><b>4.8</b> Quartiles</a>
+<ul>
+<li class="chapter" data-level="4.8.1" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-discrete-frequency-data"><i class="fa fa-check"></i><b>4.8.1</b> Quartiles of a discrete frequency data</a></li>
+<li class="chapter" data-level="4.8.2" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#quartiles-of-a-continuous-frequency-data"><i class="fa fa-check"></i><b>4.8.2</b> Quartiles of a continuous frequency data</a></li>
+</ul></li>
+<li class="chapter" data-level="4.9" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#percentiles"><i class="fa fa-check"></i><b>4.9</b> Percentiles</a></li>
+<li class="chapter" data-level="4.10" data-path="measures-of-central-tendency--ii.html"><a href="measures-of-central-tendency--ii.html#deciles"><i class="fa fa-check"></i><b>4.10</b> Deciles</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html"><i class="fa fa-check"></i><b>5</b> Measures of Dispersion</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#characteristics-of-a-good-measure-of-dispersion"><i class="fa fa-check"></i><b>5.1</b> Characteristics of a good measure of dispersion</a></li>
+<li class="chapter" data-level="5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-range"><i class="fa fa-check"></i><b>5.2</b> The Range</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-1"><i class="fa fa-check"></i><b>5.2.1</b> Method 1</a></li>
+<li class="chapter" data-level="5.2.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#method-2"><i class="fa fa-check"></i><b>5.2.2</b> Method 2</a></li>
+<li class="chapter" data-level="5.2.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-range"><i class="fa fa-check"></i><b>5.2.3</b> Merits and Demerits of Range</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-inter-quartile-range-iqr-or-midspread"><i class="fa fa-check"></i><b>5.3</b> The Inter-Quartile Range (IQR) or Midspread</a></li>
+<li class="chapter" data-level="5.4" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#mean-absolute-deviation-mad"><i class="fa fa-check"></i><b>5.4</b> Mean Absolute Deviation (MAD)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-mad"><i class="fa fa-check"></i><b>5.4.1</b> Merits and Demerits of MAD</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#the-variance-and-standard-deviation"><i class="fa fa-check"></i><b>5.5</b> The variance and standard deviation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#variance-and-standard-deviation-for-grouped-data"><i class="fa fa-check"></i><b>5.5.1</b> Variance and standard deviation for grouped data</a></li>
+<li class="chapter" data-level="5.5.2" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#merits-and-demerits-of-standard-deviation"><i class="fa fa-check"></i><b>5.5.2</b> Merits and Demerits of Standard Deviation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="measures-of-dispersion.html"><a href="measures-of-dispersion.html#coefficient-of-variation-relative-measure-of-dispersion"><i class="fa fa-check"></i><b>5.6</b> Coefficient of Variation (relative measure of dispersion)</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html"><i class="fa fa-check"></i><b>6</b> Skewness and Kurtosis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#skewness"><i class="fa fa-check"></i><b>6.1</b> Skewness</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#left-skewed-or-negatively-skewed"><i class="fa fa-check"></i><b>6.1.1</b> Left-skewed or negatively skewed</a></li>
+<li class="chapter" data-level="6.1.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#right-skewed-or-positively-skewed"><i class="fa fa-check"></i><b>6.1.2</b> Right-skewed or positively skewed</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measures-of-skewness"><i class="fa fa-check"></i><b>6.2</b> Measures of Skewness</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#karl-pearsons-coefficient-of-skewness-s_k"><i class="fa fa-check"></i><b>6.2.1</b> Karl Pearson’s coefficient of Skewness (<strong><span class="math inline">\(S_{k}\)</span></strong>)</a></li>
+<li class="chapter" data-level="6.2.2" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#bowleys-measure-of-skewness-sq"><i class="fa fa-check"></i><b>6.2.2</b> Bowley's measure of Skewness (<em>S</em><sub>Q</sub>)</a></li>
+<li class="chapter" data-level="6.2.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kellys-measure-of-skewness-sp"><i class="fa fa-check"></i><b>6.2.3</b> Kelly's Measure of Skewness (<em>S</em><sub>p</sub>)</a></li>
+<li class="chapter" data-level="6.2.4" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#measure-based-on-moments"><i class="fa fa-check"></i><b>6.2.4</b> Measure based on moments</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="skewness-and-kurtosis.html"><a href="skewness-and-kurtosis.html#kurtosis"><i class="fa fa-check"></i><b>6.3</b> Kurtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="measures-of-association.html"><a href="measures-of-association.html"><i class="fa fa-check"></i><b>7</b> Measures of Association</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram"><i class="fa fa-check"></i><b>7.1</b> Scatter Diagram</a></li>
+<li class="chapter" data-level="7.2" data-path="measures-of-association.html"><a href="measures-of-association.html#correlation"><i class="fa fa-check"></i><b>7.2</b> Correlation</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="measures-of-association.html"><a href="measures-of-association.html#positive-correlation"><i class="fa fa-check"></i><b>7.2.1</b> Positive correlation</a></li>
+<li class="chapter" data-level="7.2.2" data-path="measures-of-association.html"><a href="measures-of-association.html#negative-correlation"><i class="fa fa-check"></i><b>7.2.2</b> Negative correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="measures-of-association.html"><a href="measures-of-association.html#other-types-of-correlation"><i class="fa fa-check"></i><b>7.3</b> Other types of correlation</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="measures-of-association.html"><a href="measures-of-association.html#simple-and-multiple"><i class="fa fa-check"></i><b>7.3.1</b> Simple and Multiple</a></li>
+<li class="chapter" data-level="7.3.2" data-path="measures-of-association.html"><a href="measures-of-association.html#partial-and-total"><i class="fa fa-check"></i><b>7.3.2</b> Partial and total</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="measures-of-association.html"><a href="measures-of-association.html#linear-relationship"><i class="fa fa-check"></i><b>7.4</b> Linear relationship</a></li>
+<li class="chapter" data-level="7.5" data-path="measures-of-association.html"><a href="measures-of-association.html#methods-of-measurement-of-correlation"><i class="fa fa-check"></i><b>7.5</b> Methods of measurement of correlation</a>
+<ul>
+<li class="chapter" data-level="7.5.1" data-path="measures-of-association.html"><a href="measures-of-association.html#scatter-diagram-or-graphic-method"><i class="fa fa-check"></i><b>7.5.1</b> Scatter diagram or Graphic method</a></li>
+<li class="chapter" data-level="7.5.2" data-path="measures-of-association.html"><a href="measures-of-association.html#karl-pearsons-coefficient-of-correlation-r"><i class="fa fa-check"></i><b>7.5.2</b> Karl Pearson’s coefficient of Correlation (<em>r</em>)</a></li>
+<li class="chapter" data-level="7.5.3" data-path="measures-of-association.html"><a href="measures-of-association.html#spearmans-rank-order-correlation-coefficient-ρ"><i class="fa fa-check"></i><b>7.5.3</b> Spearman’s Rank order correlation coefficient (<em>ρ</em>)</a></li>
+<li class="chapter" data-level="7.5.4" data-path="measures-of-association.html"><a href="measures-of-association.html#kendalls-rank-correlation-coefficient-τ"><i class="fa fa-check"></i><b>7.5.4</b> Kendall’s Rank Correlation Coefficient (<em>τ</em>)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="regression-analysis.html"><a href="regression-analysis.html"><i class="fa fa-check"></i><b>8</b> Regression Analysis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="regression-analysis.html"><a href="regression-analysis.html#definition"><i class="fa fa-check"></i><b>8.1</b> Definition</a></li>
+<li class="chapter" data-level="8.2" data-path="regression-analysis.html"><a href="regression-analysis.html#simple-regression"><i class="fa fa-check"></i><b>8.2</b> Simple regression</a></li>
+<li class="chapter" data-level="8.3" data-path="regression-analysis.html"><a href="regression-analysis.html#two-types-of-variables"><i class="fa fa-check"></i><b>8.3</b> Two types of variables</a></li>
+<li class="chapter" data-level="8.4" data-path="regression-analysis.html"><a href="regression-analysis.html#detailed-explanation"><i class="fa fa-check"></i><b>8.4</b> Detailed explanation</a></li>
+<li class="chapter" data-level="8.5" data-path="regression-analysis.html"><a href="regression-analysis.html#error-and-residual"><i class="fa fa-check"></i><b>8.5</b> Error and residual</a></li>
+<li class="chapter" data-level="8.6" data-path="regression-analysis.html"><a href="regression-analysis.html#straight-lines"><i class="fa fa-check"></i><b>8.6</b> Straight lines</a></li>
+<li class="chapter" data-level="8.7" data-path="regression-analysis.html"><a href="regression-analysis.html#method-of-least-squares"><i class="fa fa-check"></i><b>8.7</b> Method of least squares</a></li>
+<li class="chapter" data-level="8.8" data-path="regression-analysis.html"><a href="regression-analysis.html#principle-of-least-squares"><i class="fa fa-check"></i><b>8.8</b> Principle of least squares</a></li>
+<li class="chapter" data-level="8.9" data-path="regression-analysis.html"><a href="regression-analysis.html#two-lines-of-regression"><i class="fa fa-check"></i><b>8.9</b> Two lines of regression</a></li>
+<li class="chapter" data-level="8.10" data-path="regression-analysis.html"><a href="regression-analysis.html#assumptions-of-regression"><i class="fa fa-check"></i><b>8.10</b> Assumptions of Regression</a></li>
+<li class="chapter" data-level="8.11" data-path="regression-analysis.html"><a href="regression-analysis.html#properties-of-regression-coefficients"><i class="fa fa-check"></i><b>8.11</b> Properties of Regression coefficients</a></li>
+<li class="chapter" data-level="8.12" data-path="regression-analysis.html"><a href="regression-analysis.html#uses-of-regression"><i class="fa fa-check"></i><b>8.12</b> Uses of Regression</a></li>
+<li class="chapter" data-level="8.13" data-path="regression-analysis.html"><a href="regression-analysis.html#example-problem"><i class="fa fa-check"></i><b>8.13</b> Example problem</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>9</b> References</a></li>
+<li class="divider"></li>
+<li><a href="https://sites.google.com/view/kau-melon/home" target="blank">Published in MeLON</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">LECTURE NOTES OF STAT 3202</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="skewness-and-kurtosis" class="section level1" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Skewness and Kurtosis</h1>
+<p>In the previous lectures we have learned numerical measures of central
+tendency and dispersion, but what about measures of shape?</p>
+<p>The histogram can give you a general idea on the shape of the
+distribution of values in your data. But we need some numerical measures
+to identify the shape of the distribution. The numerical measures which
+deal with the shape of the distribution are Skewness and Kurtosis.</p>
+<div id="skewness" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Skewness</h2>
+<p>Skewness is a measure of symmetry, or more precisely, the lack of
+symmetry. Then you may ask, what will a symmetric distribution looks
+like. Histogram of a symmetric distribution is showed below:</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hs"></span>
+<img src="images/Hist1.png" alt="Histogram of a symmetric distribution" width="50%" />
+<p class="caption">
+Figure 6.1: Histogram of a symmetric distribution
+</p>
+</div>
+<p>A distribution, or data set, is symmetric if it looks the same to the
+left and right of the centre point. In our discussion we are including
+only unimodal cases.</p>
+<p>For a symmetric distribution skewness = 0; mean = median = mode</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:hs1"></span>
+<img src="images/image3_5.jpeg" alt="symmetric distribution" width="50%" />
+<p class="caption">
+Figure 6.2: symmetric distribution
+</p>
+</div>
+<p>Example of a data set with skewness = 0 (symmetric distribution)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sk0"></span>
+<img src="images/image4_5.jpeg" alt="Data set with skewness = 0" width="50%" />
+<p class="caption">
+Figure 6.3: Data set with skewness = 0
+</p>
+</div>
+<div id="left-skewed-or-negatively-skewed" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Left-skewed or negatively skewed</h3>
+<p>For negatively skewed data set or distribution, the left tail is longer;
+the mass of the distribution is concentrated on the right of the figure.
+The distribution is said to be left-skewed, left-tailed, or skewed to
+the left, considering that there is a long tail in the left side. See
+the figure below, you can also see Mean &lt; Median &lt; Mode.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sk1"></span>
+<img src="images/image5_5.jpeg" alt="Left skewed or negatively skewed distribution" width="50%" />
+<p class="caption">
+Figure 6.4: Left skewed or negatively skewed distribution
+</p>
+</div>
+<p>Example of a data set with negative skewness</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sk3"></span>
+<img src="images/image6_5.jpeg" alt="Negatively skewed data set" width="50%" />
+<p class="caption">
+Figure 6.5: Negatively skewed data set
+</p>
+</div>
+</div>
+<div id="right-skewed-or-positively-skewed" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Right-skewed or positively skewed</h3>
+<p>For positively skewed data set or distribution, the right tail is
+longer; the mass of the distribution is concentrated on the left of the
+figure. The distribution is said to be right-skewed, right-tailed, or
+skewed to the right, considering that there is a long tail in the right
+side. See the figure below, you can also see Mean &gt; Median &gt; Mode</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sk4"></span>
+<img src="images/image7_5.jpeg" alt="Right skewed or positively skewed distribution" width="50%" />
+<p class="caption">
+Figure 6.6: Right skewed or positively skewed distribution
+</p>
+</div>
+<p>Example of a data set with positive skewness</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:sk5"></span>
+<img src="images/image8_5.jpeg" alt="Data set with positive skewness (right skewed)" width="50%" />
+<p class="caption">
+Figure 6.7: Data set with positive skewness (right skewed)
+</p>
+</div>
+</div>
+</div>
+<div id="measures-of-skewness" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Measures of Skewness</h2>
+<p>The direction and extent of skewness can be measured in various ways. We
+shall discuss four measures.</p>
+<div id="karl-pearsons-coefficient-of-skewness-s_k" class="section level3" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Karl Pearson’s coefficient of Skewness (<strong><span class="math inline">\(S_{k}\)</span></strong>)</h3>
+<p>You have noticed that the mean, median and mode are not equal in a
+skewed distribution. The Karl Pearson's measure of skewness is based
+upon the divergence of mean from mode in a skewed distribution.</p>
+<p><span class="math display">\[S_{k} = \frac{mean - mode}{\text{standard deviation}}\]</span></p>
+<p>The sign of <span class="math inline">\(S_{k}\)</span> gives the direction of skewness and its magnitude
+gives the extent of skewness. If <span class="math inline">\(S_{k}\)</span> &gt; 0, the distribution is
+positively skewed, and if <span class="math inline">\(S_{k}\)</span> &lt; 0 it is negatively skewed.</p>
+<p>In the above formula since mode is used, there is a problem that if mode
+is not defined for a distribution we cannot find <span class="math inline">\(S_{k}\)</span>. But empirical
+relation between mean, median and mode states that, for a moderately
+symmetrical distribution<span class="math inline">\(\ mean - mode \approx 3(mean - median)\)</span>. So the
+above formula can be written as</p>
+<p><span class="math display">\[S_{k} = \frac{3(mean - median)}{\text{standard deviation}}\]</span></p>
+<p><strong>Example 6.1</strong>: Compute the Karl Pearson's coefficient of skewness from
+the following data:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<em>x</em>)</th>
+<th align="left">frequency (<em>f</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+</tr>
+</tbody>
+</table>
+<p>Solution:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<span class="math inline">\(x_{i}\)</span>)</th>
+<th align="left">frequency (<span class="math inline">\(f_{i}\)</span>)</th>
+<th align="left"><span class="math display">\[f_{i}x_{i}\]</span></th>
+<th align="left"><span class="math display">\[f_{i}x_{i}^{2}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+<td align="left">580</td>
+<td align="left">33640</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+<td align="left">1062</td>
+<td align="left">62658</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+<td align="left">1800</td>
+<td align="left">108000</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+<td align="left">2562</td>
+<td align="left">156282</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+<td align="left">2170</td>
+<td align="left">134540</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+<td align="left">1764</td>
+<td align="left">111132</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+<td align="left">1024</td>
+<td align="left">65536</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+<td align="left">520</td>
+<td align="left">33800</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Sum</strong></td>
+<td align="left"><strong>187</strong></td>
+<td align="left"><strong>11482</strong></td>
+<td align="left"><strong>705588</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mean,
+<span class="math inline">\(\overline{x} = \frac{\sum_{i = 1}^{n}{f_{i}x_{i}}}{\sum_{i = 1}^{n}f_{i}}\)</span>
+= <span class="math inline">\(\frac{11482}{187} = 61.40\)</span></p>
+<p><span class="math inline">\({sample\ variance,\ s}^{2} = \frac{1}{n - 1}\left\{ \sum_{i = 1}^{n}{{f_{i}x}_{i}^{2} - \frac{1}{n}}\left( \sum_{i = 1}^{n}{f_{i}x}_{i} \right)^{2} \right\}\)</span>=
+<span class="math inline">\(\frac{705588 - \frac{\left( 11482 \right)^{2}}{187}}{186} = 3.123\)</span></p>
+<p><span class="math inline">\(standard\ deviation,\ s = \sqrt{3.123} = 1.179\)</span></p>
+<p>Median: See in the cumulative frequencies, the value just greater
+than<span class="math inline">\(\ \left( \frac{n + 1}{2} \right)\)</span> , then the corresponding value of
+<span class="math inline">\(x\)</span> is <span class="math inline">\(Q_{2}\)</span>, median</p>
+<p><span class="math inline">\(\left( \frac{n + 1}{2} \right) = \frac{187 + 1}{2}\ \)</span>= <span class="math inline">\(\frac{188}{2}\)</span>
+= 94</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<em>x</em>)</th>
+<th align="left">frequency (<em>f</em>)</th>
+<th align="left">cumulative frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+<td align="left">28</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+<td align="left">58</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+<td align="left">100</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+<td align="left">135</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+<td align="left">163</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+<td align="left">179</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+<td align="left">187</td>
+</tr>
+</tbody>
+</table>
+<p><span class="math display">\[S_{k} = \frac{3(mean - median)}{\text{standard deviation}}\]</span></p>
+<p><span class="math display">\[S_{k} = \frac{3(61.40 - 61)}{1.179} = \frac{1.2}{1.179} = 1.017\]</span></p>
+<p>Hence, the Karl Pearson's coefficient of skewness <span class="math inline">\(S_{k}\)</span>=<span class="math inline">\(1.017\)</span>, Thus
+the distribution is positively skewed.</p>
+</div>
+<div id="bowleys-measure-of-skewness-sq" class="section level3" number="6.2.2">
+<h3><span class="header-section-number">6.2.2</span> Bowley's measure of Skewness (<em>S</em><sub>Q</sub>)</h3>
+<p>Karl Pearson's coefficient of skewness is most commonly used skewness
+measure. However, in order to use it you must know the mean, mode (or
+median) and standard deviation for your data. Sometimes you might not
+have that information; instead you might have information about
+quartiles. If that’s the case, you can use Bowley’s measure of Skewness
+as an alternative to find out more about the asymmetry of your
+distribution. It’s very useful if you have extreme data values
+(outliers) or if you have an open-ended distribution.</p>
+<p><span class="math display">\[{Bowley’s\ measure\ of\ Skewness,\ S}_{Q} = \frac{\left( Q_{3} - Q_{2} \right) - \left( Q_{2} - Q_{1} \right)}{\left( Q_{3} - Q_{2} \right) + \left( Q_{2} - Q_{1} \right)}\]</span></p>
+<p>Where <span class="math inline">\(Q_{1}\)</span>= 1<sup>st</sup> quartile; <span class="math inline">\(Q_{2}\)</span> = median; <span class="math inline">\(Q_{3}\)</span>= 3<sup>rd</sup> quartile</p>
+<p>Equation can be further modified into</p>
+<p><span class="math display">\[S_{Q} = \frac{Q_{3} - 2Q_{2} + Q_{1}}{Q_{3} - Q_{1}}\]</span></p>
+<ul>
+<li><p><span class="math inline">\(S_{Q}\)</span>= 0 means that the curve is symmetrical.</p></li>
+<li><p><span class="math inline">\(S_{Q}\)</span> &gt; 0 means the curve is positively skewed.</p></li>
+<li><p><span class="math inline">\(S_{Q}\)</span>&lt; 0 means the curve is negatively skewed.</p></li>
+</ul>
+<p>For <strong>Example 6.1</strong> given above, Bowley's measure of Skewness can be
+calculated as follows</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<em>x</em>)</th>
+<th align="left">frequency (<em>f</em>)</th>
+<th align="left">cumulative frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+<td align="left">10</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+<td align="left">28</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+<td align="left">58</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+<td align="left">100</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+<td align="left">135</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+<td align="left">163</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+<td align="left">179</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+<td align="left">187</td>
+</tr>
+</tbody>
+</table>
+<p>Calculation of<span class="math inline">\(\text{Q}_{1}\)</span>, <span class="math inline">\(Q_{2}\)</span>, <span class="math inline">\(Q_{3}\)</span> is given in Section <a href="measures-of-central-tendency--ii.html#quartile">4.8</a></p>
+<p><span class="math display">\[{Q}_{1} = 60\]</span></p>
+<p><span class="math display">\[Q_{2} = 61\]</span></p>
+<p><span class="math display">\[Q_{3} = 63\]</span></p>
+<p><span class="math display">\[S_{Q} = \frac{63 - (2 \times 61) + 60}{63 - 60} = \ \frac{1}{3} = 0.33\]</span></p>
+<p>Since <span class="math inline">\(S_{Q}\)</span> &gt; 0 means the curve is positively skewed.</p>
+</div>
+<div id="kellys-measure-of-skewness-sp" class="section level3" number="6.2.3">
+<h3><span class="header-section-number">6.2.3</span> Kelly's Measure of Skewness (<em>S</em><sub>p</sub>)</h3>
+<p>Bowley's measure of skewness is based on the middle 50% of the
+observations; it leaves 25% of the observations on each extreme of the
+distribution. As an improvement over Bowley's measure, Kelly has
+suggested a measure based on Percentiles, including <em>P</em><sub>10</sub> and <em>P</em><sub>90</sub>
+so that only 10% of the observations on each extreme are ignored.</p>
+<p><span class="math display">\[{Kelly&#39;s\ Measure\ of\ Skewness,\ S}_{p} = \frac{\left( P_{90} - P_{50} \right) - \left( P_{50} - P_{10} \right)}{\left( P_{90} - P_{50} \right) + \left( P_{50} - P_{10} \right)}\]</span></p>
+
+<div class="rmdnote">
+Assignment 3:Try to find Kelly’s Measure of Skewness
+for the Example 6.1 given above
+</div>
+</div>
+<div id="measure-based-on-moments" class="section level3" number="6.2.4">
+<h3><span class="header-section-number">6.2.4</span> Measure based on moments</h3>
+<p>Before going into measuring skewness using moments, one should know what
+a moment is:</p>
+<div id="moments" class="section level4" number="6.2.4.1">
+<h4><span class="header-section-number">6.2.4.1</span> Moments</h4>
+<p>The <strong><em>r</em><sup>th</sup> moment about mean</strong> of a distribution, denoted by
+<strong><em>μ</em><sub>r</sub></strong> is given by</p>
+<p><span class="math display">\[\mu_{r} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{r}}}{N}\]</span></p>
+<p>Where <span class="math inline">\(f_{i}\)</span> is the frequency of <em>i</em><sup>th</sup> observation or class
+mark<span class="math inline">\(\ x_{i}\)</span>, <span class="math inline">\(N = \sum_{}^{}f_{i}\)</span>, number of observations</p>
+<p>Moment about mean is also called as <strong>Central Moment</strong></p>
+<p>If <em>r</em> = 0,
+<span class="math inline">\(\mu_{0} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{0}}}{N}\)</span>
+= 1</p>
+<p>If <em>r</em> = 1,
+<span class="math inline">\(\mu_{1} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{1}}}{N}\)</span>
+= 0 (sum of deviation about mean is zero)</p>
+<p>If <em>r</em> = 2,
+<span class="math inline">\(\mu_{2} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{2}}}{N}\)</span>
+= <span class="math inline">\(\sigma^{2}\)</span>, Population variance</p>
+<p>In short values of following moments about mean are</p>
+<table style="width:58%;">
+<colgroup>
+<col width="34%" />
+<col width="23%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Moments about mean</strong></p>
+<strong>(central moment)</strong></th>
+<th><strong>Value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\mu_{0}\]</span></td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\mu_{1}\]</span></td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\mu_{2}\]</span></td>
+<td><span class="math display">\[\sigma^{2}\]</span></td>
+</tr>
+</tbody>
+</table>
+<p>For the <strong>Example 6.1</strong> given above, calculate third central moment, <span class="math inline">\(\mu_{3}\)</span></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<span class="math inline">\(x_{i}\)</span>)</th>
+<th align="left">frequency (<span class="math inline">\(f_{i}\)</span>)</th>
+<th align="left"><span class="math display">\[\left( x_{i} - \overline{x} \right)^{3}\]</span></th>
+<th align="left"><span class="math display">\[{f_{i}\left( x_{i} - \overline{x} \right)}^{3}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+<td align="left">-39.304</td>
+<td align="left">-393.04</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+<td align="left">-13.824</td>
+<td align="left">-248.832</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+<td align="left">-2.744</td>
+<td align="left">-82.32</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+<td align="left">-0.064</td>
+<td align="left">-2.688</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+<td align="left">0.216</td>
+<td align="left">7.56</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+<td align="left">4.096</td>
+<td align="left">114.688</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+<td align="left">17.576</td>
+<td align="left">281.216</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+<td align="left">46.656</td>
+<td align="left">373.248</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Sum</strong></td>
+<td align="left"><strong>187</strong></td>
+<td align="left"><strong> </strong></td>
+<td align="left"><strong>49.832</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mean = 61.40</p>
+<p><span class="math display">\[\mu_{3} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{3}}}{N} = \ \frac{49.832}{187} = 0.266\]</span></p>
+</div>
+<div id="moment-measure-of-skewness-mathbfbeta_1textandgamma_1mathbf" class="section level4" number="6.2.4.2">
+<h4><span class="header-section-number">6.2.4.2</span> Moment Measure of Skewness <span class="math inline">\(\mathbf{(}\beta_{1}\text{and}\)</span><span class="math inline">\(\gamma_{1}\mathbf{)}\)</span></h4>
+<p>The moment measure of skewness is based on the property that, for a
+symmetrical distribution, all odd ordered central moments are equal to
+zero. We note that <span class="math inline">\(\mu_{1}\)</span> = 0, for every distribution, therefore, the
+lowest order moment that can provide an absolute measure of skewness
+is<span class="math inline">\(\text{μ}_{3}\)</span>. So measures of skewness are based
+on<span class="math inline">\(\text{μ}_{3}\)</span>.</p>
+<p><span class="math display">\[\beta_{1} = \frac{\mu_{3}^{2}}{\mu_{2}^{3}}\]</span></p>
+<p>Pronounced as ‘beta one’</p>
+<p><span class="math inline">\(\beta_{1}\)</span>= 0 means that the curve is symmetrical. The greater the
+value of <span class="math inline">\(\beta_{1}\)</span>the more skewed the distribution. One serious
+limitation of <span class="math inline">\(\beta_{1}\)</span>is that it cannot tell the direction of
+skewness, <em>i</em>.<em>e</em>., whether it is positive or negative. Since
+<span class="math inline">\(\text{μ}_{2}\)</span> is always positive and <span class="math inline">\(\mu_{3}^{2}\)</span> is positive,
+<span class="math inline">\(\beta_{1}\)</span> will be positive always. This drawback is removed by
+calculating<span class="math inline">\(\text{γ}_{1}\)</span>, called as Karl Pearson’s<span class="math inline">\(\text{ γ}_{1}\)</span>,
+pronounced as ‘gamma one.’</p>
+<p><span class="math display">\[\gamma_{1} = \sqrt{\beta_{1}} = \frac{\mu_{3}}{\mu_{2}^{3}}\]</span></p>
+<p>If <span class="math inline">\(\mu_{3}\)</span> is positive <span class="math inline">\(\gamma_{1}\)</span> is positive, If <span class="math inline">\(\mu_{3}\)</span> is
+negative <span class="math inline">\(\gamma_{1}\)</span> is negative</p>
+<ul>
+<li><p><span class="math inline">\(\gamma_{1}\)</span>= 0 means that the curve is symmetrical.</p></li>
+<li><p><span class="math inline">\(\gamma_{1}\)</span> &gt; 0 means the curve is positively skewed.</p></li>
+<li><p><span class="math inline">\(\gamma_{1}\)</span>&lt; 0 means the curve is negatively skewed.</p></li>
+</ul>
+<p>For the <strong>Example 6.1</strong> given above, skewness can be examined as below</p>
+<p><span class="math inline">\(\mu_{3}\)</span>= 0.226</p>
+<p><span class="math inline">\(\mu_{2}\)</span>= 3.123</p>
+<p><span class="math inline">\(\beta_{1} = \frac{\mu_{3}^{2}}{\mu_{2}^{3}}\)</span> =
+<span class="math inline">\(\frac{\left( 0.226 \right)^{2}}{\left( 3.123 \right)^{3}} = \ \frac{0.051}{30.46} = 0.0016\)</span></p>
+<p><span class="math inline">\(\gamma_{1} = \sqrt{\beta_{1}} = \ \sqrt{0.0016} = + 0.04\)</span></p>
+<p>Since <span class="math inline">\(\mu_{3}\)</span> is positive <span class="math inline">\(\gamma_{1}\)</span>is positive. Since
+<span class="math inline">\(\gamma_{1}\)</span>is slightly greater than 0, distribution is a slightly
+skewed to right.</p>
+</div>
+</div>
+</div>
+<div id="kurtosis" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> Kurtosis</h2>
+<p>Kurtosis is another measure of the shape of a distribution. Whereas
+skewness measures the lack of symmetry of the frequency curve of a
+distribution, kurtosis is a measure of the relative peakedness of its
+frequency curve. Various frequency curves can be divided into three
+categories depending upon the shape of their peak.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k1"></span>
+<img src="images/image10_5.jpeg" alt="Three categories of frequency curves depending upon the shape of their peak" width="50%" />
+<p class="caption">
+Figure 6.8: Three categories of frequency curves depending upon the shape of their peak
+</p>
+</div>
+<p>Kurtosis refers to degree of flatness or peakedness of the curve. It is
+measured relative to the peakedness of normal curve. The normal curve is considered as <em>mesokurtic</em>. If a curve is
+more peaked than normal curve, it is called <em>leptokurtic</em>. If a curve is
+more flat-topped than normal curve, it is called <em>platykurtic</em>.</p>
+<p>The condition of peakedness (leptokurtic) or flatness (platykurtic) is
+called <strong>kurtosis of excess</strong>.</p>
+<p>Measure of kurtosis is given by ‘beta two’ given by Karl Pearson</p>
+<p><span class="math inline">\(\beta_{2} = \frac{\mu_{4}}{\mu_{2}^{2}}\)</span></p>
+<p>Where <span class="math inline">\(\mu_{4}\)</span> is the 4<sup>th</sup> central moment, <span class="math inline">\(\mu_{2}\)</span> is the 2<sup>nd</sup>
+central moment</p>
+<ul>
+<li><p><span class="math inline">\(\beta_{2}\)</span>= 3 means that the curve is mesokurtic.</p></li>
+<li><p><span class="math inline">\(\beta_{2}\)</span> &gt; 3 means the curve is leptokurtic.</p></li>
+<li><p><span class="math inline">\(\beta_{2}\)</span>&lt; 3 means the curve is platykurtic.</p></li>
+</ul>
+<p>Another measure of kurtosis is gamma two, <span class="math inline">\(\gamma_{2} = \beta_{2} - 3\ \)</span></p>
+<ul>
+<li><p><span class="math inline">\(\gamma_{2}\)</span>= 0 means that the curve is mesokurtic.</p></li>
+<li><p><span class="math inline">\(\gamma_{2}\)</span> &gt; 0 means the curve is leptokurtic.</p></li>
+<li><p><span class="math inline">\(\gamma_{2}\)</span>&lt; 0 means the curve is platykurtic.</p></li>
+</ul>
+<p>For the <strong>Example 6.1</strong> given above, kurtosis can be examined as follows</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Height (<span class="math inline">\(x_{i}\)</span>)</th>
+<th align="left">frequency (<span class="math inline">\(f_{i}\)</span>)</th>
+<th align="left"><span class="math display">\[\left( x_{i} - \overline{x} \right)^{4}\]</span></th>
+<th align="left"><span class="math display">\[{f_{i}\left( x_{i} - \overline{x} \right)}^{4}\]</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">58</td>
+<td align="left">10</td>
+<td align="left">133.6336</td>
+<td align="left">1336.336</td>
+</tr>
+<tr class="even">
+<td align="left">59</td>
+<td align="left">18</td>
+<td align="left">33.1776</td>
+<td align="left">597.1968</td>
+</tr>
+<tr class="odd">
+<td align="left">60</td>
+<td align="left">30</td>
+<td align="left">3.8416</td>
+<td align="left">115.248</td>
+</tr>
+<tr class="even">
+<td align="left">61</td>
+<td align="left">42</td>
+<td align="left">0.0256</td>
+<td align="left">1.0752</td>
+</tr>
+<tr class="odd">
+<td align="left">62</td>
+<td align="left">35</td>
+<td align="left">0.1296</td>
+<td align="left">4.536</td>
+</tr>
+<tr class="even">
+<td align="left">63</td>
+<td align="left">28</td>
+<td align="left">6.5536</td>
+<td align="left">183.5008</td>
+</tr>
+<tr class="odd">
+<td align="left">64</td>
+<td align="left">16</td>
+<td align="left">45.6976</td>
+<td align="left">731.1616</td>
+</tr>
+<tr class="even">
+<td align="left">65</td>
+<td align="left">8</td>
+<td align="left">167.9616</td>
+<td align="left">1343.693</td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Sum</strong></td>
+<td align="left"><strong>187</strong></td>
+<td align="left"></td>
+<td align="left"><strong>4312.747</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Mean,<span class="math inline">\(\ \overline{x}\ \)</span>= 61.40</p>
+<p><span class="math inline">\(\mu_{2}\)</span> = 3.123 (calculation shown in previous example)</p>
+<p><span class="math inline">\(\mu_{4} = \frac{\sum_{i = 1}^{N}{f_{i}\left( x_{i} - \overline{x} \right)^{4}}}{N} = \frac{4312.747}{187} = 23.062\)</span></p>
+<p><span class="math inline">\(\beta_{2} = \frac{\mu_{4}}{\mu_{2}^{2}} = \frac{23.062}{\left( 3.123 \right)^{2}} = 2.364\)</span></p>
+<p><span class="math inline">\(\beta_{2}\)</span> is 2.364, which is close to 3, distribution can be considered
+slightly platykurtic close to symmetric.</p>
+<p>You can verify the frequency curve of <strong>Example 6.1</strong> below, it can be seen
+that it is slightly right tailed (positively skewed)</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:k2"></span>
+<img src="images/image11_5.jpeg" alt="frequency curve of Example 6.1" width="50%" />
+<p class="caption">
+Figure 6.9: frequency curve of Example 6.1
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="measures-of-dispersion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="measures-of-association.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+},
+"toolbar": {
+"position": "fixed"
+},
+"info": true
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
