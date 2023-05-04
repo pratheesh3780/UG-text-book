@@ -1,0 +1,195 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# Introduction  
+
+
+In this chapter, we will explore the fundamentals of statistics, including its definition, history, and contributions, as well as some basic concepts that are essential for understanding statistical science.  
+
+The history of statistics can be traced back to ancient civilizations, such as the Babylonians, who used statistics for agricultural purposes, and the Egyptians, who used it for census purposes. However, it wasn't until the 17th century that statistics began to emerge as a formal field of study, thanks to the work of prominent mathematicians such as John Graunt, William Petty, and Blaise Pascal.  
+
+Over the years, statistics has evolved into a multidisciplinary field that draws upon various disciplines, such as mathematics, probability theory, and computer science. It has made significant contributions to fields such as epidemiology, psychology, engineering, and finance, among others.  
+
+To understand statistics, one needs to have a good grasp of some basic concepts. These concepts provide a foundation for more advanced statistical techniques.  
+
+In the following sections, we will delve deeper into these concepts and explore how they are used in statistical analysis. We will also examine some common applications of statistics and discuss how they have contributed to the advancement of various fields. By the end of this chapter, you should have a solid understanding of the basics of statistics and be ready to explore more advanced statistical techniques[@goon] [@gupta]  
+
+## Origin of the word "Statistics"  
+
+The term statistics was derived from the Neo-Latin word
+`statisticum collegium` meaning "council of state" and the Italian word
+`statista` meaning "statesman" or "politician".  
+
+
+A German word `Statistik`, got the meaning "collection and
+classification of data" generally in the early 19th century. This word
+was first introduced by Gottfried Achenwall (1749). `Statistik` was
+originally designated as a term for analysis of data about the state
+(data used by government or other administrative bodies). The term
+`Statistik` was introduced into English in 1791 by Sir John Sinclair
+when he published the first of 21 volumes titled "Statistical Account of
+Scotland" [@ball]. The first book to have 'Statistics' in its title was
+"Contributions to Vital Statistics" (1845) by Francis GP Neison,
+actuary[^01-lecture01-1] to the Medical Invalid and General Life Office.
+
+[^01-lecture01-1]: actuary: A person who compiles and analyses
+    statistics and uses them to calculate insurance risks and premiums.
+
+</p>
+
+```{r scotland, echo=FALSE,fig.cap='Statistical Account of Scotland by Sir John Sinclair (1791)',fig.height=4, fig.align='center'}
+knitr::include_graphics(rep("images/history1.png"))
+```
+
+## Statistics and Mathematics
+
+Mathematics follows a rigid theorem and proof. Mathematical theories
+involve well-defined and proven facts which has the minimal scope of
+change. However, Statistics is a discipline where real-life data is
+handled. This factor makes this field of study more abstract, where
+individuals have to develop newer solutions to problems that was new and
+not observed before. Statistics is an applied science; in mathematics
+the goal is to prove theorems. In statistics, the main goal is to
+develop good methods for understanding data and making decisions.
+Statisticians often use mathematical theorems to justify their methods,
+but theorems are not the main focus. Statistics is now considered as an
+independent field which uses mathematics to solve real life problems.  
+
+In terms of error, mathematics and statistics differ in how they handle and approach errors.  
+
+Mathematics is all about getting the right answer. It focuses on using formulas and equations to solve problems accurately, and mistakes are considered human errors that can be corrected.  
+
+Statistics, on the other hand, acknowledges that there will always be some errors when collecting and analyzing data. Instead of trying to avoid errors altogether, statisticians use different techniques to measure and control them. They try to get the best possible estimate of the true values of the data and take into account the uncertainty and potential errors associated with those estimates.  
+
+In summary, mathematics is concerned with minimizing errors in the application of mathematical principles and calculations, while statistics acknowledges the presence of errors in data and aims to quantify and control them through statistical techniques.
+
+## Definition of Statistics  
+
+Statistics is the science which deals with the
+
+-   Collection of data
+
+-   Organization of data or Classification of data
+
+-   Presentation of data
+
+-   Analysis of data
+
+-   Interpretation of data
+
+
+
+Two main branches of statistics are:
+
+
+
+**Descriptive statistics**, is a branch of statistics that involves summarizing and presenting data in a meaningful way. It is used to describe and understand the features of a data set by providing numerical or graphical summaries of the data.  
+
+Descriptive statistics is a way to summarize and present data in a useful way. It can be used to describe things like the average score of a class or how spread out the scores are. for example such measures will help the teachers and administrators understand how well students are doing and identify areas where they need to improve.  
+
+
+**Inferential statistics**, uses a small group of data called a random sample to make predictions or draw conclusions about a larger group called the population. The goal is to learn about the characteristics, or parameters, of the population by analyzing the data from the sample. In other words, we use the data we have from a smaller group to make educated guesses about the characteristics of a larger group.  
+
+For example, imagine you want to know the average height of all students in a school, but it would take too much time and effort to measure the height of every student. Instead, you can take a sample of students and measure their height. By using inferential statistics, you can estimate the average height of all students in the school based on the height measurements of the sample.  
+
+Inferential statistics uses probability theory and statistical techniques to make inferences about a population based on the characteristics of a sample. It allows researchers to test hypotheses and make predictions with a certain level of confidence based on the data available.  
+
+Descriptive statistics is used to summarize and present data in a meaningful way, while inferential statistics is used to make predictions or draw conclusions about a larger group based on a smaller sample. Descriptive statistics provides a summary of the data that is easy to understand and use, while inferential statistics allows us to make generalizations about a larger population based on the characteristics of a smaller sample.  
+
+## Father of Statistics  
+
+Ronald Aylmer Fisher (R.A. Fisher) is often referred to as the "father of statistics" because of his numerous contributions to statistical theory and methodology. He developed several statistical tests and methods that are still widely used today, such as analysis of variance (ANOVA) and maximum likelihood estimation.  
+
+Prasanta Chandra Mahalanobis (P.C. Mahalanobis), on the other hand, is regarded as the "father of Indian statistics" because of his pioneering work in developing statistical methods that were specifically suited to the unique challenges of the Indian context. He founded the Indian Statistical Institute and developed the Mahalanobis distance, which is still used in fields such as image recognition and pattern analysis. He also played a key role in shaping India's national statistical system and promoting the use of statistics in policymaking.
+
+
+## Scope of statistics
+
+**Functions of statistics**: Statistics simplifies complexity, presents
+facts in a definite form, helps in formulation of suitable policies,
+facilitates comparison and helps in forecasting. Valid results and
+conclusion are obtained in research experiments using proper statistical
+tools.  
+
++  Summarize data: Statistics can be used to take large amounts of data and present it in a simple and understandable way.  
+
+
++  Analyze data: Statistics can be used to identify patterns, trends, and relationships in data, which can help us to understand various phenomena.  
+
+
++  Make decisions: Statistics can be used to provide accurate and reliable information that can be used to support decision-making processes.  
+
+
++  Test hypotheses: Statistics can be used to test theories or ideas by analyzing data and drawing conclusions based on the results.  
+
+
++  Estimate parameters: Statistics can be used to estimate characteristics of a larger group, called the population, based on information collected from a smaller group, called the sample.  
+
++  Model relationships: Statistics can be used to create models that show how different variables are related to one another, which can be used to make predictions and inform future decisions.  
+
+Overall, statistics helps us to make sense of the world by providing tools to organize and analyze data, and to draw meaningful conclusions from it.  
+
+
+**Uses of statistics:** Statistics has pervaded almost all spheres of
+human activities. Statistics is useful in the administration, Industry,
+business, economics, research workers, banking,insurance companies etc.   
+
+* Business: Statistics can be used to analyze sales data, customer behavior, and market trends to help businesses make informed decisions about pricing, product development, and marketing strategies.  
+
+* Healthcare: Statistics can be used to analyze patient data, evaluate the effectiveness of treatments, and identify risk factors for various diseases.  
+* Science: Statistics can be used to design experiments, analyze data from experiments, and make predictions based on data.  
+
+* Government: Statistics can be used to gather information about populations, monitor trends in crime, and evaluate the effectiveness of public policies.  
+
+* Education: Statistics can be used to evaluate student performance, develop educational programs, and measure the effectiveness of teaching methods.  
+
+* Sports: Statistics can be used to analyze player performance, evaluate team strategies, and predict the outcome of games.  
+
+Overall, statistics plays an important role in helping us to make informed decisions and understand the world around us.  
+
+
+## The Architects of Statistical Theory  
+
+Statistics is a field that has a long history of important contributors who have made significant contributions to the development of statistical theory and practice. There have been many prominent statisticians throughout history, including several notable Indian statisticians who have made significant contributions to the field. Here are a few of the most important statisticians throughout history:  
+
+**Ronald Aylmer Fisher**: R. A. Fisher was an English statistician and geneticist who is widely considered to be one of the founders of modern statistics. He made significant contributions to statistical theory, including the development of methods for analyzing variance, the design of experiments, and the development of maximum likelihood estimation. Fisher was also a pioneer in the field of genetics, and his work on the inheritance of traits has had a lasting impact on the field.  
+
+**Karl Pearson**: Pearson was an English mathematician and statistician who is best known for his work on correlation and regression analysis. He also made significant contributions to the development of the chi-squared test, which is widely used in statistical hypothesis testing.  
+
+**William S. Gosset**: Gosset, who is also known by his pen name "Student," was an English statistician who worked for the Guinness Brewery in Dublin, Ireland. He developed the t-test, which is used to determine whether the means of two groups are significantly different from one another. Gosset's work on the t-test had a significant impact on the development of statistical inference.  
+
+**Florence Nightingale**: Nightingale was an English nurse who is widely considered to be the founder of modern nursing. She also made significant contributions to the field of statistics, particularly in the area of medical statistics. Nightingale used statistical methods to analyze data on mortality rates and other health-related data, and her work had a significant impact on the development of public health policies.  
+
+**Sir David Cox**: Cox is an English statistician who is best known for his work on survival analysis and the development of the proportional hazards model. He also made significant contributions to the development of methods for analyzing categorical data and the analysis of variance. Cox's work has had a significant impact on many fields, including medicine, epidemiology, and engineering.  
+
+**P.C.Mahalanobis**: Prasanta Chandra Mahalanobis was an Indian statistician who is best known for his work on multivariate analysis and the development of the Mahalanobis distance. He was the founder of the Indian Statistical Institute, which he established in 1931 with the goal of advancing statistical research and training in India. Mahalanobis was also instrumental in the development of the National Sample Survey, which has been used to collect data on a wide range of topics in India since the 1950s.  
+
+**C.R. Rao**: Calyampudi Radhakrishna Rao is another prominent Indian statistician who has made significant contributions to the field. He is known for his work on statistical theory, matrix algebra, and multivariate analysis. Rao has received numerous awards for his contributions to statistics, including the National Medal of Science in the United States and the Royal Society's Copley Medal. C.R. Rao has earned a reputation as a living legend in the field. In 2023, Rao was awarded the International Prize in Statistics, an award often touted as the "statistics’ equivalent of the Nobel Prize".  
+
+**Ramanujan**: While not traditionally thought of as a statistician, Srinivasa Ramanujan was a mathematician who made significant contributions to the field of number theory. His work on the partition function, which counts the number of ways that a positive integer can be expressed as a sum of other positive integers, has applications in statistical mechanics and the analysis of algorithms. Ramanujan's contributions to mathematics and statistics have had a lasting impact on the field.  
+
+**Bhattacharya**: Subhashis Bhattacharya is a contemporary Indian statistician who is known for his work on probability theory and stochastic processes. He has received numerous awards for his contributions to the field, including the Shanti Swarup Bhatnagar Prize in Mathematical Sciences, which is one of the highest scientific honors in India.  
+
+**Basu**: Pranab Kumar Basu is another prominent Indian statistician who has made significant contributions to the field. He is known for his work on survey sampling, statistical inference, and Bayesian analysis. Basu has received numerous awards for his contributions to statistics, including the Padma Shri award, which is one of the highest civilian honors in India.  
+
+These are just a few examples of statisticians who have made significant contributions to the field. Their work has helped to advance statistical theory and practice, and has had a lasting impact on the way that we collect, analyze, and interpret data.  
+
+## Agricultural Statistics in India  
+
+Agriculture is a vital sector in India's economy, contributing approximately 16% of the country's GDP and employing over 50% of the population. As such, agricultural statistics play a crucial role in monitoring and evaluating the performance of the sector.  
+
+The Indian agricultural statistical system comprises several institutions, including the Ministry of Agriculture and Farmers Welfare, the Department of Agriculture, Cooperation and Farmers Welfare, and the Directorate of Economics and Statistics. These institutions are responsible for collecting, compiling, and analyzing data related to agriculture, including crop production, livestock, land use, irrigation, and agricultural finance.  
+
+One of the main sources of agricultural statistics in India is the Agricultural Census. Conducted every five years, this census collects data on various aspects of agriculture, such as land use, irrigation, livestock, and crop production. The data collected in the Agricultural Census provides a comprehensive picture of the state of agriculture in the country and helps policymakers to make informed decisions.  
+
+In addition to the Agricultural Census, several surveys are also conducted to collect data on specific aspects of agriculture, such as the National Sample Survey (NSS) on Household Consumption Expenditure, which collects data on agricultural household income and expenditure patterns, and the Annual Report on the Price Situation of Agricultural Commodities, which monitors prices of agricultural commodities.  
+
+Agricultural statistics in India also play an essential role in international trade. India is one of the world's largest exporters of agricultural products, such as rice, wheat, and cotton. The collection and analysis of agricultural statistics help policymakers to monitor the performance of the sector, identify areas for improvement, and make informed decisions about trade policies.  
+
+In conclusion, agricultural statistics in India play a crucial role in monitoring and evaluating the performance of the agricultural sector. The data collected and analyzed helps policymakers to make informed decisions about policies related to agriculture, including crop production, livestock, land use, irrigation, and agricultural finance. By providing a comprehensive picture of the state of agriculture in the country, agricultural statistics play an essential role in supporting the growth and development of the sector.  

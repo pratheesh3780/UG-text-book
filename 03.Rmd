@@ -1,0 +1,273 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+# Frequency distribution   
+
+Frequency distribution is an essential tool in statistics that summarizes the distribution of a dataset by showing how often each value occurs. A frequency distribution provides a visual representation of the data that allows for easy interpretation and analysis. Example below will help you understand more about frequency distribution.  
+
+Table shows the number of children per family for 54 families selected
+from a town in India. The data, presented in this form in which it was
+collected, is called raw data.
+
+```{r raw, echo=FALSE,fig.cap='raw data set of No. of children in 54 families',out.width="70%", fig.align='center'}
+knitr::include_graphics(rep("images/image3.jpeg"))
+```
+
+It can be seen that, the minimum and the maximum numbers of children per
+family are 0 and 4, respectively. Apart from these numbers, it is
+impossible, without further careful study, to extract any exact
+information from the data. But by breaking down the data into the form
+below
+
+```{r freq, echo=FALSE,fig.cap='Frequency distribution table',out.width="90%", fig.align='center'}
+knitr::include_graphics(rep("images/image4.png"))
+```
+
+Now certain features of the data become apparent. For instance, it can
+easily be seen that, most of the 54 families selected have two children
+because number of houses having 2 children is 18. This information
+cannot easily be obtained from the raw data. The above table is called a
+frequency table or a frequency distribution. It is so called because it
+gives the frequency or number of times each observation occurs. Thus, by
+finding the frequency of each observation, a more intelligible picture
+is obtained.
+
+### Construction of frequency distribution
+
+1.  List all values of the variable in ascending order of magnitude.
+
+2.  Form a tally column, that is, for each value in the data, record a
+    stroke in the tally column next to that value. In the tally, each
+    fifth stroke is made across the first four. This makes it easy to
+    count the entries and enter the frequency of each observation.
+
+3.  Check that the frequencies sum to the total number of observations
+
+## Grouped frequency distribution
+
+Data below gives the body masses of 22 patients, measured to the nearest
+kilogram.
+
+```{r mass, echo=FALSE,fig.cap='Body masses of 22 patients',out.width="90%", fig.align='center'}
+knitr::include_graphics(rep("images/image5.png"))
+```
+
+It can be seen that the minimum and the maximum body masses are 42 kg
+and 83 kg, respectively. A frequency distribution giving every body mass
+between 42 kg and 83 kg would be very long and would not be very
+informative. The problem is to overcome by grouping the data into
+classes.\
+If we choose the classes\
+41 -- 49\
+50 -- 58\
+59 -- 67\
+68 -- 76 and 77 -- 85, we obtain the frequency distribution given below:
+
+```{r grptable, echo=FALSE,fig.cap='Grouped Frequency distribution table',out.width="90%", fig.align='center'}
+knitr::include_graphics(rep("images/image6.png"))
+```
+
+Above table gives the frequency of each group or class; it is therefore
+called a grouped frequency table or a grouped frequency distribution.
+Using this grouped frequency distribution, it is easier to obtain
+information about the data than using the raw data. For instance, it can
+be seen that 17 of the 22 patients have body masses between 50 kg and 76
+kg (both inclusive). This information cannot easily be obtained from the
+raw data.\
+It should be noted that, even though above table is concise, some
+information is lost. For example, the grouped frequency distribution
+does not give us the exact body masses of the patients. Thus the
+individual body masses of the patients are lost in our effort to obtain
+an overall picture.
+
+## Terms used in grouped frequency tables.
+
+**Class limits**
+
+The intervals into which the observations are put are called [class
+intervals]{.underline}. The end points of the class intervals are called
+[class limits]{.underline}. For example, the class interval 41 -- 49,
+has lower class limit 41 and upper class limit 49.
+
+**Class boundaries**
+
+The raw data in the above example were recorded to the nearest kilogram.
+Thus, a body mass of 49.5kg would have been recorded as 50 kg, a body
+mass of 58.4 kg would have been recorded as 58 kg, while a body mass of
+58.5 kg would have been recorded as 59 kg. It can therefore be seen
+that, the class interval 50 -- 58, consists of measurements greater than
+or equal to 49.5 kg and less than 58.5 kg. The numbers 49.5 and 58.5 are
+called the lower and upper boundaries of the class interval 50 -- 58.
+The class boundaries of the other class intervals are given below:
+
+```{r clsslmt, echo=FALSE,fig.cap='Class boundary and class limits',out.width="90%", fig.align='center'}
+knitr::include_graphics(rep("images/image7.png"))
+```
+
+[Note:]{.underline}\
+Notice that the lower class boundary of the i^th^ class interval is the
+mean of the lower class limit of the class interval and the upper class
+limit of the (i-1)^th^ class interval (i = 2, 3, 4, ...). For example,
+in the table above the lower class boundaries of the second and the
+fourth class intervals are (50 + 49) /2 = 49.5 and (68 + 67)/2 = 67.5
+respectively.\
+It can also be seen that the upper class boundary of the i^th^ class
+interval is the mean of the upper class limit of the class interval and
+the lower class limit of the (i+1)^th^ class interval (i = 1, 2, 3,
+...). Thus, in the above table the upper class boundary of the fourth
+class interval is (76 + 77)/2 = 76.5.
+
+**Class mark**\
+The mid-point of a class interval is called the class mark or class
+mid-point of the class interval. It is the average of the upper and
+lower class limits of the class interval. It is also the average of the
+upper and lower class boundaries of the class interval. For example, in
+the table, the class mark of the third class interval was found as
+follows: class mark =(59+67) /2 = (58.5 + 67.5)/2= 63.
+
+**Class width**\
+The difference between the upper and lower class boundaries of a class
+interval is called the class width of the class interval. Class widths
+of class intervals can also be found by subtracting two consecutive
+lower class limits, or by subtracting two consecutive upper class
+limits.
+
+[Note:]{.underline}
+
+The width of the i^th^ class interval is the numerical difference
+between the upper class limits of the i^th^ and the ( i-1)^th^ class
+intervals (i = 2, 3, ...). It is also the numerical difference between
+the lower class limits of the i^th^ and the (i+1) ^th^ class intervals
+(i = 1, 2, ...).
+
+In grouped frequency table above the width of the first class interval
+is \|41-50\| = 9. This is the numerical difference between the lower
+class limits of the first and the second class intervals. The width of
+the second class interval is \|50-59\|= 9. This is the numerical
+difference between the lower class limits of the second and the third
+class intervals. It is also equal to \|58-49\| the numerical, difference
+between the upper class limits of the first and the second class
+intervals.
+
+## Construction of frequency distribution table
+
+**Step 1**. Decide how many classes you wish to use.\
+**Step 2**. Determine the class width\
+**Step 3**. Set up the individual class limits  
+**Step 4**. Tally the
+items into the classes\
+**Step 5**. Count the number of items in each class
+
+I will explain the construction process with the example below:  
+
+>An agricultural student measured the lengths of leaves on an oak tree (to the nearest cm). Measurements on 38 leaves are as follows  
+
+>9,16,13,7,8,4,18,10,17,18,9,12,5,9,9,16,1,8,17,1,10,5,9,11,15,6,14,9,1,12,5,16,4,16,8,15,14,17  
+
+
+**Step 1.** Decide how many classes you wish to use.
+
+H.A. Sturges provides a formula for determining the approximation number
+of classes.  
+$$\mathbf{k^{'} = 1 + 3.322}\mathbf{\log}\mathbf{N}$$  
+If $k^{'}$ is a decimal value, then the Number of classes (*k*) is obtained by rounding $k^{'}$ to the nearest higher integer.  
+
+If $k^{'}$ is an integer,the number of classes (*k*) is equal to $k^{'}$.  
+
+In our example *N*=38, so $k^{'}$=1+3.322×log(38) = 1+3.322×1.5797 = 6.24  
+here $k^{'}$ is a decimal value so it is rounded to next higher integer, that is 7  
+
+So the number of classes (*k*) = 7  
+
+**Step 2.** Determine the class width (*C*)
+
+Generally, the class width should be the same size for all classes. Formula for calculating approximate number of classes is  
+$$C^{'} = {| max -min|\over k^{'}}$$  
+Note that $k^{'}$ used here is the approximation number of classes using Struges formula not the rounded number of class (*k*).  
+
+If $C^{'}$ is a decimal value, then the class width (*C*) is obtained by rounding $C^{'}$ to the nearest higher integer.  
+
+If $C^{'}$ is an integer,the class width (*C*) is equal to $C^{'}$. 
+
+For this example, $C^{'}$ = \| 18− 1\|/**6.24** = 2.72, here $C^{'}$ is a decimal value so it is rounded to next higher integer, that is 3. so class width *C* = 3.  
+
+**Step 3.** To set up the individual class limits, We need to find the
+lower limit only
+
+$$L = min - \frac{C \times k - (max - min)}{2}$$
+
+where *C* and *k* here are class width and number of classes respectively in our example  
+
+$L = 1 - \frac{3 \times 7 - (18 - 1)}{2}$=1-2= -1; since there is no
+negative values in data = 0.  
+
+
+```{r ch1, echo=FALSE,warning=FALSE,results='asis'}
+library(knitr)
+library(kableExtra)
+dt<-read.csv("csv/c1e1.csv")
+dt %>%
+  kbl(booktabs = TRUE, align = "c") %>%
+   kable_classic(full_width = F, html_font = "Cambria") %>%
+kable_styling(latex_options = "HOLD_position")
+
+
+```
+
+Even though the student only measured in whole numbers, the data is
+continuous, so "4 cm" means the actual value could have been anywhere
+from 3.5 cm to 4.5 cm.
+
+## Cumulative frequency
+
+In many situations, we are not interested in the number of observations
+in a given class interval, but in the number of observations which are
+less than (or greater than) a specified value. For example, in the above
+table, it can be seen that 3 leaves have length less than 3.5 cm and 9
+leaves (i.e. 3 + 6) have length less than 6.5 cm. These frequencies are
+called cumulative frequencies. A table of such cumulative frequencies is
+called **a cumulative frequency table** or **cumulative frequency
+distribution**.
+
+Cumulative frequency is defined as a running total of frequencies.
+Cumulative frequency can also defined as the sum of all previous
+frequencies up to the current point. Notice that the last cumulative
+frequency is equal to the sum of all the frequencies. Two types of
+cumulative frequencies are Less than cumulative frequency and Greater
+than cumulative frequency. Less than cumulative frequency (LCF) is the
+number of values less than a specified value. Greater than cumulative
+frequency (GCF) is the number of observations greater than a specified
+value.
+
+The specified value for LCF in the case of grouped frequency
+distribution will be upper limits and for GCF will be the lower limits
+of the classes. LCF's are obtained by adding frequencies in the
+successive classes and GCF are obtained by subtracting the successive
+class frequencies from the total frequency.
+
+## Relative frequency
+
+It is sometimes useful to know the proportion, rather than the number,
+of values falling within a particular class interval. We obtain this
+information by dividing the frequency of the particular class interval
+by the total number of observations. **Relative frequency** of a class
+is the frequency of class / total observation. Relative frequencies all
+add up to 1.  
+
+```{r ch2, echo=FALSE,warning=FALSE,results='asis'}
+library(knitr)
+library(kableExtra)
+dt<-read.csv("csv/c1e2.csv")
+dt %>%
+  kbl(booktabs = TRUE,align = "c") %>%
+   kable_classic(full_width = F, html_font = "Cambria") %>%
+kable_styling(latex_options = "HOLD_position")
+   add_footnote("Note: A= Less than cumulative frequency; B= Greater than cumulative frequency, C = Relative frequency", notation="alphabet")
+``` 
+
+

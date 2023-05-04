@@ -1,0 +1,497 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+editor_options: 
+  markdown: 
+    wrap: 72
+---  
+
+# Some basic concepts  
+
+Statistics is all about making sense of data, and to do that effectively, you need to understand some fundamental concepts. In this chapter, we will explore some basic concepts in statistics that are essential for anyone who wants to analyze data.  
+
+
+## Population and Sample  
+
+Consider the following example.Suppose we wish to study the body masses
+of all students of College of Agriculture, Vellayani. It will take us a
+long time to measure the body masses of all students of the college and
+so we may select 20 of the students and measure their body masses (in
+kg). Suppose we obtain the measurements like this  
+
+
+49 56 48 61 59 43 58 52 64 71 57 52 63 58 51 47 57 46 53 59  
+
+In this study, we are interested in the body masses of all students of
+College of Agriculture, Vellayani. The set of body masses of all
+students of College of Agriculture, Vellayani is called the
+**population** of this study. The set of 20 body masses, *W* = {49,
+56,48, ..., 53, 59}, is a **sample** from this population.
+
+
+
+### Population
+
+A population is the set of all objects we wish to study.  
+
+In statistics, a population refers to the entire group of individuals, objects, or events that we are interested in studying. It is the entire set of units or elements that share one or more characteristics of interest to the researcher. The population can be of any size, depending on the research question and the resources available to the researcher.  
+
+For example, if a researcher is interested in studying the attitudes of all the farmers in a village, the population would be all the farmers in that village. If a researcher is interested in studying the prevalence of a disease in cattle in a particular area only, the population would be all the cattle in that area.  
+
+It is important to define the population clearly, as it forms the basis for sampling and making inferences about the larger group.  
+
+### Sample
+
+A sample is part of the population we study to learn about the
+population.  
+
+In statistics, a sample is a subset of a population that is selected for study. The purpose of taking a sample is to study a smaller group of individuals, objects, or events from the larger population, and to use the information obtained from the sample to make inferences about the population as a whole.  
+
+Sampling is a crucial part of statistical analysis, as it allows researchers to study a population without having to study every individual, which can be time-consuming and costly. The sample should be selected in a way that is representative of the population of interest, so that the results of the study can be generalized to the larger population.  
+
+The size of the sample also plays an important role in determining the accuracy of the estimates. Generally, the larger the sample size, the more accurate the estimates are likely to be.
+
+## Variables and constants
+
+### Variables
+
+
+Any type of observation which can take different values for different
+people, or different values at different times, or places, is called a
+variable. The following are examples of variables:
+
+-   family size, number of hospital beds, number of schools in a
+    country, etc.
+
+-   height, mass, blood pressure, temperature, blood glucose level, etc.
+
+
+
+
+Broadly speaking, there are two types of variables -- **quantitative**
+and **qualitative** (or categorical) variables
+
+
+
+### Constants
+
+
+Constants are characteristics that have values that do not change.
+Examples of constants are: pi ($\pi$) = the ratio of the circumference of a
+circle to its diameter ($\pi$ = 3.14159\...) and *e*, the base of the
+natural or (Napierian) logarithms (*e*=2.71828).
+
+
+
+## Types of variables
+
+### Quantitative variables
+
+A quantitative variable is one that can take numerical values. The
+variables like family size, number of hospital beds, number of schools
+in a country, height, mass, blood pressure, temperature, blood glucose
+level, etc. are examples of quantitative variables. Quantitative
+variables may be characterized further as to whether they are discrete
+or continuous
+
+### Discrete variables
+
+The variables like family size, number of hospital beds, number of
+schools in a country, etc. can be counted. These are examples of
+discrete variables. Variables that can only take on a finite number of
+values are called "discrete variables." Any variable phrased as "the
+number of ...", is discrete, because it is possible to list its possible
+values {0,1, ...}. Any variable with a finite number of possible values
+is discrete. The following example illustrates the point. The number of
+daily admissions to a hospital is a discrete variable since it can be
+represented by a whole number, such as 0, 1, 2 or 3. The number of daily
+admissions on a given day cannot be a number such as 1.8, 3.96 or 5.33.
+
+### Continuous variables
+
+The variables like height, mass, blood pressure, temperature, blood
+glucose level, etc. can be measured. These are examples of continuous
+variables. A continuous variable does not possess the gaps or
+interruptions characteristic of a discrete variable. A continuous
+variable can assume any value within a specific relevant interval of
+values assumed by the variable. Notice that age is continuous since an
+individual does not age in discrete jumps. Weight can be measured as
+35.5, 35.8 kg etc so, it is a continuous variable.
+
+### Categorical variables
+
+A variable is called categorical when the measurement scale is a set of
+categories. For example, marital status, with categories
+(single,married, widowed), is categorical. Whether employed (yes, no),
+religious affiliation (Protestant, Catholic, Jewish, Muslim, others,
+none), colours etc. Categorical variables are often called qualitative.
+It can be seen that categorical variables can neither be measured nor
+counted.
+
+## Measurement scales
+
+Variables can further be classified according to the following four
+levels of measurement: nominal, ordinal, interval and ratio.
+
+### Nominal scale
+
+This scale of measure applies to qualitative variables only. On the
+nominal scale, no order is required. For example,gender is nominal,
+blood group is nominal, and marital status is also nominal. We cannot
+perform arithmetic operations on data measured on the nominal scale.
+
+### Ordinal scale
+
+This scale also applies to qualitative data. On the ordinal scale, order
+is necessary. This means that one category is lower than the next one or
+vice versa. For example, Grades are ordinal, as excellent is higher than
+very good, which in turn is higher than good, and so on. It should be
+noted that, in the ordinal scale, differences between category values
+have no meaning.
+
+### Interval scale
+
+This scale of measurement applies to quantitative data only. In this
+scale, the zero point does not indicate a total absence of the quantity
+being measured. An example of such a scale is temperature on the Celsius
+or Fahrenheit scale. Suppose the minimum temperatures of 3 cities, A, B
+and C, on a particular day were 0^0^C, 20^0^C and 10^0^C, respectively.
+It is clear that we can find the differences between these temperatures.
+For example, city B is 20^0^C hotter than city A. However, we cannot say
+that city A has no temperature. Moreover, we cannot say that city B is
+twice as hot as city C, just because city B is 20^0^C and city C is
+10^0^C. The reason is that, in the interval scale, the ratio between two
+numbers is not meaningful.
+
+### Ratio scale
+
+This scale of measurement also applies to quantitative data only and has
+all the properties of the interval scale. In addition to these
+properties, the ratio scale has a meaningful zero starting point and a
+meaningful ratio between 2 numbers. An example of variables measured on
+the ratio scale, is weight. A weighing scale that reads 0 kg gives an
+indication that there is absolutely no weight on it. So the zero
+starting point is meaningful. If Ram weighs 40 kg and Laxman weighs 20
+kg, then Ram weighs twice as Laxman. Another example of a variable
+measured on the ratio scale is temperature measured on the Kelvin scale.
+This has a true zero point.
+
+```{r variables, echo=FALSE,fig.cap='Classification of variables',out.width="70%", fig.align='center'}
+knitr::include_graphics(rep("images/image2.jpeg"))
+```  
+
+## Data  
+
+Data can be defined as individual pieces of factual information recorded
+and used for the purpose of analysis. It is the raw information from
+which inferences are drawn using the science "STATISTICS".  
+
+Data refers to information that is collected and recorded for analysis. This information can be in the form of numbers, text, images, or other formats and can be obtained from a variety of sources. The analysis of data can help to identify patterns, trends, and relationships, and can be used to inform decision making in many different fields.  
+
+
+Example for data
+
+-   No. of farmers in a block.
+
+-   The rainfall over a period of time.
+
+-   Area under paddy crop in a state.  
+
+-   Images of rice blast disease  
+
+
+## Collection of Data
+
+The first step in any enquiry (investigation) is the collection of data.
+The data may be collected for the whole population or for a sample only.
+It is mostly collected on a sample basis. Collecting data is very
+difficult job. The enumerator or investigator is the well trained
+individual who collects the statistical data. The respondents are the
+persons from whom the information is collected.
+
+### Types of Data
+
+There are two types (sources) for the collection of data:  
+* Primary Data  
+
+* Secondary Data  
+
+#### Primary Data
+
+Primary data are the first hand information which is collected, compiled
+and published by organizations for some purpose. They are the most
+original data in character and have not undergone any sort of
+statistical treatment.
+
+Example: Population census reports are primary data because these are
+collected, complied and published by the population census organization.
+
+#### Secondary Data
+
+The secondary data are the second hand information which is already
+collected by an organization for some purpose and are available for the
+present study. Secondary data are not pure in character and have
+undergone some treatment at least once.
+
+Example: An economic survey of England is secondary data because the
+data are collected by more than one organization like the Bureau of
+Statistics, Board of Revenue, banks, etc.
+
+## Methods of Collecting Primary Data
+
+Primary data are collected using the following methods:
+
+### Personal Investigation
+
+The researcher conducts the survey him/herself and collects data from
+it. The data collected in this way are usually accurate and reliable.
+This method of collecting data is only applicable in case of small
+research projects.
+
+### Through Investigation
+
+Trained investigators are employed to collect the data. These
+investigators contact the individuals and fill in questionnaires after
+asking for the required information. Most organizations utilize this
+method.
+
+### Collection through Questionnaire
+
+Researchers get the data from local representations or agents that are
+based upon their own experience. This method is quick but gives only a
+rough estimate.
+
+### Through the Telephone
+
+Researchers get information from individuals through the telephone. This
+method is quick and gives accurate information.
+
+## Methods of Collecting Secondary Data
+
+Secondary data are collected by the following methods:
+
+### Official
+
+Publications from the Statistical Division, Ministry of Finance, the
+Federal Bureaus of Statistics, Ministries of Food, Agriculture,
+Industry, Labor, etc.
+
+### Semi-Official
+
+-   Publications from State Bank, Railway Board, Central Cotton
+    Committee, Boards of Economic Enquiry etc.\
+-   Publication of Trade Associations, Chambers of Commerce, etc.\
+-   Technical and Trade Journals and Newspapers.\
+-   Research Organizations such as universities and other institutions.
+
+## Difference Between Primary and Secondary Data
+
+The difference between primary and secondary data is only a change of
+hand. Primary data are the first hand information which is directly
+collected form one source. They are the most original in character and
+have not undergone any sort of statistical treatment, while secondary
+data are obtained from other sources or agencies. They are not pure in
+character and have undergone some treatment at least once.  
+
+
+## Self-Evaluation Quiz 
+
+## Fill in the blanks{.unlisted .unnumbered}  
+
+
+1.  \_\_\_\_\_\_\_\_\_\_ is a complete set of individuals, objects, or
+    measurements of interest.
+
+2.  \_\_\_\_\_\_\_\_\_\_ is a subset of a population, selected for study
+    in some prescribed manner.
+
+3.  \_\_\_\_\_\_\_\_\_\_ is a characteristic of interest that varies
+    from one individual, object, or measurement to another.
+
+4.  \_\_\_\_\_\_\_\_\_\_ is a characteristic of interest that remains
+    constant for all individuals, objects, or measurements in a study.
+
+5.  \_\_\_\_\_\_\_\_\_\_ is the process of collecting information from
+    individuals, objects, or measurements of interest.
+
+6.  \_\_\_\_\_\_\_\_\_\_ data are collected by the investigator for the
+    first time, while \_\_\_\_\_\_\_\_\_\_ data are obtained from a
+    third-party source.
+
+7.  \_\_\_\_\_\_\_\_\_\_ variable is one whose values are determined by
+    chance.
+
+8.  \_\_\_\_\_\_\_\_\_\_ variable is one whose values depend on or are
+    determined by the values of another variable.
+
+9.  On a \_\_\_\_\_\_\_\_\_\_ scale, both the order and the distance
+    between values are meaningful.
+
+10. An example of a variable measured on an \_\_\_\_\_\_\_\_\_\_ scale
+    is temperature in degrees Celsius or Fahrenheit.
+
+11. A \_\_\_\_\_\_\_\_\_\_ scale has a true zero point, meaning that a
+    value of zero indicates the complete absence of the characteristic
+    being measured.
+
+12. An example of a variable measured on a \_\_\_\_\_\_\_\_\_\_ scale is
+    weight in kilograms or pounds.
+
+13. On a \_\_\_\_\_\_\_\_\_\_ scale, the order of values is meaningful,
+    but the distance between values is not.
+
+14. An example of a variable measured on an \_\_\_\_\_\_\_\_\_\_ scale
+    is socioeconomic status, as measured by income level.
+
+15. The \_\_\_\_\_\_\_\_\_\_ is the ratio of the distance between two
+    values on a measurement scale to the difference between the
+    corresponding values.
+
+16. The \_\_\_\_\_\_\_\_\_\_ of a measurement scale refers to the range
+    of values that can be measured on the scale.
+
+17. In statistical analysis, variables measured on \_\_\_\_\_\_\_\_\_\_
+    scales often allow for more powerful analyses and more meaningful
+    conclusions.
+
+18. One important consideration when choosing a measurement scale is the
+    level of \_\_\_\_\_\_\_\_\_\_ required by the research question or
+    hypothesis being tested.
+
+19. Temperature measured in Kelvin is in \_\_\_\_\_\_\_\_\_\_ scale.
+
+20. \_\_\_\_\_\_\_ refers to any collection of facts, numbers, or other
+    information that can be analyzed to gain knowledge or make
+    decisions.  
+    
+    
+> **Answers**: 1. population, 2. sample, 3. variable, 4. constant, 5. data collection, 6. primary, secondary, 7. random, 8. dependent, 9. interval, 10. interval, 11. ratio, 12. ratio, 13. ordinal, 14. ordinal, 15. scale factor, 16. range, 17. interval or ratio, 18. precision, 19. ratio, 20. data  
+
+
+## Multiple choice questions{.unlisted .unnumbered}  
+
+
+1.  Which of the following is an example of a variable?
+
+    a.  A rock
+
+    b.  The color blue
+
+    c.  Age
+
+    d.  All of the above
+
+2.  What is the difference between a population and a sample?
+
+    a.  A population is a subset of a sample.
+
+    b.  A sample is a subset of a population.
+
+    c.  A population and a sample are the same thing.
+
+    d.  A population is larger than a sample.
+
+3.  Which of the following is an example of a ratio scale measurement?
+
+    a.  The rating of a restaurant on a scale from 1 to 5 stars
+
+    b.  The level of education completed by a person (e.g., high school,
+        college, graduate degree)
+
+    c.  The number of hours worked in a week
+
+    d.  The weight of a person in kilograms or pounds
+
+4.  What is the difference between primary and secondary data?
+
+    a.  Primary data are collected by the investigator, while secondary
+        data are obtained from a third-party source.
+
+    b.  Primary data are obtained from a third-party source, while
+        secondary data are collected by the investigator.
+
+    c.  Primary data and secondary data are the same thing.
+
+    d.  Primary data are more reliable than secondary data.  
+
+5.  Which of the following is an example of an ordinal scale
+    measurement?
+
+    a.  Height in centimeters
+
+    b.  Number of siblings
+
+    c.  Rank of preference for different ice cream flavors
+
+    d.  Number of pets
+
+6.  What is the primary characteristic of a nominal scale measurement?
+
+    a.  It has an arbitrary zero point.
+
+    b.  It is used for ranking and ordering data.
+
+    c.  It uses numerical values to represent quantities.
+
+    d.  It categorizes data into mutually exclusive and exhaustive
+        categories.
+
+7.  Which of the following is an example of a variable measured on an
+    interval scale?
+
+    a.  The weight of a person in pounds
+
+    b.  The type of car a person drives
+
+    c.  The score on a multiple choice exam
+
+    d.  The level of agreement on a Likert scale survey question
+
+8.  What is the main difference between a ratio scale measurement and an
+    interval scale measurement?
+
+    a.  A ratio scale measurement has an arbitrary zero point, while an
+        interval scale measurement does not.
+
+    b.  An interval scale measurement is used to measure non-numeric
+        variables, while a ratio scale measurement is used to measure
+        numeric variables.
+
+    c.  A ratio scale measurement can have a value of zero, while an
+        interval scale measurement cannot.
+
+    d.  An interval scale measurement is less precise than a ratio scale
+        measurement.
+
+9.  Which of the following is an example of a categorical variable?
+
+    a.  Age
+
+    b.  Weight
+
+    c.  Gender
+
+    d.  Temperature in Celsius
+
+10. Which of the following is an example of a continuous variable?
+
+    a.  Number of pets
+
+    b.  Blood type
+
+    c.  Number of siblings
+
+    d.  Height in centimeters  
+    
+    **Answers**
+
+  -------------------------------------------------------------------------------
+  1       2       3       4       5       6       7       8       9       10
+  ------- ------- ------- ------- ------- ------- ------- ------- ------- -------
+  **c**   **b**   **d**   **a**   **c**   **d**   **d**   **c**   **c**   d
+
+  -------------------------------------------------------------------------------
+
+
+

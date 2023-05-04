@@ -1,0 +1,48 @@
+\contentsline {chapter}{Preface}{7}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Introduction}{9}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Origin of the word ``Statistics''}{9}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Statistics and Mathematics}{10}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Definition of Statistics}{11}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Father of Statistics}{12}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Scope of statistics}{12}{section.1.5}%
+\contentsline {section}{\numberline {1.6}The Architects of Statistical Theory}{14}{section.1.6}%
+\contentsline {section}{\numberline {1.7}Agricultural Statistics in India}{15}{section.1.7}%
+\contentsline {chapter}{\numberline {2}Some basic concepts}{17}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Population and Sample}{17}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Population}{17}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Sample}{18}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Variables and constants}{18}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Variables}{18}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Constants}{19}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Types of variables}{19}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Quantitative variables}{19}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Discrete variables}{19}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Continuous variables}{19}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Categorical variables}{20}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}Measurement scales}{20}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Nominal scale}{20}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Ordinal scale}{20}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Interval scale}{20}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Ratio scale}{21}{subsection.2.4.4}%
+\contentsline {section}{\numberline {2.5}Data}{21}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Collection of Data}{22}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}Types of Data}{22}{subsection.2.6.1}%
+\contentsline {subsubsection}{\numberline {2.6.1.1}Primary Data}{22}{subsubsection.2.6.1.1}%
+\contentsline {subsubsection}{\numberline {2.6.1.2}Secondary Data}{22}{subsubsection.2.6.1.2}%
+\contentsline {section}{\numberline {2.7}Methods of Collecting Primary Data}{22}{section.2.7}%
+\contentsline {subsection}{\numberline {2.7.1}Personal Investigation}{23}{subsection.2.7.1}%
+\contentsline {subsection}{\numberline {2.7.2}Through Investigation}{23}{subsection.2.7.2}%
+\contentsline {subsection}{\numberline {2.7.3}Collection through Questionnaire}{23}{subsection.2.7.3}%
+\contentsline {subsection}{\numberline {2.7.4}Through the Telephone}{23}{subsection.2.7.4}%
+\contentsline {section}{\numberline {2.8}Methods of Collecting Secondary Data}{23}{section.2.8}%
+\contentsline {subsection}{\numberline {2.8.1}Official}{23}{subsection.2.8.1}%
+\contentsline {subsection}{\numberline {2.8.2}Semi-Official}{23}{subsection.2.8.2}%
+\contentsline {section}{\numberline {2.9}Difference Between Primary and Secondary Data}{24}{section.2.9}%
+\contentsline {section}{\numberline {2.10}Self-Evaluation Quiz}{24}{section.2.10}%
+\contentsline {chapter}{\numberline {3}Frequency distribution}{29}{chapter.3}%
+\contentsline {subsection}{\numberline {3.0.1}Construction of frequency distribution}{30}{subsection.3.0.1}%
+\contentsline {section}{\numberline {3.1}Grouped frequency distribution}{30}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Terms used in grouped frequency tables.}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Construction of frequency distribution table}{32}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Cumulative frequency}{34}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Relative frequency}{35}{section.3.5}%

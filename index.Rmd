@@ -1,7 +1,7 @@
 ---
-title: "LECTURE NOTES OF STAT 3202"
+title: "TEXT BOOK OF AGRICULTURAL STATISTICS"
 author: "Dr. Pratheesh P. Gopinath"
-date: "2022-01-30"
+#date: "2022-12-24"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib]
@@ -13,27 +13,50 @@ cover-image: images/cover.PNG
 ---  
  
 
-# Welcome {-} 
-<p style="text-align: center;"><a href="https://coavellayani.kau.in/people/dr-pratheesh-p-gopinath"><img src="images/cover.png" alt="STAT 3202" /></a></p>  
-Welcome to the book **LECTURE NOTES ON STATISTICAL METHODS AND APPLICATIONS**.
+# Textbook of Agricultural Statistics{.unlisted .unnumbered}
+## Dedication{.unlisted .unnumbered}  
+
+<p style="text-align: justify;">To my beloved wife, Saliny S Nair, who has always been my source of inspiration and unwavering support throughout my journey. Your love, encouragement, and understanding have been instrumental in making this book a reality.</p>
+
+<p style="text-align: justify;">To my dear children, Aadiseshan and Anandapadmanabhan, who fill my life with joy and laughter. You are my motivation to keep learning and growing every day. </p>
+
+<p style="text-align: justify;">To my parents, whose unwavering love and support have been the foundation of my life. Your guidance and encouragement have shaped me into the person I am today, and I am forever grateful. </p>
+
+<p style="text-align: justify;">This book is dedicated to all of you with love and gratitude. </p>  
+
+
+&nbsp;  
+  
+<p style="text-align: justify;">Copyright © 2023 by Pratheesh P Gopinath</p>
+
+<p style="text-align: justify;">All rights reserved. No part of this book may be reproduced in any form or by any means, electronic or mechanical, including photocopying, recording, or by any information storage and retrieval system, without permission in writing from the author, except by a reviewer who may quote brief passages in a review. </p>  
+
+<p style="text-align: left;"><b>ISBN:</b> 9798840789896</p>
+
+<p style="text-align: left;"> <b>Imprint:</b> Independently published</p>
+
+KINDLE DIRECT PUBLISHING  
+
+Cover design by Pratheesh P Gopinath  
+
+For information on permissions, translation rights, or bulk purchases, please contact `pratheesh@kaugrapes.com`
+
 
 # Preface {-}  
-<p style="text-align: justify;">
-</p>  
+<p style="text-align: justify;">Agricultural statistics is a crucial field of study for students pursuing undergraduate programs in agriculture. However, the subject is often perceived as complex and challenging, and students may find it difficult to comprehend the basic concepts and principles. </p>
+<p style="text-align: justify;">In addition, statistics is also important in agricultural research for making informed decisions based on the results of experiments and surveys. By using statistical methods to analyze data, researchers can draw conclusions about the effectiveness of different agricultural practices, the impact of environmental factors on crop yields, and the efficacy of new technologies in agriculture. Furthermore, statistics is crucial in ensuring the accuracy and validity of research findings, and helps to prevent biased or misleading interpretations of data. As such, a strong understanding of statistical principles and techniques is essential for any student or professional working in the field of agriculture. </p>
+<p style="text-align: justify;">As a result, I wrote this book, "Text book of Agricultural Statistics," to provide a comprehensive and accessible introduction to the subject. This book is written with the objective of helping students, who are beginners in statistics, understand the fundamental concepts and principles of agricultural statistics with ease. </p>
+<p style="text-align: justify;">The book covers a wide range of topics, from basic statistical concepts such as probability theory and data presentation to advanced techniques like regression analysis and experimental designs. Each topic is explained in a clear and concise manner, with examples and illustrations provided to help the reader understand the concepts in a practical context. </p>
+<p style="text-align: justify;">Throughout the book, I have tried to use simple language and minimize technical jargon to ensure that the content is accessible to readers who have no prior experience with statistics. The examples used are drawn from the field of agriculture, making the book more relevant and engaging for students in this field. </p>
+<p style="text-align: justify;">I hope that this book will serve as a useful resource for students pursuing undergraduate programs in agriculture, as well as for professionals who wish to refresh their knowledge of agricultural statistics. I also believe that this book will help readers develop an appreciation for the role of statistics in the field of agriculture, and inspire them to apply statistical techniques to solve real-world problems in this field. </p>
+<p style="text-align: justify;">I would like to express my gratitude to all those who supported me throughout the writing of this book. I would also like to acknowledge the valuable feedback and suggestions provided by colleagues and students, which have helped to improve the content of this book. </p>
+<p style="text-align: justify;">Finally, I would like to encourage readers to provide feedback on this book, as I believe that this will help me to improve the content and make future editions even more useful to readers. Write me to `pratheesh@kaugrapes.com`</p>
 
+<p style="text-align: center;">Thank you,</p>
 
+<p style='text-align: right;'> Dr Pratheesh P Gopinath</p>
+  
 
-<p style="text-align: justify;"> **Note**: This book is published in MeLoN (Module for e-Learning & Online Notes) . The online version of this book is free to read here.</p> 
-````{=html}
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.
-````
-<p>If you have any feedback, please feel free to contact [Dr.Pratheesh P. Gopinath](https://coavellayani.kau.in/people/dr-pratheesh-p-gopinath). E-mail: `pratheesh.pg@kau.in` Thank you!</p>  
-
-<p>This book is a collection of all lecture notes covering the syllabus of statistics course in B.Sc.(Hons.) Agriculture under Kerala Agricultural University </p>  
-
-```{r logo, echo=FALSE,out.width="30%", fig.align='center'}
-knitr::include_graphics(rep("docs/logo.png"))
-```
 
 
 
